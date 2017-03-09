@@ -1,3 +1,4 @@
+
 package controllers;
 
 import java.text.SimpleDateFormat;
@@ -13,22 +14,22 @@ import org.springframework.web.servlet.ModelAndView;
 public class WelcomeController extends AbstractController {
 
 	// Constructors -----------------------------------------------------------
-	
+
 	public WelcomeController() {
 		super();
 	}
-		
-	// Index ------------------------------------------------------------------		
+
+	// Index ------------------------------------------------------------------
 
 	@RequestMapping(value = "/index")
-	public ModelAndView index(@RequestParam(required=false, defaultValue="Grupo DP 29") String name) {
+	public ModelAndView index(@RequestParam(required = false, defaultValue = "") final String name) {
 		ModelAndView result;
 		SimpleDateFormat formatter;
 		String moment;
-		
+
 		formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		moment = formatter.format(new Date());
-				
+
 		result = new ModelAndView("welcome/index");
 		result.addObject("name", name);
 		result.addObject("moment", moment);

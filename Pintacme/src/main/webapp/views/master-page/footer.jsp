@@ -4,7 +4,7 @@
 <jsp:useBean id="date" class="java.util.Date" />
 
 <b>Copyright &copy; <fmt:formatDate value="${date}" pattern="yyyy" />
-	Acme - Six Pack
+	Pintacme
 </b>
 -
 <b><a href="terms/show.do"><spring:message

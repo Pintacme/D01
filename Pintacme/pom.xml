@@ -7,9 +7,9 @@
 
 	<!-- Artifact identification and properties -->
 
-	<groupId>Design-and-Testing</groupId>
-	<artifactId>Sample</artifactId>
-	<version>1.5</version>
+	<groupId>Pintacme-ISPP</groupId>
+	<artifactId>Pintacme</artifactId>
+	<version>0.0.0.SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<properties>
@@ -18,9 +18,9 @@
 
 	<!-- Indexing information -->
 
-	<name>Sample Project</name>
-	<url>http://www.sample-project.com</url>
-	<description>This is D&amp;T's sample project.</description>
+	<name>Pintacme</name>
+	<url>http://www.Pintacme.com</url>
+	<description>This is D&amp;T's Pintacme.</description>
 
 	<!-- Build commands -->
 
