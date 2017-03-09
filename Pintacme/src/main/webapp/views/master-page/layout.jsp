@@ -99,7 +99,7 @@
 				</div>
 				<div class="col-sm-9 text-right">
 					<h1>
-						<a style="text-decoration: none;" href="#">Acme - Six Pack</a>
+						<a style="text-decoration: none;" href="#">Pintacme</a>
 					</h1>
 					<h2>
 						<tiles:insertAttribute name="title" />
