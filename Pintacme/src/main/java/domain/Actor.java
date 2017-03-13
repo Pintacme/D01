@@ -20,7 +20,7 @@ public abstract class Actor extends DomainEntity {
 		super();
 	}
 
-	// esto es una prueba asdad
+	// esto es una prueba 
 	
 	@NotNull
 	@Valid
