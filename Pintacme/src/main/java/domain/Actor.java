@@ -1,3 +1,4 @@
+
 package domain;
 
 import javax.persistence.Access;
@@ -16,20 +17,22 @@ public abstract class Actor extends DomainEntity {
 
 	private UserAccount userAccount;
 
+
 	public Actor() {
 		super();
 	}
 
 	// esto es una prueba asdad
-	
+
+	// comentario de prueba Jorge
 	@NotNull
 	@Valid
 	@OneToOne(cascade = CascadeType.ALL, optional = false)
 	public UserAccount getUserAccount() {
-		return userAccount;
+		return this.userAccount;
 	}
 
-	public void setUserAccount(UserAccount userAccount) {
+	public void setUserAccount(final UserAccount userAccount) {
 		this.userAccount = userAccount;
 	}
 }
