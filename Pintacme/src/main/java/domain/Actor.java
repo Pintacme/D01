@@ -20,8 +20,6 @@ public abstract class Actor extends DomainEntity {
 		super();
 	}
 
-	// esto es una prueba 
-	
 	@NotNull
 	@Valid
 	@OneToOne(cascade = CascadeType.ALL, optional = false)
