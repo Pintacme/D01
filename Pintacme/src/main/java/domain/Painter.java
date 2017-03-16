@@ -6,41 +6,34 @@ import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.NotBlank;
-
-
 @Entity
 @Access(AccessType.PROPERTY)
 public class Painter extends Actor {
 
-	
-	private String code;
-	private int averageStart;
-	
-	
+	private String	code;
+	private int		averageStart;
+
 
 	public Painter() {
 		super();
 	}
-	
+
 	@NotNull
 	public String getCode() {
-		return code;
+		return this.code;
 	}
 
-	public void setCode(String code) {
+	public void setCode(final String code) {
 		this.code = code;
 	}
 
 	@NotNull
 	public int getAverageStart() {
-		return averageStart;
+		return this.averageStart;
 	}
 
-	public void setAverageStart(int averageStart) {
+	public void setAverageStart(final int averageStart) {
 		this.averageStart = averageStart;
 	}
-	
 
-	
 }

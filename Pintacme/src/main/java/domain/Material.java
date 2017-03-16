@@ -4,49 +4,77 @@ package domain;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.Digits;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.Range;
-
 
 @Entity
 @Access(AccessType.PROPERTY)
 public class Material extends DomainEntity {
-	
-	private String description;
-	private int quantity;
-	private Double price;
-	
+
+	//Constructors====================================================================================
+
 	public Material() {
 		super();
 	}
+
+
+	//Attributes=====================================================================================
+
+	private String	description;
+	private int		quantity;
+	private double	price;
+
+
+	//Getters & setters================================================================================
+
 	@NotBlank
 	public String getDescription() {
-		return description;
+		return this.description;
 	}
 
-	public void setDescription(String description) {
+	public void setDescription(final String description) {
 		this.description = description;
 	}
-	@Range(min = 1)
+
+	@Min(1)
 	public int getQuantity() {
-		return quantity;
+		return this.quantity;
 	}
 
-	public void setQuantity(int quantity) {
+	public void setQuantity(final int quantity) {
 		this.quantity = quantity;
 	}
 
-	@Range(min = 1)
-	@Digits(fraction=2, integer=99)
-	public Double getPrice() {
-		return price;
+	@Min(1)
+	@Digits(integer = 99, fraction = 2)
+	public double getPrice() {
+		return this.price;
 	}
 
-	public void setPrice(Double price) {
+	public void setPrice(final double price) {
 		this.price = price;
 	}
-	
-	
+
+
+	//Relationships ====================================================================================
+
+	private Budget budget;
+
+
+	@Valid
+	@NotNull
+	@OneToOne(optional = false)
+
+	public Budget getBudget() {
+		return this.budget;
+	}
+
+	public void setBudget(final Budget budget) {
+		this.budget = budget;
+	}
 }
