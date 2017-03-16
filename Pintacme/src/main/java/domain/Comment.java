@@ -15,21 +15,10 @@ import security.UserAccount;
 @Access(AccessType.PROPERTY)
 public abstract class Comment extends DomainEntity {
 
-	private UserAccount userAccount;
-
 
 	public Comment() {
 		super();
 	}
 
-	@NotNull
-	@Valid
-	@OneToOne(cascade = CascadeType.ALL, optional = false)
-	public UserAccount getUserAccount() {
-		return this.userAccount;
-	}
-
-	public void setUserAccount(final UserAccount userAccount) {
-		this.userAccount = userAccount;
-	}
+	
 }
