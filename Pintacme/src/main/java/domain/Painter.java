@@ -23,7 +23,7 @@ public class Painter extends Actor {
 		super();
 	}
 	
-	@NotBlank
+	@NotNull
 	public String getCode() {
 		return code;
 	}
