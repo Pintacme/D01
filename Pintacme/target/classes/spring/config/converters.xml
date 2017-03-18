@@ -17,7 +17,7 @@
 		<bean class="converters.CustomerToStringConverter" />
 		<bean class="converters.MaterialToStringConverter" />
 		<bean class="converters.PainterToStringConverter" />
-		<bean class="converters.UserToStringConverter" />
+		<bean class="converters.RequestToStringConverter" />
 		
 		<bean class="converters.StringToActorConverter" />
 		<bean class="converters.StringToAdminConverter" />
@@ -27,7 +27,7 @@
 		<bean class="converters.StringToCustomerConverter" />
 		<bean class="converters.StringToMaterialConverter" />
 		<bean class="converters.StringToPainterConverter" />
-		<bean class="converters.StringToUserConverter" />
+		<bean class="converters.StringToRequestConverter" />
 	
 	
 	</util:list>

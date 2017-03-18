@@ -8,7 +8,6 @@ import org.springframework.util.StringUtils;
 
 import domain.Material;
 import domain.Painter;
-import domain.User;
 import repositories.PainterRepository;
 
 @Component
