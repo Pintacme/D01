@@ -74,7 +74,7 @@ public class Material extends DomainEntity {
 		return this.budget;
 	}
 
-	public void setBudget(final Budget budget) {
+	public void setBudget(Budget budget) {
 		this.budget = budget;
 	}
 }

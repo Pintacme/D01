@@ -74,8 +74,8 @@ public abstract class Actor extends DomainEntity {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
 	@NotBlank
-	@Pattern(regexp = "\\d{9}")
 	public String getPhone() {
 		return phone;
 	}

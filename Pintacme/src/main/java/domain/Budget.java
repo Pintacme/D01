@@ -90,14 +90,14 @@ public class Budget extends DomainEntity {
 
 	@Valid
 	@OneToMany(mappedBy="budget")
-	public Collection<Material> getMaterial() {
+	public Collection<Material> getMaterials() {
 		return materials;
 	}
 
-	public void setMaterial(Collection<Material> materials) {
+	public void setMaterials(Collection<Material> materials) {
 		this.materials = materials;
 	}
-	
+
 	
 	
 	

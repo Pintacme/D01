@@ -67,16 +67,18 @@ public class Painter extends Actor {
 	public void setComments(Collection<Comment> comments) {
 		this.comments = comments;
 	}
-	
+
 	@Valid
 	@OneToOne(optional=true)
-	public Curriculum getCurricula() {
+	public Curriculum getCurriculum() {
 		return curriculum;
 	}
-	
-	public void setCurricula(Curriculum curriculum) {
+
+	public void setCurriculum(Curriculum curriculum) {
 		this.curriculum = curriculum;
 	}
+	
+	
 	
 	
 	

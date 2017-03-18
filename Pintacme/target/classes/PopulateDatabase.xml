@@ -15,10 +15,163 @@
 		<property name="authorities">
 			<list>
 				<bean class="security.Authority">
-					<property name="authority" value="ADMIN" />
+					<property name="authority" value="ADMINISTRATOR" />
 				</bean>
 			</list>
 		</property>
 	</bean>
 	
+	<bean id="userAccount2" class="security.UserAccount">
+		<property name="username" value="customer1" />
+		<property name="password" value="ffbc4675f864e0e9aab8bdf7a0437010" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CUSTOMER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount3" class="security.UserAccount">
+		<property name="username" value="painter1" />
+		<property name="password" value="aa169edf790b0b0c8dadc7283a0b51f7" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PAINTER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- CreditCards -->
+
+	<bean id="creditCard1" class="domain.CreditCard">
+		<property name="holderName" value="NameCustomer1" />
+		<property name="brandName" value="American Express" />
+		<property name="number" value="5654543141175015" />
+		<property name="expirationMonth" value="5" />
+		<property name="expirationYear" value="2017" />
+		<property name="cvvCode" value="364" />
+	</bean>
+	
+	<!-- Curricula -->
+
+	<bean id="curriculum1" class="domain.Curriculum">
+		<property name="photo" value="http://curriculum1.painter1.es/" />
+		<property name="general" value="GeneralPainter1" />
+		<property name="experience" value="ExperiencePainter1" />
+		<property name="lastUpdate" value="05/05/2014 00:00" />
+	</bean>
+	
+	<!-- Administrator -->
+	
+	<bean id="administrator" class="domain.Administrator">
+		<property name="userAccount" ref="userAccount1" />
+		<property name="name" value="NameAdmin" />
+		<property name="surname" value="SurnameAdmin" />
+		<property name="postalCode" value="41900" />
+		<property name="email" value="admin@pintacme.com" />
+		<property name="phone" value="675456123" />
+	</bean>
+	
+	<!-- Customers -->
+	
+	<bean id="customer1" class="domain.Customer">
+		<property name="userAccount" ref="userAccount2" />
+		<property name="name" value="NameCustomer1" />
+		<property name="surname" value="SurnameCustomer1" />
+		<property name="postalCode" value="06800" />
+		<property name="email" value="customer1@pintacme.com" />
+		<property name="phone" value="88888888" />
+		<property name="dni" value="15588564L" />
+		<property name="creditCard" ref="creditCard1" />
+		<property name="requests">
+			<list>
+				<ref bean="request1" />
+			</list>
+		</property>
+
+	</bean>
+	
+	<!-- Painters -->
+	
+	<bean id="painter1" class="domain.Painter">
+		<property name="userAccount" ref="userAccount3" />
+		<property name="name" value="NamePainter1" />
+		<property name="surname" value="SurnamePainter1" />
+		<property name="postalCode" value="06800" />
+		<property name="email" value="painter1@pintacme.com" />
+		<property name="phone" value="777777777" />
+		<property name="code" value="CodePinter1" />
+		<property name="averageStart" value="3" />
+		<property name="comments">
+			<list>
+				<ref bean="comment1" />
+			</list>
+		</property>
+		
+		<property name="budgets">
+			<list>
+				<ref bean="budget1" />
+			</list>
+		</property>
+
+		<property name="curriculum" ref="curriculum1" />
+
+	</bean>
+	
+		<!-- Requests -->
+
+	<bean id="request1" class="domain.Request">
+		<property name="priority" value="MID" />
+		<property name="schedule" value="ScheduleReques1" />
+		<property name="measures" value="MeasuresRequest1" />
+		<property name="description" value="DescriptionRequest1" />
+		<property name="address" value="AddressRequest1" />
+
+		<property name="customer" ref="customer1" />
+		
+		<property name="budgets">
+			<list>
+				<ref bean="budget1" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Budgets -->
+	
+	<bean id="budget1" class="domain.Budget">
+		<property name="status" value="PENDING" />
+		<property name="amount" value="450.50" />
+		<property name="description" value="DescriptionBudget1" />
+		<property name="painter" ref="painter1" />
+		<property name="request" ref="request1" />
+		<property name="materials">
+			<list>
+				<ref bean="material1" />
+			</list>
+		</property>
+
+	</bean>
+	
+	<!-- Comments -->
+	
+	<bean id="comment1" class="domain.Comment">
+		<property name="numberOfStars" value="3" />
+		<property name="text" value="TextComment1" />
+		<property name="painter" ref="painter1" />
+	</bean>
+	
+	<!-- Materials -->
+
+	<bean id="material1" class="domain.Material">
+		<property name="description" value="DescriptionMaterial1" />
+		<property name="quantity" value="2" />
+		<property name="price" value="125.0" />
+		<property name="budget" ref="budget1" />
+	</bean>
+	
+
 </beans>

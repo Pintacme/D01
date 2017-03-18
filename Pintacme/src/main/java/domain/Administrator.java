@@ -9,10 +9,10 @@ import javax.persistence.Entity;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class Admin extends Actor {
+public class Administrator extends Actor {
 
 	
-	public Admin() {
+	public Administrator() {
 		super();
 	}
 	

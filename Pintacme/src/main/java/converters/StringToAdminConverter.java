@@ -7,19 +7,19 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import domain.Actor;
-import domain.Admin;
+import domain.Administrator;
 import repositories.AdminRepository;
 
 @Component
 @Transactional
-public class StringToAdminConverter implements Converter<String, Admin> {
+public class StringToAdminConverter implements Converter<String, Administrator> {
 
 	@Autowired
 	private AdminRepository adminRepository;
 	
 	@Override
-	public Admin convert(String arg0) {
-		Admin result;
+	public Administrator convert(String arg0) {
+		Administrator result;
 		int id;
 		try{
 			if(StringUtils.isEmpty(arg0))
