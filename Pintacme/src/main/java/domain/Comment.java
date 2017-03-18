@@ -4,6 +4,9 @@ package domain;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
@@ -35,6 +38,24 @@ public class Comment extends DomainEntity {
 	public void setText(String text) {
 		this.text = text;
 	}
+	
+	//Relationships
+	
+	private Painter painter;
+	
+
+	@Valid
+	@ManyToOne(optional=false)
+	public Painter getPainter() {
+		return painter;
+	}
+
+	public void setPainter(Painter painter) {
+		this.painter = painter;
+	}
+	
+
+	
 
 	
 }

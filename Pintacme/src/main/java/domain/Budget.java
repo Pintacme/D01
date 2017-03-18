@@ -1,9 +1,14 @@
 
 package domain;
 
+import java.util.Collection;
+
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.validation.Valid;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
@@ -59,4 +64,41 @@ public class Budget extends DomainEntity {
 
 	//Relationships ====================================================================================
 
+	private Painter painter;
+	private Request request;
+	private Collection<Material> materials;
+
+	@Valid
+	@ManyToOne(optional=false)
+	public Painter getPainter() {
+		return painter;
+	}
+
+	public void setPainter(Painter painter) {
+		this.painter = painter;
+	}
+
+	@Valid
+	@ManyToOne(optional=false)
+	public Request getRequest() {
+		return request;
+	}
+
+	public void setRequest(Request request) {
+		this.request = request;
+	}
+
+	@Valid
+	@OneToMany(mappedBy="budget")
+	public Collection<Material> getMaterial() {
+		return materials;
+	}
+
+	public void setMaterial(Collection<Material> materials) {
+		this.materials = materials;
+	}
+	
+	
+	
+	
 }

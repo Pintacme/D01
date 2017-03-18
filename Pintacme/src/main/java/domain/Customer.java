@@ -1,9 +1,13 @@
 
 package domain;
 
+import java.util.Collection;
+
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 
@@ -29,6 +33,8 @@ public class Customer extends Actor {
 	public void setDni(String dni) {
 		this.dni = dni;
 	}
+	
+	@Valid
 	@NotNull
 	public CreditCard getCreditCard() {
 		return creditCard;
@@ -37,6 +43,23 @@ public class Customer extends Actor {
 	public void setCreditCard(CreditCard creditCard) {
 		this.creditCard = creditCard;
 	}
+	
+	//RELATIONSHIPS
+	
+	private Collection<Request> requests;
+
+	@Valid
+	@OneToMany(mappedBy="customer")
+	public Collection<Request> getRequests() {
+		return requests;
+	}
+
+
+	public void setRequests(Collection<Request> requests) {
+		this.requests = requests;
+	}
+	
+	
 
 	
 }

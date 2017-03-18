@@ -4,6 +4,7 @@ package domain;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Embeddable;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -51,7 +52,6 @@ public class CreditCard {
 
 	@NotBlank
 	@CreditCardNumber
-	@Pattern(regexp = "\\d{16}")
 	public String getNumber() {
 		return this.number;
 	}
@@ -59,7 +59,6 @@ public class CreditCard {
 		this.number = number;
 	}
 
-	@NotNull
 	@Range(min = 1, max = 12)
 	public Integer getExpirationMonth() {
 		return this.expirationMonth;
@@ -68,8 +67,8 @@ public class CreditCard {
 		this.expirationMonth = expirationMonth;
 	}
 
-	@NotNull
-	@Min(2017)
+	@Range(min = 2016)
+	@Digits(fraction=0,integer=4)
 	public Integer getExpirationYear() {
 		return this.expirationYear;
 	}
@@ -77,7 +76,6 @@ public class CreditCard {
 		this.expirationYear = expirationYear;
 	}
 
-	@NotNull
 	@Range(min = 100, max = 999)
 	public Integer getCvvCode() {
 		return cvvCode;

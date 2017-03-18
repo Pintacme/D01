@@ -4,6 +4,8 @@ package domain;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.Digits;
@@ -67,9 +69,7 @@ public class Material extends DomainEntity {
 
 
 	@Valid
-	@NotNull
-	@OneToOne(optional = false)
-
+	@ManyToOne(optional = false)
 	public Budget getBudget() {
 		return this.budget;
 	}
