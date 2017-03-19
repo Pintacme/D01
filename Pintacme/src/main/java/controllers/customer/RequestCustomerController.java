@@ -92,6 +92,20 @@ public class RequestCustomerController extends AbstractController {
 			}
 			return result;
 		}
+		
+		@RequestMapping(value = "/edit", method = RequestMethod.POST, params = "delete")
+		public ModelAndView delete(@Valid Request Request, BindingResult binding) {
+			ModelAndView result;
+			try {
+				requestService.delete(Request);
+				result = new ModelAndView("redirect:list.do");		
+			} catch (Throwable oops) {
+				System.out.println(oops.getMessage());
+				result = createEditModelAndView(Request, "request.commit.error");
+			}
+
+			return result;
+		}
 
 		// auxiliary------------------------------------------------------------
 

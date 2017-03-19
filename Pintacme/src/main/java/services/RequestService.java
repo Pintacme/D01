@@ -53,11 +53,18 @@ public class RequestService {
 		return this.requestRepository.saveAndFlush(Request);
 
 	}
+	
+	public void delete(Request Request){
+		Assert.notNull(Request);
+		requestRepository.delete(Request);
+	}
 
-	public Request findOne(final int RequestId) {
-		Assert.isNull(RequestId);
-
-		return this.requestRepository.findOne(RequestId);
+	public Request findOne(int RequestId) {
+		Assert.notNull(RequestId);
+		
+		Request result =requestRepository.findOne(RequestId);
+		
+		return result;
 	}
 
 	public Collection<Request> findLoggedRequest() {

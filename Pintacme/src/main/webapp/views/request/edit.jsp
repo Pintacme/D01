@@ -18,7 +18,18 @@
 	<form:hidden path="customer"/>
 	<form:hidden path="budgets"/>
 
-	<acme:inputTextMD code="request.edit.priority" path="priority"/>	
+	<div class="form-group">
+	<form:label path="priority" class="col-md-2 control-label">
+		<spring:message code="request.edit.priority" />
+	</form:label>
+	<div class="col-md-10">
+		<form:select class="form-control" path="priority">
+    <form:options class="col-md-2 control-label" items="${priorities}" />
+  	</form:select>
+  	</div>
+	
+  	</div>
+  	
 	<acme:inputTextMD code="request.edit.schedule" path="schedule"/>	
 	<acme:inputTextMD code="request.edit.measures" path="measures"/>	
 	<acme:textareaMD code="request.edit.description" path="description"/>	
@@ -27,6 +38,11 @@
 	
 	<acme:submitMD name="save" code="request.edit.save" withButtonCancel="true"
 					codeButtonCancel="request.edit.cancel" />
+	
+	<jstl:if test="${request.id!=0}">
+		<acme:submitMD name="delete" code="request.edit.delete"/>
+	</jstl:if>
+	
 	
 
 </form:form>

@@ -37,6 +37,14 @@
 	<spring:message code="request.address" var="addressColumn" ></spring:message>
 	<display:column property="address" title="${addressColumn}"/>
 	
+	<security:authorize access="hasRole('CUSTOMER')">
+	<display:column>
+		<center><a href="request/customer/edit.do?id=${row.id}">
+			<spring:message code="request.edit"/>
+		</a></center>
+	</display:column>
+	</security:authorize>
+	
 	<display:column>
 		<center><a href="budget/customer/list.do?id=${row.id}">
 			<spring:message code="request.list.budget"/>
