@@ -66,8 +66,9 @@
 
 									<li><a href="security/login.do"><spring:message
 												code="master.page.login" /></a></li>
-									<li><a href="user/register.do"><spring:message
-												code="master.page.register" /></a></li>
+				
+									<li><a href="customer/create.do"><spring:message
+												code="master.page.customer.register" /></a></li>
 
 								</security:authorize>
 
