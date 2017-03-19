@@ -24,9 +24,10 @@
 
 							<ul class="nav navbar-nav">
 
-								<security:authorize access="hasRole('ADMIN')">
-									
-								</security:authorize>
+									<security:authorize access="hasRole('CUSTOMER')">
+								<li><a href="request/customer/list.do"><spring:message
+												code="master.page.request.customer" /></a></li>
+											</security:authorize>	
 
 							</ul>
 							
@@ -37,6 +38,11 @@
 									code="master.page.search" />">
 								</div>
 							</form>
+							
+							
+							
+							
+							
 
 							<ul class="nav navbar-nav navbar-right">
 
@@ -51,10 +57,11 @@
 													code="master.page.spanish" /></a></li>
 									</ul></li>
 
-								<security:authorize access="hasRole('ADMIN')">
+								<security:authorize access="hasRole('ADMINISTRATOR')">
 									<!-- Espacio a la izquierda para el admin -->
 								</security:authorize>
 
+						
 								<security:authorize access="isAnonymous()">
 
 									<li><a href="security/login.do"><spring:message
