@@ -1,5 +1,7 @@
 package controllers.customer;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
@@ -10,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import controllers.AbstractController;
 import domain.Budget;
+import domain.Request;
 import services.BudgetService;
 import services.RequestService;
 
@@ -48,15 +51,31 @@ public class BudgetCustomerController extends AbstractController{
 	@RequestMapping(value = "/accept", method = RequestMethod.GET)
 	 public ModelAndView accept(@RequestParam int id) {
 	  ModelAndView result; 
+	  Collection<Budget> budgets;
+	  int idRequest=0;
+	  Assert.notNull(id);
+	  budgets= budgetService.findBudgetsForRequestId(id);
 	  
 	  Budget budget;
 	  budget= budgetService.findOne(id);
 	  Assert.notNull(budget);
 	  
-	  budget.setStatus("ACCEPTED");
-	  budgetService.save(budget);
+	  Assert.notNull(budgets);
 	  
-	  result = new ModelAndView("redirect:list.do");
+	  for(Budget b:budgets){
+		  if(b == budget){
+			  b.setStatus("ACCEPTED");
+			  idRequest=b.getRequest().getId();
+			  budgetService.save(b); 
+		  }else{
+			  b.setStatus("REJECTED");
+			  idRequest=1000;
+			  budgetService.save(b);
+		  }
+	  }
+	  
+	  
+	  result = new ModelAndView("redirect:list.do?id="+idRequest);
 	  
 	  return result;
 	 }
@@ -66,14 +85,17 @@ public class BudgetCustomerController extends AbstractController{
 	  ModelAndView result; 
 	  
 	  Budget budget;
+	  int idRequest;
+	  
 	  budget= budgetService.findOne(id);
 	  Assert.notNull(budget);
+	  idRequest=budget.getRequest().getId();
 	  
 	  budget.setStatus("REJECTED");
 	  
 	  budgetService.save(budget);
 	  
-	  result = new ModelAndView("redirect:list.do");
+	  result = new ModelAndView("redirect:list.do?id="+idRequest);
 	  
 	  return result;
 	 }

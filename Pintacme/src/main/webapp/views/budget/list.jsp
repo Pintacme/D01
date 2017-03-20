@@ -38,8 +38,25 @@
 	</display:column>
 	</security:authorize>
 	
-	
-	
+	<security:authorize access="hasRole('CUSTOMER')">
+	<display:column>
+  <jstl:if test="${row.status=='PENDING' && row.status != 'ACCEPTED'}">
+  <center><a href="budget/customer/accept.do?id=${row.id}">
+   <spring:message code="budget.list.accept"/>
+  </a></center>
+  </jstl:if>
+ </display:column>
+ </security:authorize>
+ 
+ <security:authorize access="hasRole('CUSTOMER')">
+ <display:column>
+  <jstl:if test="${row.status=='PENDING'&& row.status != 'ACCEPTED'}">
+  <center><a href="budget/customer/reject.do?id=${row.id}">
+   <spring:message code="budget.list.reject"/>
+  </a></center>
+  </jstl:if>
+ </display:column>
+	</security:authorize>
 	
 	</display:table>
 	
