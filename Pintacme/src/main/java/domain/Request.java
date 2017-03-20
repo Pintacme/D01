@@ -1,6 +1,7 @@
 
 package domain;
 
+import java.net.URL;
 import java.util.Collection;
 import java.util.Date;
 
@@ -33,25 +34,17 @@ public class Request extends DomainEntity {
 
 
 	//Attributes=====================================================================================
-	private String	priority;
 	private String  schedule;
 	private String	measures;
 	private String description;
 	private String address;
 	private Date moment;
 	private Date work;
+	private CreditCard creditCard;
+	private Collection<URL> photos;
 	
 	
 	//Getters & setters================================================================================
-	
-	@Pattern(regexp = "^LOW$|^MID$|^HIGH$")
-	@NotBlank
-	public String getPriority() {
-		return priority;
-	}
-	public void setPriority(String priority) {
-		this.priority = priority;
-	}
 	
 	@NotBlank
 	public String getSchedule() {
@@ -107,6 +100,23 @@ public class Request extends DomainEntity {
 		this.work = work;
 	}
 	
+	@Valid
+	@NotNull
+	public CreditCard getCreditCard() {
+		return creditCard;
+	}
+
+	public void setCreditCard(CreditCard creditCard) {
+		this.creditCard = creditCard;
+	}
+	
+	public Collection<URL> getPhotos() {
+		return photos;
+	}
+	public void setPhotos(Collection<URL> photos) {
+		this.photos = photos;
+	}
+	
 	
 
 	//Relationships ====================================================================================
@@ -134,9 +144,5 @@ public class Request extends DomainEntity {
 	public void setBudgets(Collection<Budget> budgets) {
 		this.budgets = budgets;
 	}
-	
-	
-	
-	
 
 }

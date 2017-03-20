@@ -11,11 +11,13 @@ import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 @Access(AccessType.PROPERTY)
 public class Painter extends Actor {
 
-	private String	code;
+	private String	codeSS;
 	private int		averageStart;
 
 
@@ -23,13 +25,13 @@ public class Painter extends Actor {
 		super();
 	}
 
-	@NotNull
-	public String getCode() {
-		return this.code;
+	@NotBlank
+	public String getCodeSS() {
+		return this.codeSS;
 	}
 
-	public void setCode(final String code) {
-		this.code = code;
+	public void setCodeSS(final String codeSS) {
+		this.codeSS = codeSS;
 	}
 
 	@NotNull
