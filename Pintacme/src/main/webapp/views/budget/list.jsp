@@ -11,10 +11,8 @@
 <%@ page import="java.io.*,java.util.*" %>
 <%@ page import="javax.servlet.*,java.text.*" %>
 
-	<security:authorize access="hasRole('CUSTOMER')">
 
-
-<display:table name="budgets" id="row" requestURI="${budgetUri}" class="table" keepStatus="false" pagesize="5"  >
+<display:table name="budgets" id="row" requestURI="${requestUri}" class="table" keepStatus="false" pagesize="5"  >
 	
 	<spring:message code="budget.status" var="statusColumn" ></spring:message>
 	<display:column property="status" title="${statusColumn}"/>
@@ -49,4 +47,3 @@
 		<a href="budget/painter/create.do"><spring:message code="budget.create"/></a>
 	</div>
 	
-</security:authorize>

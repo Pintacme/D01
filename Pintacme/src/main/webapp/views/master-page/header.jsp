@@ -27,7 +27,12 @@
 									<security:authorize access="hasRole('CUSTOMER')">
 								<li><a href="request/customer/list.do"><spring:message
 												code="master.page.request.customer" /></a></li>
-											</security:authorize>	
+											</security:authorize>
+											
+												<security:authorize access="hasRole('PAINTER')">
+								<li><a href="budget/painter/list.do"><spring:message
+												code="master.page.budget.painter" /></a></li>
+											</security:authorize>		
 
 							</ul>
 							

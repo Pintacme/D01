@@ -67,5 +67,11 @@ public class BudgetService {
 		result = budgetRepository.findLoggedBudget(painter.getId());
 		return result;
 	}
+
+	public Collection<Budget> findAll() {
+		Collection<Budget> result = new ArrayList<Budget>();
+		result = budgetRepository.findAll();
+		return result;
+	}
 	
 }
