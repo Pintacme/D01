@@ -47,11 +47,11 @@ public class BudgetPainterController extends AbstractController{
 	
 		
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
-	public ModelAndView create() {
+	public ModelAndView create(@RequestParam int id) {
 		ModelAndView result;
 		Budget budget;
 	
-		budget = budgetService.create();
+		budget = budgetService.create(id);
 		result = createEditModelAndView(budget);
 			
 		return result;

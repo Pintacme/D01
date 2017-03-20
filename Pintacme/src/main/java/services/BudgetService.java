@@ -25,6 +25,9 @@ public class BudgetService {
 	
 	@Autowired
 	private PainterService painterService;
+	
+	@Autowired
+	private RequestService requestService;
 
 
 	public BudgetService() {
@@ -71,6 +74,22 @@ public class BudgetService {
 	public Collection<Budget> findAll() {
 		Collection<Budget> result = new ArrayList<Budget>();
 		result = budgetRepository.findAll();
+		return result;
+	}
+
+	public Budget create(int id) {
+		Budget result = new Budget();
+		
+		Request request= requestService.findOne(id);
+		
+		Collection <Material> materials = new ArrayList<Material>();
+		
+		Painter painter = painterService.getLogged();
+		
+		result.setPainter(painter);
+		result.setMaterials(materials);
+				
+		result.setRequest(request);
 		return result;
 	}
 	

@@ -73,4 +73,12 @@ public class RequestService {
 		result = requestRepository.findLoggedRequests(customer.getId());
 		return result; 
 	}
+
+	public Collection<Request> findRequestToBudget() {
+		Collection<Request> result = new ArrayList<Request>();
+		
+		result = requestRepository.findRequestToBudget();
+		
+		return result; 
+	}
 }

@@ -11,7 +11,7 @@
 <%@ page import="java.io.*,java.util.*" %>
 <%@ page import="javax.servlet.*,java.text.*" %>
 
-	<security:authorize access="hasRole('CUSTOMER')">
+<security:authorize access="hasAnyRole('CUSTOMER','PAINTER')">
 
 
 <display:table name="requests" id="row" requestURI="${requestUri}" class="table" keepStatus="false" pagesize="5"  >
@@ -47,14 +47,22 @@
 			<spring:message code="request.edit"/>
 		</a></center>
 	</display:column>
-	</security:authorize>
+	
 	
 	<display:column>
 		<center><a href="budget/customer/list.do?id=${row.id}">
 			<spring:message code="request.list.budget"/>
 		</a></center>
 	</display:column>
+	</security:authorize>
 	
+	<security:authorize access="hasRole('PAINTER')">
+	<display:column>
+		<center><a href="budget/painter/create.do?id=${row.id}">
+			<spring:message code="request.create.budget"/>
+		</a></center>
+	</display:column>
+	</security:authorize>
 	
 	</display:table>
 	
