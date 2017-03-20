@@ -41,13 +41,6 @@
 
 							</ul>
 							
-							<form class="navbar-form navbar-left">
-								<div class="form-group">
-									<input type="text" class="form-control col-md-8"
-										placeholder="<spring:message
-									code="master.page.search" />">
-								</div>
-							</form>
 							
 							
 							

@@ -43,7 +43,8 @@
 	
 	</display:table>
 	
+	<security:authorize access="hasRole('PAINTER')">
 	<div>
 		<a href="budget/painter/create.do"><spring:message code="budget.create"/></a>
 	</div>
-	
+	</security:authorize>

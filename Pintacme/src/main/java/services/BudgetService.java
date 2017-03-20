@@ -92,5 +92,13 @@ public class BudgetService {
 		result.setRequest(request);
 		return result;
 	}
+
+	public Collection<Budget> findBudgetsForRequestId(int id) {
+		Collection<Budget> result;
+		
+		result = budgetRepository.findBudgetsForRequestId(id);
+		
+		return result;
+	}
 	
 }

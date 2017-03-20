@@ -18,4 +18,7 @@ public interface BudgetRepository extends JpaRepository<Budget, Integer> {
 	@Query("select b from Budget b where b.painter.id=?1")
 	Collection<Budget> findLoggedBudget(int id);
 
+	@Query("select r.budgets from Request r where r.id=?1")
+	Collection<Budget> findBudgetsForRequestId(int id);
+
 }
