@@ -16,6 +16,8 @@
 		<value>/views/register/messages</value>
 		<value>/views/request/messages</value>
 		<value>/views/customer/messages</value>
+		<value>/views/painter/messages</value>
+		<value>/views/budget/messages</value>
 	</util:list>
 
 </beans>
