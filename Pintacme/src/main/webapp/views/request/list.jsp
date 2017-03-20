@@ -16,14 +16,18 @@
 
 <display:table name="requests" id="row" requestURI="${requestUri}" class="table" keepStatus="false" pagesize="5"  >
 	
-	<spring:message code="request.priority" var="priorityColumn" ></spring:message>
-	<display:column property="priority" title="${priorityColumn}"/>
-	
 	<spring:message code="request.moment" var="momentColumn" ></spring:message>
 	<display:column title="${momentColumn}"><center><fmt:formatDate value="${row.moment}" pattern="dd-MM-yyyy HH:mm"/></center></display:column>
 	
 	<spring:message code="request.schedule" var="scheduleColumn" ></spring:message>
 	<display:column property="schedule" title="${scheduleColumn}"/>
+	
+	<spring:message code="request.photos" var="photosColumn" ></spring:message>
+	<display:column title="${photosColumn}">
+	<jstl:forEach items="${row.photos}" var="p" >
+			<li><A HREF="${p}"><IMG HEIGHT=50 WIDTH=50 SRC="${p}"></A></li>
+	</jstl:forEach>
+	</display:column>
 	
 	<spring:message code="request.measures" var="measuresColumn" ></spring:message>
 	<display:column property="measures" title="${measuresColumn}"/>

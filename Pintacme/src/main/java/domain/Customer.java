@@ -39,6 +39,16 @@ public class Customer extends Actor {
 		this.dni = dni;
 	}
 	
+	@Valid
+	@NotNull
+	public CreditCard getCreditCard() {
+		return creditCard;
+	}
+
+	public void setCreditCard(CreditCard creditCard) {
+		this.creditCard = creditCard;
+	}
+	
 	//RELATIONSHIPS
 	
 	private Collection<Request> requests;

@@ -104,7 +104,7 @@
 		<property name="postalCode" value="06800" />
 		<property name="email" value="painter1@pintacme.com" />
 		<property name="phone" value="777777777" />
-		<property name="code" value="CodePinter1" />
+		<property name="codeSS" value="CodePinter1" />
 		<property name="averageStart" value="3" />
 		<property name="comments">
 			<list>
@@ -125,7 +125,6 @@
 		<!-- Requests -->
 
 	<bean id="request1" class="domain.Request">
-		<property name="priority" value="MID" />
 		<property name="schedule" value="ScheduleReques1" />
 		<property name="measures" value="MeasuresRequest1" />
 		<property name="description" value="DescriptionRequest1" />
@@ -138,6 +137,12 @@
 		<property name="budgets">
 			<list>
 				<ref bean="budget1" />
+			</list>
+		</property>
+		
+		<property name="photos">
+			<list>
+				<value>http://interiorismos.com/wp-content/2015/11/pintar-paredes-1.jpg</value>
 			</list>
 		</property>
 	</bean>
