@@ -49,6 +49,7 @@ public class BudgetService {
 		
 		budget.setPainter(painter);
 		budget.setMaterials(materials);
+		budget.setStatus("PENDING");
 		
 		return budget;
 	}
@@ -88,7 +89,7 @@ public class BudgetService {
 		
 		result.setPainter(painter);
 		result.setMaterials(materials);
-				
+		result.setStatus("PENDING");
 		result.setRequest(request);
 		return result;
 	}

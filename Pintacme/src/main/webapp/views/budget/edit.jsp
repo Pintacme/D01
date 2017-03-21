@@ -16,18 +16,9 @@
 	<form:hidden path="version"/>
 	<form:hidden path="materials"/>
 	<form:hidden path="request"/>
-
-	<div class="form-group">
-	<form:label path="status" class="col-md-2 control-label">
-		<spring:message code="budget.edit.status" />
-	</form:label>
-	<div class="col-md-10">
-		<form:select class="form-control" path="status">
-    <form:options class="col-md-2 control-label" items="${priorities}" />
-  	</form:select>
-  	</div>
+	<form:hidden path="status"/>
+	<form:hidden path="painter"/>
 	
-  	</div>
   	
 	<acme:inputTextMD code="budget.edit.amount" path="amount"/>	
 	<acme:textareaMD code="budget.edit.description" path="description"/>	

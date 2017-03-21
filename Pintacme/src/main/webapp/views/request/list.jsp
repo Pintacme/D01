@@ -66,8 +66,10 @@
 	
 	</display:table>
 	
+	<security:authorize access="hasRole('CUSTOMER')">
 	<div>
 		<a href="request/customer/create.do"><spring:message code="request.create"/></a>
 	</div>
+	</security:authorize>
 	
 </security:authorize>

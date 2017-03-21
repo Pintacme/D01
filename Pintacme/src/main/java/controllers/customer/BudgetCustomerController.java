@@ -52,7 +52,6 @@ public class BudgetCustomerController extends AbstractController{
 	 public ModelAndView accept(@RequestParam int id) {
 	  ModelAndView result; 
 	  Collection<Budget> budgets;
-	  int idRequest=0;
 	  Assert.notNull(id);
 	  budgets= budgetService.findBudgetsForRequestId(id);
 	  
@@ -65,17 +64,15 @@ public class BudgetCustomerController extends AbstractController{
 	  for(Budget b:budgets){
 		  if(b == budget){
 			  b.setStatus("ACCEPTED");
-			  idRequest=b.getRequest().getId();
 			  budgetService.save(b); 
 		  }else{
 			  b.setStatus("REJECTED");
-			  idRequest=1000;
 			  budgetService.save(b);
 		  }
 	  }
 	  
 	  
-	  result = new ModelAndView("redirect:list.do?id="+idRequest);
+	  result = new ModelAndView("redirect:list.do?id="+budget.getRequest().getId());
 	  
 	  return result;
 	 }
