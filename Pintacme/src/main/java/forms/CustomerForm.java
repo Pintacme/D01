@@ -2,6 +2,7 @@ package forms;
 
 import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
@@ -56,7 +57,9 @@ public class CustomerForm {
 		this.email = email;
 	}
 
+	@NotBlank
 	@SafeHtml(whitelistType = WhiteListType.NONE)
+	@Pattern(regexp="^[9|6|7][0-9]{8}$")
 	public String getPhone() {
 		return phone;
 	}
@@ -96,6 +99,7 @@ public class CustomerForm {
 
 	@NotBlank
 	@SafeHtml(whitelistType = WhiteListType.NONE)
+	@Pattern(regexp="^([1-9]{2}|[0-9][1-9]|[1-9][0-9])[0-9]{3}$")
 	public String getPostalCode() {
 		return postalCode;
 	}
@@ -106,6 +110,7 @@ public class CustomerForm {
 
 	@NotBlank
 	@SafeHtml(whitelistType = WhiteListType.NONE)
+	@Pattern(regexp="([0-9]{8})([A-Z])")
 	public String getDni() {
 		return dni;
 	}

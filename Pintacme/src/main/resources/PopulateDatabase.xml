@@ -73,7 +73,7 @@
 		<property name="surname" value="SurnameAdmin" />
 		<property name="postalCode" value="41900" />
 		<property name="email" value="admin@pintacme.com" />
-		<property name="phone" value="675456123" />
+		<property name="phone" value="665475845" />
 	</bean>
 	
 	<!-- Customers -->
@@ -84,9 +84,8 @@
 		<property name="surname" value="SurnameCustomer1" />
 		<property name="postalCode" value="06800" />
 		<property name="email" value="customer1@pintacme.com" />
-		<property name="phone" value="88888888" />
+		<property name="phone" value="654784525" />
 		<property name="dni" value="15588564L" />
-		<property name="creditCard" ref="creditCard1" />
 		<property name="requests">
 			<list>
 				<ref bean="request1" />
@@ -103,7 +102,7 @@
 		<property name="surname" value="SurnamePainter1" />
 		<property name="postalCode" value="06800" />
 		<property name="email" value="painter1@pintacme.com" />
-		<property name="phone" value="777777777" />
+		<property name="phone" value="687452123" />
 		<property name="codeSS" value="CodePinter1" />
 		<property name="averageStart" value="3" />
 		<property name="comments">

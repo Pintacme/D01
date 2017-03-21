@@ -66,6 +66,7 @@ public class CustomerController extends AbstractController{
 
 						result = createEditModelAndView(customerForm,
 								"customer.error.operation");
+						System.out.println(oops.toString());
 					}
 
 						}

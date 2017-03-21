@@ -14,7 +14,8 @@
 
 	
 	<acme:inputTextMD code="customer.username" path="username"/>	
-	<acme:inputTextMD code="customer.password" path="password"/>	
+	<acme:inputTextMD code="customer.password" path="password"/>
+		<acme:inputTextMD code="customer.passRepeated" path="repeatedPassword"/>		
   	
 	<acme:inputTextMD code="customer.name" path="name"/>	
 	<acme:inputTextMD code="customer.surname" path="surname"/>	
@@ -22,13 +23,13 @@
 	<acme:inputTextMD code="customer.email" path="email"/>	
 	<acme:inputTextMD code="customer.phone" path="phone"/>
 	<acme:inputTextMD code="customer.dni" path="dni"/>
-	
+
+	<form:checkbox path="hasAccepted"></form:checkbox>
+	<spring:message code="customer.hasAccepted"/>
 		
 	
 	<acme:submitMD name="save" code="customer.save" withButtonCancel="true"
 					codeButtonCancel="customer.cancel" />
-	
-	
 	
 
 </form:form>
