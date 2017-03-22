@@ -1,5 +1,6 @@
 package controllers.customer;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,12 +53,22 @@ public class BudgetCustomerController extends AbstractController{
 	 public ModelAndView accept(@RequestParam int id) {
 		  ModelAndView result; 
 		  
-		  Budget budget = budgetService.acceptBudgetByCustomer(id);
-		 
-		  result = new ModelAndView("redirect:list.do?id="+budget.getRequest().getId());
+		  Budget budget;
+		  int idRequest;
+		  
+		  budget= budgetService.findOne(id);
+		  Assert.notNull(budget);
+		  idRequest=budget.getRequest().getId();
+		  
+		  budget.setStatus("ACCEPTED");
+		  
+		  budgetService.save(budget);
+		  
+		  result = new ModelAndView("redirect:list.do?id="+idRequest);
 		  
 		  return result;
-		 }
+		
+ }
 	 
 	 @RequestMapping(value = "/reject", method = RequestMethod.GET)
 	 public ModelAndView reject(@RequestParam int id) {

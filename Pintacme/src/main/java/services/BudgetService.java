@@ -116,13 +116,14 @@ public class BudgetService {
 		  Assert.notNull(budgets);
 		
 		  for(Budget b:budgets){
-			  if(b == budget && b.getStatus()=="PENDING"){
+			  System.out.println("Budget recorre:"+b.getId());
+			  if(b.getId() == budget.getId()){
 				  b.setStatus("ACCEPTED");
 				  System.out.println("Budget id:"+b.getId()+" aceptado");
 				  save(b); 
-			  }else if(b.getStatus()=="PENDING"){
-				  b.setStatus("REJECTED");
+			  }else{
 				  System.out.println("Budget id:"+b.getId()+" rechazado");
+				  b.setStatus("REJECTED");
 				  save(b);
 			  }
 		  }
