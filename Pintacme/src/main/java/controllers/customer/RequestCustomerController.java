@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import services.CustomerService;
 import services.RequestService;
 
 
@@ -31,6 +32,9 @@ public class RequestCustomerController extends AbstractController {
 	
 	@Autowired
 	private RequestService requestService;
+	
+	@Autowired
+	private CustomerService customrService;
 	
 	
 	// Constructors -----------------------------------------------------------
@@ -56,6 +60,8 @@ public class RequestCustomerController extends AbstractController {
 	public ModelAndView create() {
 		ModelAndView result;
 		Request request;
+		
+		
 	
 		request = requestService.create();
 		result = createEditModelAndView(request);

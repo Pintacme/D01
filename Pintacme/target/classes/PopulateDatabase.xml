@@ -130,6 +130,7 @@
 		<property name="address" value="AddressRequest1" />
 		<property name="moment" value="2017/03/15 12:50" />
 		<property name="work" value="2017/03/21 12:50" />
+		<property name="creditCard" ref="creditCard1" />
 
 		<property name="customer" ref="customer1" />
 		

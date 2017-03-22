@@ -8,6 +8,8 @@ import java.util.Date;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.ElementCollection;
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -42,6 +44,7 @@ public class Request extends DomainEntity {
 	private Date moment;
 	private Date work;
 	private Collection<URL> photos;
+	private CreditCard creditCard;
 	
 	
 	//Getters & setters================================================================================
@@ -108,6 +111,13 @@ public class Request extends DomainEntity {
 		this.photos = photos;
 	}
 	
+	@NotNull
+	public CreditCard getCreditCard() {
+		return creditCard;
+	}
+	public void setCreditCard(CreditCard creditCard) {
+		this.creditCard = creditCard;
+	}
 	
 
 	//Relationships ====================================================================================
