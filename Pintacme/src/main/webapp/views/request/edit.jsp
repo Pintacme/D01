@@ -25,12 +25,22 @@
 	<acme:inputTextMD code="request.edit.address" path="address"/>	
 	<acme:inputTextMD code="request.edit.work" path="work"/>
 	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<h1><spring:message code="request.paidFormat"></spring:message>
+	<small><spring:message code="request.creditTarjet"></spring:message></small></h1>
+	
+	
 	<acme:inputTextMD code="request.edit.creditCard.holderName" path="creditCard.holderName"/>
 	<acme:inputTextMD code="request.edit.creditCard.brandName" path="creditCard.brandName"/>
 	<acme:inputTextMD code="request.edit.creditCard.number" path="creditCard.number"/>
 	<acme:inputTextMD code="request.edit.creditCard.expirationMonth" path="creditCard.expirationMonth"/>
 	<acme:inputTextMD code="request.edit.creditCard.expirationYear" path="creditCard.expirationYear"/>
-	<acme:inputTextMD code="request.edit.creditCard.cvv" path="creditCard.cvv"/>
+	<acme:inputTextMD code="request.edit.creditCard.cvv" path="creditCard.cvvCode"/>
 	
 	<acme:submitMD name="save" code="request.edit.save" withButtonCancel="true"
 					codeButtonCancel="request.edit.cancel" />

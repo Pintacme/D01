@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
 import org.springframework.validation.BindingResult;
@@ -34,7 +36,7 @@ public class RequestCustomerController extends AbstractController {
 	private RequestService requestService;
 	
 	@Autowired
-	private CustomerService customrService;
+	private CustomerService customerService;
 	
 	
 	// Constructors -----------------------------------------------------------
@@ -60,10 +62,17 @@ public class RequestCustomerController extends AbstractController {
 	public ModelAndView create() {
 		ModelAndView result;
 		Request request;
-		
-		
+	
 	
 		request = requestService.create();
+		
+		List<Request> requests = (List<Request>) requestService.findLoggedRequest();					
+		if(!requests.isEmpty() && request.getId()==0){
+			
+			request.setCreditCard(requests.get(requests.size()-1).getCreditCard());
+			
+		}
+		
 		result = createEditModelAndView(request);
 			
 		return result;
@@ -89,9 +98,10 @@ public class RequestCustomerController extends AbstractController {
 			if(binding.hasErrors()){
 				result = createEditModelAndView(request);
 			}else{
-				try{
+				try{	
 						requestService.save(request);
-						result = new ModelAndView("redirect:list.do");
+						result = new ModelAndView("redirect:list.do");					
+		
 				}catch(Throwable oops){
 					result = createEditModelAndView(request, "request.commit.error");
 				}

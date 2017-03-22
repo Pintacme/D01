@@ -122,8 +122,6 @@ public class Request extends DomainEntity {
 
 	//Relationships ====================================================================================
 	
-	
-
 
 	private Customer customer;
 	private Collection<Budget> budgets;

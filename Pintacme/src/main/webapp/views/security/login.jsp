@@ -54,8 +54,6 @@
 						<button type="submit" class="btn btn-primary">
 							<spring:message code="security.login" />
 						</button>
-						<a href="user/register.do" class="btn btn-primary"><spring:message
-								code="security.register" /></a>
 					</div>
 				</div>
 
