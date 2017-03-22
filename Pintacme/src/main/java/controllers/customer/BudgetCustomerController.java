@@ -51,26 +51,9 @@ public class BudgetCustomerController extends AbstractController{
 	@RequestMapping(value = "/accept", method = RequestMethod.GET)
 	 public ModelAndView accept(@RequestParam int id) {
 	  ModelAndView result; 
-	  Collection<Budget> budgets;
 	  Assert.notNull(id);
-	  budgets= budgetService.findBudgetsForRequestId(id);
 	  
-	  Budget budget;
-	  budget= budgetService.findOne(id);
-	  Assert.notNull(budget);
-	  
-	  Assert.notNull(budgets);
-	  
-	  for(Budget b:budgets){
-		  if(b == budget){
-			  b.setStatus("ACCEPTED");
-			  budgetService.save(b); 
-		  }else{
-			  b.setStatus("REJECTED");
-			  budgetService.save(b);
-		  }
-	  }
-	  
+	  Budget budget = budgetService.acceptBudgetByCustomer(id);
 	  
 	  result = new ModelAndView("redirect:list.do?id="+budget.getRequest().getId());
 	  

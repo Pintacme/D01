@@ -33,7 +33,7 @@
 	<display:column property="measures" title="${measuresColumn}"/>
 	
 	<spring:message code="request.work" var="workColumn" ></spring:message>
-	<display:column property="work" title="${workColumn}"/>
+	<display:column title="${workColumn}"><center><fmt:formatDate value="${row.work}" pattern="dd-MM-yyyy HH:mm"/></center></display:column>
 	
 	<spring:message code="request.description" var="descriptionColumn" ></spring:message>
 	<display:column property="description" title="${descriptionColumn}"/>

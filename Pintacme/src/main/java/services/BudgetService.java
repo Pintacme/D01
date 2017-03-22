@@ -101,5 +101,30 @@ public class BudgetService {
 		
 		return result;
 	}
+
+	public Budget acceptBudgetByCustomer(int id) {
+		  Collection<Budget> budgets;
+		  budgets= findBudgetsForRequestId(id);
+		  System.out.println("Lista de budgets:"+budgets);
+		  Assert.notNull(budgets);
+		  
+		  Budget budget;
+		  budget= findOne(id);
+		  System.out.println("Budget id principal:"+budget.getId());
+		  Assert.notNull(budget);
+		
+		  for(Budget b:budgets){
+			  if(b == budget && b.getStatus()=="PENDING"){
+				  b.setStatus("ACCEPTED");
+				  System.out.println("Budget id:"+b.getId()+" aceptado");
+				  save(b); 
+			  }else if(b.getStatus()=="PENDING"){
+				  b.setStatus("REJECTED");
+				  System.out.println("Budget id:"+b.getId()+" rechazado");
+				  save(b);
+			  }
+		  }
+		  return budget;
+	}
 	
 }

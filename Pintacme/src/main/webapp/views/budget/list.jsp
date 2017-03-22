@@ -14,6 +14,12 @@
 
 <display:table name="budgets" id="row" requestURI="${requestUri}" class="table" keepStatus="false" pagesize="5"  >
 	
+	<spring:message code="budget.request.work" var="workColumn" ></spring:message>
+	<display:column title="${workColumn}"><center><fmt:formatDate value="${row.request.work}" pattern="dd-MM-yyyy HH:mm"/></center></display:column>
+	
+	<spring:message code="budget.request.address" var="addressColumn" ></spring:message>
+	<display:column property="request.address" title="${addressColumn}"/>
+	
 	<spring:message code="budget.status" var="statusColumn" ></spring:message>
 	<display:column property="status" title="${statusColumn}"/>
 	
