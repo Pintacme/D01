@@ -50,15 +50,14 @@ public class BudgetCustomerController extends AbstractController{
 		
 	@RequestMapping(value = "/accept", method = RequestMethod.GET)
 	 public ModelAndView accept(@RequestParam int id) {
-	  ModelAndView result; 
-	  Assert.notNull(id);
-	  
-	  Budget budget = budgetService.acceptBudgetByCustomer(id);
-	  
-	  result = new ModelAndView("redirect:list.do?id="+budget.getRequest().getId());
-	  
-	  return result;
-	 }
+		  ModelAndView result; 
+		  
+		  Budget budget = budgetService.acceptBudgetByCustomer(id);
+		 
+		  result = new ModelAndView("redirect:list.do?id="+budget.getRequest().getId());
+		  
+		  return result;
+		 }
 	 
 	 @RequestMapping(value = "/reject", method = RequestMethod.GET)
 	 public ModelAndView reject(@RequestParam int id) {

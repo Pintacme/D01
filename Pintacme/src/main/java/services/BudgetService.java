@@ -103,15 +103,17 @@ public class BudgetService {
 	}
 
 	public Budget acceptBudgetByCustomer(int id) {
-		  Collection<Budget> budgets;
-		  budgets= findBudgetsForRequestId(id);
-		  System.out.println("Lista de budgets:"+budgets);
-		  Assert.notNull(budgets);
 		  
 		  Budget budget;
 		  budget= findOne(id);
 		  System.out.println("Budget id principal:"+budget.getId());
 		  Assert.notNull(budget);
+		  
+		  Collection<Budget> budgets;
+		  budgets= findBudgetsForRequestId(budget.getRequest().getId());
+		  System.out.println("Request id principal:"+budget.getRequest().getId());
+		  System.out.println("Lista de budgets:"+budgets);
+		  Assert.notNull(budgets);
 		
 		  for(Budget b:budgets){
 			  if(b == budget && b.getStatus()=="PENDING"){
