@@ -41,11 +41,6 @@
 
 							</ul>
 							
-							
-							
-							
-							
-							
 
 							<ul class="nav navbar-nav navbar-right">
 
@@ -72,7 +67,10 @@
 				
 									<li><a href="customer/create.do"><spring:message
 												code="master.page.customer.register" /></a></li>
-
+												
+									<li><a href="painter/create.do"><spring:message
+												code="master.page.painter.register" /></a></li>
+									
 								</security:authorize>
 
 								<security:authorize access="isAuthenticated()">

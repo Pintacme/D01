@@ -38,6 +38,7 @@
 		<security:intercept-url pattern="/customer/create.do" access="isAnonymous()" />
 		<security:intercept-url pattern="/customer/register.do" access="isAnonymous()" />
 		<security:intercept-url pattern="/painter/create.do" access="isAnonymous()" />
+		<security:intercept-url pattern="/painter/register.do" access="isAnonymous()" />
 								
 		<security:intercept-url pattern="/request/customer/**" access="hasRole('CUSTOMER')" />
 		<security:intercept-url pattern="/budget/painter/**" access="hasRole('PAINTER')" />

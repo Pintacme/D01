@@ -10,8 +10,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.Range;
+import org.hibernate.validator.constraints.SafeHtml;
+import org.hibernate.validator.constraints.SafeHtml.WhiteListType;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -26,6 +30,8 @@ public class Painter extends Actor {
 	}
 
 	@NotBlank
+	@SafeHtml(whitelistType = WhiteListType.NONE)
+	@Pattern(regexp="\\d{11}")
 	public String getCodeSS() {
 		return this.codeSS;
 	}
@@ -35,6 +41,7 @@ public class Painter extends Actor {
 	}
 
 	@NotNull
+	@Range(min = 0, max = 5)
 	public int getAverageStart() {
 		return this.averageStart;
 	}

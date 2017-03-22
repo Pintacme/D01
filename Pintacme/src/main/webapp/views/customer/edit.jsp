@@ -14,8 +14,8 @@
 
 	
 	<acme:inputTextMD code="customer.username" path="username"/>	
-	<acme:inputTextMD code="customer.password" path="password"/>
-		<acme:inputTextMD code="customer.passRepeated" path="repeatedPassword"/>		
+	<acme:inputPassMD code="customer.password" path="password"/>
+	<acme:inputPassMD code="customer.passRepeated" path="repeatedPassword"/>		
   	
 	<acme:inputTextMD code="customer.name" path="name"/>	
 	<acme:inputTextMD code="customer.surname" path="surname"/>	
