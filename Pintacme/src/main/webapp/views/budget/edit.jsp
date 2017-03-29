@@ -20,17 +20,25 @@
 	<form:hidden path="painter"/>
 	
   	
+  	<acme:inputTextMD code="budget.edit.painter.name" path="painter.name"/>
+  	<acme:inputTextMD code="budget.edit.painter.surname" path="painter.surname"/>		
+  	
 	<acme:inputTextMD code="budget.edit.amount" path="amount"/>	
 	<acme:textareaMD code="budget.edit.description" path="description"/>	
 	
+	<acme:submitMD name="save" code="budget.edit.save" />
 	
+	
+	<!--  
 	<acme:submitMD name="save" code="budget.edit.save" withButtonCancel="true"
 					codeButtonCancel="budget.edit.cancel" />
+	-->
 	
+	<!--  
 	<jstl:if test="${budget.id!=0}">
 		<acme:submitMD name="delete" code="budget.edit.delete"/>
 	</jstl:if>
-	
+	 -->
 	
 
 </form:form>
