@@ -18,15 +18,14 @@
 	<form:hidden path="request"/>
 	<form:hidden path="status"/>
 	<form:hidden path="painter"/>
+	<form:hidden path="amount"/>
+	<form:hidden path="description"/>
 	
+  	<br>
   	
-  	<acme:inputTextMD code="budget.edit.painter.name" path="painter.name"/>
-  	<acme:inputTextMD code="budget.edit.painter.surname" path="painter.surname"/>		
-  	
-	<acme:inputTextMD code="budget.edit.amount" path="amount"/>	
-	<acme:textareaMD code="budget.edit.description" path="description"/>	
-	
-	<acme:submitMD name="save" code="budget.edit.save" />
+  
+
+	<h1><spring:message code="budget.payment.exito"></spring:message></h1>
 	
 	
 	<!--  
