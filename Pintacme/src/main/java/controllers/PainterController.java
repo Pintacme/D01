@@ -76,6 +76,19 @@ public class PainterController extends AbstractController{
 				return result;
 			}
 			
+			@RequestMapping(value = "/list",method=RequestMethod.GET)
+			public ModelAndView list() {
+				ModelAndView result;			
+				result = new ModelAndView("painter/list");
+					
+				result.addObject("painters",painterService.findAll());
+				result.addObject("requestUri","painter/list.do");
+					
+
+				return result;
+			}
+			
+			
 			
 			//Auxiliary methods-----------------------------------------------------
 			

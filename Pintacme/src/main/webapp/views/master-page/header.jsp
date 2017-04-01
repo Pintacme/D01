@@ -37,7 +37,11 @@
 												<security:authorize access="hasRole('PAINTER')">
 								<li><a href="request/painter/list.do"><spring:message
 												code="master.page.request.customer" /></a></li>
-											</security:authorize>			
+											</security:authorize>
+											
+								<li><a href="painter/list.do"><spring:message
+												code="master.page.painter.list" /></a></li>
+															
 
 							</ul>
 							

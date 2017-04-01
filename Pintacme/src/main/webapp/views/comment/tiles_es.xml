@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!-- 
- * tiles.xml
+ * tiles_es.xml
  *
  * Copyright (C) 2013 Universidad de Sevilla
  * 
@@ -13,17 +13,18 @@
 <!DOCTYPE tiles-definitions PUBLIC
        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
-       
+      
 <tiles-definitions>
 
-	<definition name="painter/edit" extends="master.page">	
-		<put-attribute name="title" value="Painter register" />
-		<put-attribute name="body" value="/views/painter/edit.jsp" />
+	<definition name="comment/list" extends="master.page">	
+		<put-attribute name="title" value="Comentarios" />
+		<put-attribute name="body" value="/views/comment/list.jsp" />
 	</definition>
 	
-	<definition name="painter/list" extends="master.page">	
-		<put-attribute name="title" value="List Painter´s" />
-		<put-attribute name="body" value="/views/painter/list.jsp" />
+	<definition name="comment/edit" extends="master.page">	
+		<put-attribute name="title" value="Crear comentario" />
+		<put-attribute name="body" value="/views/comment/edit.jsp" />
 	</definition>
+	
 	
 </tiles-definitions>

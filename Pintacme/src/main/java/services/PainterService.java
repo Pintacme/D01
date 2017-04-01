@@ -82,4 +82,20 @@ public class PainterService {
 		return painter;
 	}
 
+	public Collection<Painter> findAll() {
+		Collection<Painter> res;
+		
+		res = painterRepository.findAll();
+		
+		return res;
+	}
+
+	public Painter findOne(int id) {
+		Painter result; 
+		
+		result = painterRepository.findOne(id);
+		
+		return result;
+	}
+
 }

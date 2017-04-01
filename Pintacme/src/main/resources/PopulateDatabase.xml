@@ -168,6 +168,7 @@
 	<bean id="comment1" class="domain.Comment">
 		<property name="numberOfStars" value="3" />
 		<property name="text" value="TextComment1" />
+		<property name="moment" value="2017/03/15 12:50" />
 		<property name="painter" ref="painter1" />
 	</bean>
 	
