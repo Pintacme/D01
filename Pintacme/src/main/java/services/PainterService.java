@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
+import domain.Comment;
 import domain.Customer;
 import domain.Painter;
 import forms.PainterForm;
@@ -96,6 +97,21 @@ public class PainterService {
 		result = painterRepository.findOne(id);
 		
 		return result;
+	}
+
+	public void calculateAverageStarPainter(Painter painter) {
+		Collection<Comment> comments = painter.getComments();
+		System.out.println("Tamaño del array de comments es: "+comments.size());
+		Double res = 0.0;
+		for(Comment c:comments){
+			res = res+c.getNumberOfStars();
+			System.out.println("Puntuacion de este comentario es "+ c.getNumberOfStars());
+		}
+		
+		painter.setAverageStart(res/comments.size());
+		
+		System.out.println("El nuevo calculo de la media es: "+painter.getAverageStart());
+		save(painter);
 	}
 
 }

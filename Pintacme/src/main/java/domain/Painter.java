@@ -22,7 +22,7 @@ import org.hibernate.validator.constraints.SafeHtml.WhiteListType;
 public class Painter extends Actor {
 
 	private String	codeSS;
-	private int		averageStart;
+	private double		averageStart;
 
 
 	public Painter() {
@@ -38,15 +38,16 @@ public class Painter extends Actor {
 
 	public void setCodeSS(final String codeSS) {
 		this.codeSS = codeSS;
+		
 	}
-
+	
 	@NotNull
 	@Range(min = 0, max = 5)
-	public int getAverageStart() {
-		return this.averageStart;
+	public double getAverageStart() {
+		return averageStart;
 	}
 
-	public void setAverageStart(final int averageStart) {
+	public void setAverageStart(double averageStart) {
 		this.averageStart = averageStart;
 	}
 
@@ -86,6 +87,8 @@ public class Painter extends Actor {
 	public void setCurriculum(Curriculum curriculum) {
 		this.curriculum = curriculum;
 	}
+
+	
 	
 	
 	

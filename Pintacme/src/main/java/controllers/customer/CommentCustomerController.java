@@ -19,6 +19,7 @@ import domain.Comment;
 import domain.Request;
 import services.ActorService;
 import services.CommentService;
+import services.PainterService;
 
 @Controller
 @RequestMapping("/comment/customer")
@@ -28,6 +29,9 @@ public class CommentCustomerController extends AbstractController{
 	
 			@Autowired
 			private CommentService commentService;
+			
+			@Autowired
+			private PainterService painterService;
 	
 			//Constructor--------------------------------------------
 			
@@ -82,6 +86,7 @@ public class CommentCustomerController extends AbstractController{
 				}else{
 					try{	
 							commentService.save(comment);
+							painterService.calculateAverageStarPainter(comment.getPainter());
 							result = new ModelAndView("redirect:list.do?id="+comment.getPainter().getId());					
 			
 					}catch(Throwable oops){
