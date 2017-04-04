@@ -11,6 +11,20 @@
 <%@ page import="java.io.*,java.util.*" %>
 <%@ page import="javax.servlet.*,java.text.*" %>
 
+<?php
+    for($x=1;$x<=$starNumber;$x++) {
+        echo '<img src="path/to/star.png" />';
+    }
+    if (strpos($starNumber,'.')) {
+        echo '<img src="path/to/half/star.png" />';
+        $x++;
+    }
+    while ($x<=5) {
+        echo '<img src="path/to/blank/star.png" />';
+        $x++;
+    }
+?>
+
 
 <display:table name="painters" id="row" requestURI="${requestUri}" class="table" keepStatus="false" pagesize="5"  >
 	
