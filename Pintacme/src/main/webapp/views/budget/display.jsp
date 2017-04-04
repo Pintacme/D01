@@ -10,7 +10,7 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 
-<form:form action="budget/painter/edit.do" modelAttribute="budget">
+<form:form action="budget/customer/display.do" modelAttribute="budget">
 
 	<form:hidden path="id"/>
 	<form:hidden path="version"/>
@@ -20,21 +20,18 @@
 	<form:hidden path="painter"/>
 	
   	<br>
-  	
-	
-	<acme:textareaMD code="budget.edit.amount" path="amount"/>
-	<acme:inputTextMD code="budget.description" path="description"/>
-	
-	 
-	<acme:submitMD name="save" code="budget.edit.save" withButtonCancel="true"
-					codeButtonCancel="budget.edit.cancel" />
-	
-	
 
-	<jstl:if test="${budget.id!=0}">
-		<acme:submitMD name="delete" code="budget.edit.delete"/>
-	</jstl:if>
 	
+	<acme:inputTextMD code="budget.amount" path="amount"/>
+	<acme:textareaMD code="budget.description" path="description"/>
+	
+	<div class="col-xs-12 col-sm-4 pull-right">
+					<a href="budget/customer/makePayPaypal.do">
+						<img src="images/paypal.png" alt="Pay with paypal button" class="pull-right">
+					</a>
+			
+			</div>
+	 
 	
 
 </form:form>
