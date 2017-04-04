@@ -32,9 +32,3 @@
 	<display:column property="text" title="${textColumn}" />	
 	
 </display:table>
-
-	<security:authorize access="hasRole('CUSTOMER')">
-	<div>
-		<a href="comment/painter/create.do"><spring:message code="comment.create"/></a>
-	</div>
-	</security:authorize>
