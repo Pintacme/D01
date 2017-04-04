@@ -18,26 +18,23 @@
 	<form:hidden path="request"/>
 	<form:hidden path="status"/>
 	<form:hidden path="painter"/>
-	<form:hidden path="amount"/>
-	<form:hidden path="description"/>
 	
   	<br>
   	
-  
-
-	<h1><spring:message code="budget.payment.exito"></spring:message></h1>
 	
+	<acme:textareaMD code="budget.amount " path="amount"/>
+	<acme:inputTextMD code="budget.description" path="description"/>
 	
-	<!--  
+	 
 	<acme:submitMD name="save" code="budget.edit.save" withButtonCancel="true"
 					codeButtonCancel="budget.edit.cancel" />
-	-->
 	
-	<!--  
+	
+
 	<jstl:if test="${budget.id!=0}">
 		<acme:submitMD name="delete" code="budget.edit.delete"/>
 	</jstl:if>
-	 -->
+	
 	
 
 </form:form>
