@@ -134,7 +134,7 @@
 	
 	<bean id="curriculum2" class="domain.Curriculum">
 		<property name="photo" value="http://curriculum2.painter2.es/" />
-		<property name="general" value="GeneralPainter2" />
+		<property name="general" value="Full-time PainColor worker for 8 years" />
 		<property name="experience" value="ExperiencePainter2" />
 		<property name="lastUpdate" value="06/06/2014 18:00" />
 	</bean>
@@ -315,10 +315,10 @@
 	
 	
 	<bean id="request2" class="domain.Request">
-		<property name="schedule" value="ScheduleReques2" />
-		<property name="measures" value="MeasuresRequest2" />
-		<property name="description" value="DescriptionRequest2" />
-		<property name="address" value="AddressRequest2" />
+		<property name="schedule" value="Afternoon" />
+		<property name="measures" value="Room 3 x 4m" />
+		<property name="description" value="It is a small room" />
+		<property name="address" value="C/Reina Merces Bl.3, B" />
 		<property name="moment" value="2017/03/05 15:50" />
 		<property name="work" value="2017/08/08 12:00" />
 		<property name="creditCard" ref="creditCard2" />
@@ -358,7 +358,7 @@
 	<bean id="budget2" class="domain.Budget">
 		<property name="status" value="PENDING" />
 		<property name="amount" value="670.50" />
-		<property name="description" value="DescriptionBudget2" />
+		<property name="description" value="Budget fit for a room" />
 		<property name="painter" ref="painter2" />
 		<property name="request" ref="request2" />
 		<property name="materials">
@@ -372,7 +372,7 @@
 	<bean id="budget3" class="domain.Budget">
 		<property name="status" value="ACCEPTED" />
 		<property name="amount" value="850.50" />
-		<property name="description" value="DescriptionBudget3" />
+		<property name="description" value="Minimum price for a small room" />
 		<property name="painter" ref="painter3" />
 		<property name="request" ref="request2" />
 		<property name="materials">
@@ -408,14 +408,14 @@
 	
 	<bean id="comment2" class="domain.Comment">
 		<property name="numberOfStars" value="4" />
-		<property name="text" value="TextComment2" />
+		<property name="text" value="Very perfectionist worker" />
 		<property name="moment" value="2017/03/15 18:50" />
 		<property name="painter" ref="painter2" />
 	</bean>
 	
 	<bean id="comment3" class="domain.Comment">
 		<property name="numberOfStars" value="4" />
-		<property name="text" value="TextComment3" />
+		<property name="text" value="Very perfectionist worker" />
 		<property name="moment" value="2017/03/15 20:50" />
 		<property name="painter" ref="painter2" />
 	</bean>
@@ -430,14 +430,14 @@
 	</bean>
 	
 	<bean id="material2" class="domain.Material">
-		<property name="description" value="DescriptionMaterial2" />
+		<property name="description" value="Yellow and white paint" />
 		<property name="quantity" value="6" />
 		<property name="price" value="325.0" />
 		<property name="budget" ref="budget2" />
 	</bean>
 	
 	<bean id="material3" class="domain.Material">
-		<property name="description" value="DescriptionMaterial3" />
+		<property name="description" value="Green and white paint" />
 		<property name="quantity" value="9" />
 		<property name="price" value="115.0" />
 		<property name="budget" ref="budget3" />
