@@ -142,7 +142,7 @@
 	<bean id="curriculum3" class="domain.Curriculum">
 		<property name="photo" value="http://curriculum3.painter3.es/" />
 		<property name="general" value="GeneralPainter2" />
-		<property name="experience" value="ExperiencePainter3" />
+		<property name="experience" value="Extensive work experience" />
 		<property name="lastUpdate" value="07/07/2014 20:00" />
 	</bean>
 	
@@ -386,7 +386,7 @@
 	<bean id="budget4" class="domain.Budget">
 		<property name="status" value="ACCEPTED" />
 		<property name="amount" value="750.50" />
-		<property name="description" value="DescriptionBudget4" />
+		<property name="description" value="Price for this room" />
 		<property name="painter" ref="painter3" />
 		<property name="request" ref="request2" />
 		<property name="materials">
@@ -444,7 +444,7 @@
 	</bean>
 	
 	<bean id="material4" class="domain.Material">
-		<property name="description" value="DescriptionMaterial4" />
+		<property name="description" value="Green, red and yellow paint" />
 		<property name="quantity" value="2" />
 		<property name="price" value="45.0" />
 		<property name="budget" ref="budget4" />
