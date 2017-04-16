@@ -80,9 +80,12 @@ public class PainterController extends AbstractController{
 			public ModelAndView list() {
 				ModelAndView result;			
 				result = new ModelAndView("painter/list");
+				
+				Boolean res = false;
 					
 				result.addObject("painters",painterService.findAll());
 				result.addObject("requestUri","painter/list.do");
+				result.addObject("res",res);
 					
 
 				return result;

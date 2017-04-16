@@ -39,6 +39,11 @@
 												code="master.page.request.customer" /></a></li>
 											</security:authorize>
 											
+											<security:authorize access="hasRole('CUSTOMER')">
+								<li><a href="painter/customer/list.do"><spring:message
+												code="master.page.painter.customer" /></a></li>
+											</security:authorize>
+											
 								<li><a href="painter/list.do"><spring:message
 												code="master.page.painter.list" /></a></li>
 															

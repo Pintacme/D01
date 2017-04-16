@@ -114,4 +114,12 @@ public class PainterService {
 		save(painter);
 	}
 
+	public Collection<Painter> findPaintersWorkedWithCustomerId(int id) {
+		Collection<Painter> res;
+		
+		res = painterRepository.findPaintersWorkedWithCustomerId(id);
+		
+		return res;
+	}
+
 }
