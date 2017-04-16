@@ -129,5 +129,20 @@ public class BudgetService {
 		  }
 		  return budget;
 	}
+
+	public void rejectedOtherBudgets(Budget budget) {
+		Request request = budget.getRequest();
+		
+		Collection<Budget> budgets = request.getBudgets();
+		
+		for (Budget b:budgets){
+			System.out.println("Budget id recorriendo:"+b.getId());
+			if(!b.equals(budget)){
+				b.setStatus("REJECTED");
+				save(b);
+			}
+		}
+		
+	}
 	
 }

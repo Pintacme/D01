@@ -370,7 +370,7 @@
 	</bean>
 	
 	<bean id="budget3" class="domain.Budget">
-		<property name="status" value="ACCEPTED" />
+		<property name="status" value="PENDING" />
 		<property name="amount" value="850.50" />
 		<property name="description" value="Minimum price for a small room" />
 		<property name="painter" ref="painter3" />
@@ -384,7 +384,7 @@
 	</bean>
 	
 	<bean id="budget4" class="domain.Budget">
-		<property name="status" value="ACCEPTED" />
+		<property name="status" value="PENDING" />
 		<property name="amount" value="750.50" />
 		<property name="description" value="Price for this room" />
 		<property name="painter" ref="painter3" />

@@ -78,6 +78,8 @@ public class BudgetCustomerController extends AbstractController{
 		  
 		  budgetService.save(budget);
 		  
+		  budgetService.rejectedOtherBudgets(budget);
+		  
 		  result = new ModelAndView("redirect:display.do?id="+budget.getId());
 		  
 		  return result;
