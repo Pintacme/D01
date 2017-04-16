@@ -404,6 +404,7 @@
 		<property name="text" value="TextComment1" />
 		<property name="moment" value="2017/03/15 12:50" />
 		<property name="painter" ref="painter1" />
+		<property name="customer" ref="customer1" />
 	</bean>
 	
 	<bean id="comment2" class="domain.Comment">
@@ -411,6 +412,7 @@
 		<property name="text" value="Very perfectionist worker" />
 		<property name="moment" value="2017/03/15 18:50" />
 		<property name="painter" ref="painter2" />
+		<property name="customer" ref="customer2" />
 	</bean>
 	
 	<bean id="comment3" class="domain.Comment">
@@ -418,6 +420,7 @@
 		<property name="text" value="Very perfectionist worker" />
 		<property name="moment" value="2017/03/15 20:50" />
 		<property name="painter" ref="painter2" />
+		<property name="customer" ref="customer1" />
 	</bean>
 	
 	<!-- Materials -->

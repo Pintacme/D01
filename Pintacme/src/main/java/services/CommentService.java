@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import domain.Comment;
+import domain.Customer;
 import domain.Painter;
 import domain.Request;
 import repositories.CommentRepository;
@@ -24,6 +25,8 @@ public class CommentService {
 	@Autowired
 	private PainterService painterService;
 
+	@Autowired
+	private CustomerService customerService;
 
 	public CommentService() {
 		super();
@@ -42,7 +45,9 @@ public class CommentService {
 		
 		Painter painter = painterService.findOne(id);
 		Date now = new Date(System.currentTimeMillis()-1000);
+		Customer customer = customerService.getLogged();
 		
+		result.setCustomer(customer);
 		result.setMoment(now);
 		result.setPainter(painter);
 		

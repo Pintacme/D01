@@ -62,6 +62,7 @@ public class Comment extends DomainEntity {
 	//Relationships
 	
 	private Painter painter;
+	private Customer customer;
 	
 
 	@Valid
@@ -73,6 +74,18 @@ public class Comment extends DomainEntity {
 	public void setPainter(Painter painter) {
 		this.painter = painter;
 	}
+
+	@Valid
+	@ManyToOne(optional=false)
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+	
+	
 	
 
 	

@@ -22,6 +22,9 @@
 
 <display:table name="comments" id="row" requestURI="${requestUri}" class="table" keepStatus="true" pagesize="5" >
 	
+	<spring:message code="comment.customer" var="customerColumn" ></spring:message>
+	<display:column property="customer.name" title="${customerColumn}"/>
+	
 	<spring:message code="comment.moment" var="momentColumn" ></spring:message>
 	<display:column title="${momentColumn}"><center><fmt:formatDate value="${row.moment}" pattern="dd-MM-yyyy HH:mm"/></center></display:column>
 	

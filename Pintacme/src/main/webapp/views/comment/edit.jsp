@@ -15,6 +15,7 @@
 		<form:hidden path="version"/>
 		<form:hidden path="painter"/>
 		<form:hidden path="moment"/>
+		<form:hidden path="customer"/>
 		
 		<acme:textareaMD code="comment.edit.text" path="text"/>
 		<acme:inputTextMD code="comment.edit.numberOfStars" path="numberOfStars"/>	
