@@ -85,20 +85,22 @@ public class BudgetCustomerController extends AbstractController{
 		  return result;
 		
  }
-	
+	int iD;
 	@RequestMapping(value = "/display", method = RequestMethod.GET)
 	public ModelAndView create(@RequestParam int id) {
 		ModelAndView result;
 		Budget budget;
 	
 		budget = budgetService.findOne(id);
-		result = createEditModelAndView(budget);
-			
+		result = createEditModelAndView1(budget);
+		
+		iD=id;
+		
 		return result;
 	}
 	
 	@RequestMapping("/makePayPaypal")
-	public ModelAndView makePayPaypal(@RequestParam int id) throws IOException, PayPalRESTException
+	public ModelAndView makePayPaypal() throws IOException, PayPalRESTException
 	{
 		Map<String, String> sdkConfig = new HashMap<String, String>();
 		sdkConfig.put("mode", "sandbox");
@@ -109,7 +111,10 @@ public class BudgetCustomerController extends AbstractController{
 
 		Amount amount = new Amount();
 		amount.setCurrency("EUR");
-		amount.setTotal("450.5");
+		
+		String s = new Double(budgetService.findOne(iD).getAmount()).toString();
+		
+		amount.setTotal(s);
 
 		Transaction transaction = new Transaction();
 		transaction.setDescription("Pictame Service paid");
@@ -237,5 +242,35 @@ public class BudgetCustomerController extends AbstractController{
 			
 			return result;
 		}
+		
+		
+		//DISPLAY
+		
+		 protected ModelAndView createEditModelAndView1(Budget budget){
+				ModelAndView result;
+				
+				result = createEditModelAndView1(budget, null);
+				
+				return result;
+			}
+			
+			protected ModelAndView createEditModelAndView1(Budget budget, String message){
+				ModelAndView result;
+				
+				Collection<String> priorities = new ArrayList<String>();
+				
+				priorities.add("ACCEPTED");
+				priorities.add("PENDING");
+				priorities.add("REJECTED");
+					
+				result = new ModelAndView("budget/display");
+				
+				
+				result.addObject("priorities", priorities);
+				result.addObject("budget", budget);
+				result.addObject("message", message);
+				
+				return result;
+			}
 
 }

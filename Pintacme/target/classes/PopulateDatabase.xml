@@ -96,7 +96,7 @@
 	<!-- CreditCards -->
 
 	<bean id="creditCard1" class="domain.CreditCard">
-		<property name="holderName" value="NameCustomer1" />
+		<property name="holderName" value="Rafael" />
 		<property name="brandName" value="American Express" />
 		<property name="number" value="5654543141175015" />
 		<property name="expirationMonth" value="5" />
@@ -105,7 +105,7 @@
 	</bean>
 	
 	<bean id="creditCard2" class="domain.CreditCard">
-		<property name="holderName" value="NameCustomer2" />
+		<property name="holderName" value="Jesus" />
 		<property name="brandName" value="La Caixa" />
 		<property name="number" value="5675843141175015" />
 		<property name="expirationMonth" value="6" />
@@ -114,7 +114,7 @@
 	</bean>
 	
 	<bean id="creditCard3" class="domain.CreditCard">
-		<property name="holderName" value="NameCustomer3" />
+		<property name="holderName" value="Jose Carlos" />
 		<property name="brandName" value="Santander" />
 		<property name="number" value="5654549576175015" />
 		<property name="expirationMonth" value="7" />
@@ -127,14 +127,14 @@
 
 	<bean id="curriculum1" class="domain.Curriculum">
 		<property name="photo" value="http://curriculum1.painter1.es/" />
-		<property name="general" value="GeneralPainter1" />
-		<property name="experience" value="ExperiencePainter1" />
-		<property name="lastUpdate" value="05/05/2014 00:00" />
+		<property name="general" value="National and international companies" />
+		<property name="experience" value="12 years" />
+		<property name="lastUpdate" value="05/05/2014 08:00" />
 	</bean>
 	
 	<bean id="curriculum2" class="domain.Curriculum">
 		<property name="photo" value="http://curriculum2.painter2.es/" />
-		<property name="general" value="GeneralPainter2" />
+		<property name="general" value="Full-time PainColor worker for 8 years" />
 		<property name="experience" value="ExperiencePainter2" />
 		<property name="lastUpdate" value="06/06/2014 18:00" />
 	</bean>
@@ -142,7 +142,7 @@
 	<bean id="curriculum3" class="domain.Curriculum">
 		<property name="photo" value="http://curriculum3.painter3.es/" />
 		<property name="general" value="GeneralPainter2" />
-		<property name="experience" value="ExperiencePainter3" />
+		<property name="experience" value="Extensive work experience" />
 		<property name="lastUpdate" value="07/07/2014 20:00" />
 	</bean>
 	
@@ -161,10 +161,10 @@
 	
 	<bean id="customer1" class="domain.Customer">
 		<property name="userAccount" ref="userAccount2" />
-		<property name="name" value="NameCustomer1" />
-		<property name="surname" value="SurnameCustomer1" />
+		<property name="name" value="Rafael" />
+		<property name="surname" value="Del Rio Franco" />
 		<property name="postalCode" value="06800" />
-		<property name="email" value="customer1@pintacme.com" />
+		<property name="email" value="rafaelrf@pintacme.com" />
 		<property name="phone" value="654784525" />
 		<property name="dni" value="15588564L" />
 		<property name="requests">
@@ -177,10 +177,10 @@
 	
 	<bean id="customer2" class="domain.Customer">
 		<property name="userAccount" ref="userAccount6" />
-		<property name="name" value="NameCustomer2" />
-		<property name="surname" value="SurnameCustomer2" />
+		<property name="name" value="Jesus" />
+		<property name="surname" value="Navas Inocencio" />
 		<property name="postalCode" value="48759" />
-		<property name="email" value="customer2@pintacme.com" />
+		<property name="email" value="jesusni@pintacme.com" />
 		<property name="phone" value="654787775" />
 		<property name="dni" value="15547964L" />
 		<property name="requests">
@@ -193,10 +193,10 @@
 	
 	<bean id="customer3" class="domain.Customer">
 		<property name="userAccount" ref="userAccount7" />
-		<property name="name" value="NameCustomer3" />
-		<property name="surname" value="SurnameCustomer3" />
+		<property name="name" value="Jose Carlos" />
+		<property name="surname" value="Ruiz Navarro" />
 		<property name="postalCode" value="48751" />
-		<property name="email" value="customer3@pintacme.com" />
+		<property name="email" value="josecarlosrn@pintacme.com" />
 		<property name="phone" value="654778925" />
 		<property name="dni" value="15522264L" />
 		<property name="requests">
@@ -210,10 +210,10 @@
 	
 	<bean id="painter1" class="domain.Painter">
 		<property name="userAccount" ref="userAccount3" />
-		<property name="name" value="NamePainter1" />
-		<property name="surname" value="SurnamePainter1" />
+		<property name="name" value="Ernesto" />
+		<property name="surname" value="Rodriguez Nuñez" />
 		<property name="postalCode" value="06800" />
-		<property name="email" value="painter1@pintacme.com" />
+		<property name="email" value="ernestorn@pintacme.com" />
 		<property name="phone" value="687452123" />
 		<property name="codeSS" value="14123457840" />
 		<property name="averageStart" value="3" />
@@ -236,10 +236,10 @@
 	
 	<bean id="painter2" class="domain.Painter">
 		<property name="userAccount" ref="userAccount4" />
-		<property name="name" value="NamePainter2" />
-		<property name="surname" value="SurnamePainter2" />
+		<property name="name" value="Jesus" />
+		<property name="surname" value="Rivas Jimenez" />
 		<property name="postalCode" value="45784" />
-		<property name="email" value="painter2@pintacme.com" />
+		<property name="email" value="jesusrj@pintacme.com" />
 		<property name="phone" value="687499923" />
 		<property name="codeSS" value="14199957840" />
 		<property name="averageStart" value="2" />
@@ -263,10 +263,10 @@
 	
 	<bean id="painter3" class="domain.Painter">
 		<property name="userAccount" ref="userAccount5" />
-		<property name="name" value="NamePainter3" />
-		<property name="surname" value="SurnamePainter3" />
+		<property name="name" value="Manuel" />
+		<property name="surname" value="Serrano Guerrero" />
 		<property name="postalCode" value="41015" />
-		<property name="email" value="painter3@pintacme.com" />
+		<property name="email" value="manuelsg@pintacme.com" />
 		<property name="phone" value="687444553" />
 		<property name="codeSS" value="14144557840" />
 		<property name="averageStart" value="5" />
@@ -289,10 +289,10 @@
 		<!-- Requests -->
 
 	<bean id="request1" class="domain.Request">
-		<property name="schedule" value="ScheduleReques1" />
-		<property name="measures" value="MeasuresRequest1" />
-		<property name="description" value="DescriptionRequest1" />
-		<property name="address" value="AddressRequest1" />
+		<property name="schedule" value="Morning 12:00" />
+		<property name="measures" value="Room 7 x 5  m" />
+		<property name="description" value="It is a marriage room" />
+		<property name="address" value="C/Ruperto Chapi Nº43" />
 		<property name="moment" value="2017/03/15 12:50" />
 		<property name="work" value="2017/08/21 12:50" />
 		<property name="creditCard" ref="creditCard1" />
@@ -315,10 +315,10 @@
 	
 	
 	<bean id="request2" class="domain.Request">
-		<property name="schedule" value="ScheduleReques2" />
-		<property name="measures" value="MeasuresRequest2" />
-		<property name="description" value="DescriptionRequest2" />
-		<property name="address" value="AddressRequest2" />
+		<property name="schedule" value="Afternoon" />
+		<property name="measures" value="Room 3 x 4m" />
+		<property name="description" value="It is a small room" />
+		<property name="address" value="C/Reina Merces Bl.3, B" />
 		<property name="moment" value="2017/03/05 15:50" />
 		<property name="work" value="2017/08/08 12:00" />
 		<property name="creditCard" ref="creditCard2" />
@@ -344,7 +344,7 @@
 	<bean id="budget1" class="domain.Budget">
 		<property name="status" value="PENDING" />
 		<property name="amount" value="450.50" />
-		<property name="description" value="DescriptionBudget1" />
+		<property name="description" value="It is the price of a medium-sized room" />
 		<property name="painter" ref="painter1" />
 		<property name="request" ref="request1" />
 		<property name="materials">
@@ -358,7 +358,7 @@
 	<bean id="budget2" class="domain.Budget">
 		<property name="status" value="PENDING" />
 		<property name="amount" value="670.50" />
-		<property name="description" value="DescriptionBudget2" />
+		<property name="description" value="Budget fit for a room" />
 		<property name="painter" ref="painter2" />
 		<property name="request" ref="request2" />
 		<property name="materials">
@@ -370,9 +370,9 @@
 	</bean>
 	
 	<bean id="budget3" class="domain.Budget">
-		<property name="status" value="ACCEPTED" />
+		<property name="status" value="PENDING" />
 		<property name="amount" value="850.50" />
-		<property name="description" value="DescriptionBudget3" />
+		<property name="description" value="Minimum price for a small room" />
 		<property name="painter" ref="painter3" />
 		<property name="request" ref="request2" />
 		<property name="materials">
@@ -384,9 +384,9 @@
 	</bean>
 	
 	<bean id="budget4" class="domain.Budget">
-		<property name="status" value="ACCEPTED" />
+		<property name="status" value="PENDING" />
 		<property name="amount" value="750.50" />
-		<property name="description" value="DescriptionBudget4" />
+		<property name="description" value="Price for this room" />
 		<property name="painter" ref="painter3" />
 		<property name="request" ref="request2" />
 		<property name="materials">
@@ -404,47 +404,50 @@
 		<property name="text" value="TextComment1" />
 		<property name="moment" value="2017/03/15 12:50" />
 		<property name="painter" ref="painter1" />
+		<property name="customer" ref="customer1" />
 	</bean>
 	
 	<bean id="comment2" class="domain.Comment">
 		<property name="numberOfStars" value="4" />
-		<property name="text" value="TextComment2" />
+		<property name="text" value="Very perfectionist worker" />
 		<property name="moment" value="2017/03/15 18:50" />
 		<property name="painter" ref="painter2" />
+		<property name="customer" ref="customer2" />
 	</bean>
 	
 	<bean id="comment3" class="domain.Comment">
 		<property name="numberOfStars" value="4" />
-		<property name="text" value="TextComment3" />
+		<property name="text" value="Very perfectionist worker" />
 		<property name="moment" value="2017/03/15 20:50" />
 		<property name="painter" ref="painter2" />
+		<property name="customer" ref="customer1" />
 	</bean>
 	
 	<!-- Materials -->
 
 	<bean id="material1" class="domain.Material">
-		<property name="description" value="DescriptionMaterial1" />
+		<property name="description" value="Paint, brush and others" />
 		<property name="quantity" value="2" />
-		<property name="price" value="125.0" />
+		<property name="price" value="255.0" />
 		<property name="budget" ref="budget1" />
 	</bean>
 	
 	<bean id="material2" class="domain.Material">
-		<property name="description" value="DescriptionMaterial2" />
+		<property name="description" value="Yellow and white paint" />
 		<property name="quantity" value="6" />
 		<property name="price" value="325.0" />
 		<property name="budget" ref="budget2" />
 	</bean>
 	
 	<bean id="material3" class="domain.Material">
-		<property name="description" value="DescriptionMaterial3" />
+		<property name="description" value="Green and white paint" />
 		<property name="quantity" value="9" />
 		<property name="price" value="115.0" />
 		<property name="budget" ref="budget3" />
 	</bean>
 	
 	<bean id="material4" class="domain.Material">
-		<property name="description" value="DescriptionMaterial4" />
+		<property name="description" value="Green, red and yellow paint" />
 		<property name="quantity" value="2" />
 		<property name="price" value="45.0" />
 		<property name="budget" ref="budget4" />
