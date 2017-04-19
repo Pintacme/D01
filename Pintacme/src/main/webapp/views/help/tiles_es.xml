@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+      
+<tiles-definitions>
+
+	<definition name="help/show" extends="master.page">	
+		<put-attribute name="title" value="Ayuda" />
+		<put-attribute name="body" value="/views/help/help.jsp" />
+	</definition>
+	
+	<definition name="helpClient/show" extends="master.page">	
+		<put-attribute name="title" value="Ayuda para clientes" />
+		<put-attribute name="body" value="/views/help/helpClient.jsp" />
+	</definition>
+	
+	<definition name="helpPainter/show" extends="master.page">	
+		<put-attribute name="title" value="Ayuda para pintores" />
+		<put-attribute name="body" value="/views/help/helpPainter.jsp" />
+	</definition>
+	
+	<definition name="helpIssue/show" extends="master.page">	
+		<put-attribute name="title" value="Ayuda sobre incidencias" />
+		<put-attribute name="body" value="/views/help/helpIssue.jsp" />
+	</definition>
+	
+</tiles-definitions>

@@ -33,6 +33,10 @@
 		<security:intercept-url pattern="/welcome/index.do" access="permitAll" /> 
 		
 		<security:intercept-url pattern="/terms/show.do" access="permitAll" />
+		<security:intercept-url pattern="/help/show.do" access="permitAll" />
+		<security:intercept-url pattern="/helpClient/show.do" access="permitAll" />
+		<security:intercept-url pattern="/helpPainter/show.do" access="permitAll" />
+		<security:intercept-url pattern="/helpIssue/show.do" access="permitAll" />
 		
 		<security:intercept-url pattern="/user/register.do" access="isAnonymous()" />
 		<security:intercept-url pattern="/customer/create.do" access="isAnonymous()" />

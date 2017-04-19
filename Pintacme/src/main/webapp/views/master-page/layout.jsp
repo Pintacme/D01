@@ -95,7 +95,7 @@
 			<div class="row" style="display: flex; align-items: center;">
 				<div class="col-sm-3">
 					<a href="#"><img width="100%" src="images/logo.png"
-						alt="Acme - Six Pack" /></a>
+						alt="Pintacme" /></a>
 				</div>
 				<div class="col-sm-9 text-right">
 					<h1>

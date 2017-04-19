@@ -19,6 +19,7 @@
 		<value>/views/budget/tiles.xml</value>
 		<value>/views/painter/tiles.xml</value>
 		<value>/views/comment/tiles.xml</value>
+		<value>/views/help/tiles.xml</value>
 	</util:list>
 
 </beans>

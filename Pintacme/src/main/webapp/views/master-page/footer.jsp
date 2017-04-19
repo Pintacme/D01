@@ -9,3 +9,8 @@
 -
 <b><a href="terms/show.do"><spring:message
 			code="master.page.terms" /></a></b>
+
+<br>
+	
+<b><a href="help/show.do"><spring:message
+			code="master.page.help" /></a></b>
