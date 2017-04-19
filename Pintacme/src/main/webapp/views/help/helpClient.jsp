@@ -12,26 +12,28 @@
 
 <%@ taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<h2>
-	<spring:message code="helpClient.title" />
-</h2>
+<a href="#"><img align="left" width="25%" src="images/brochita clienta guantes.png"
+						alt="Pintacme" /></a>
+						
+<h2 align="left">
+	<spring:message code="helpClient.title" />:
+</h2> 
 
-<h3>
+
+<h3 align="left">
 	<spring:message code="helpClient.1" />
 </h3>
-<h3>
+<h3 align="left">
 	<spring:message code="helpClient.2" />
 </h3>
-<h3>
+<h3 align="left">
 	<spring:message code="helpClient.3" />
 </h3>
-<h3>
+<h3 align="left">
 	<spring:message code="helpClient.4" />
 </h3>
-<h3>
+<h3 align="left">
 	<spring:message code="helpClient.5" />
 </h3>
 
 
-<a href="#"><img width="10%" src="images/brochita clienta guantes.png"
-						alt="Pintacme" /></a>

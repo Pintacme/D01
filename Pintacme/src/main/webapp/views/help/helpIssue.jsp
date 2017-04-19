@@ -12,18 +12,18 @@
 
 <%@ taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
+<a href="#"><img align="left" width="25%" src="images/brochita enfada guantes.png"
+						alt="Pintacme" /></a>
 
-<h2>
-<spring:message code="helpIssue.title" />
+<h2 align="left">
+<spring:message code="helpIssue.title" />:
 </h2>
 
-<h3>
+<h3 align="left">
 <spring:message code="helpIssue.1" />
 </h3>
 
-<h3>
+<h3 align="left">
 <spring:message code="helpIssue.2" />
 </h3>
 
-<a href="#"><img width="10%" src="images/brochita enfada guantes.png"
-						alt="Pintacme" /></a>

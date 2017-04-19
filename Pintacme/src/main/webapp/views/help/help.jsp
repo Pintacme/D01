@@ -13,15 +13,21 @@
 
 <%@ taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<h1>
-<a href="<c:url value="/helpClient/show.do"/>"><spring:message code="helpClient.title" /></a>
+
+<style>
+h1   {color: blue;
+padding-left: 20px;}
+</style>
+
+<h1 align="justify">
+<a  href="<c:url value="/helpClient/show.do"/>"><spring:message code="helpClient.title" /></a>
 </h1>
 
-<h1>
+<h1 align="justify">
 <a href="<c:url value="/helpPainter/show.do"/>"><spring:message code="helpPainter.title" /></a>
 </h1>
 
-<h1>
+<h1 align="justify" >
 <a href="<c:url value="/helpIssue/show.do"/>"><spring:message code="helpIssue.title" /></a>
 
 </h1>

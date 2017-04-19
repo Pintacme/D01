@@ -12,24 +12,26 @@
 
 <%@ taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<h2>
-<spring:message code="helpPainter.title" />
+
+<a href="#"><img align="left" width="25%" src="images/brochita pintora guantes.png"
+						alt="Pintacme" /></a>
+
+<h2 align="left">
+<spring:message code="helpPainter.title" />:
 </h2>
 
-<h3>
+<h3 align="left">
 	<spring:message code="helpPainter.1" />
 </h3>
-<h3>
+<h3 align="left">
 	<spring:message code="helpPainter.2" />
 </h3>
-<h3>
+<h3 align="left">
 	<spring:message code="helpPainter.3" />
 </h3>
-<h3>
+<h3 align="left">
 	<spring:message code="helpPainter.4" />
 </h3>
 
 
-<a href="#"><img width="10%" src="images/brochita pintora guantes.png"
-						alt="Pintacme" /></a>
 
