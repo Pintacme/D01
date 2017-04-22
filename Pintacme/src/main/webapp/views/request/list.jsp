@@ -13,7 +13,7 @@
 
 <security:authorize access="hasAnyRole('CUSTOMER','PAINTER')">
 
-
+<div class="table-responsive">
 <display:table name="requests" id="row" requestURI="${requestUri}" class="table" keepStatus="false" pagesize="5"  >
 	
 	<spring:message code="request.moment" var="momentColumn" ></spring:message>
@@ -65,6 +65,8 @@
 	</security:authorize>
 	
 	</display:table>
+	
+	</div>
 	
 	<security:authorize access="hasRole('CUSTOMER')">
 	<div>

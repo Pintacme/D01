@@ -11,7 +11,7 @@
 <%@ page import="java.io.*,java.util.*" %>
 <%@ page import="javax.servlet.*,java.text.*" %>
 
-
+<div class="table-responsive">
 <display:table name="painters" id="row" requestURI="${requestUri}" class="table" keepStatus="false" pagesize="5"  >
 	
 	<spring:message code="painter.name" var="nameColumn" ></spring:message>
@@ -40,4 +40,4 @@
 	</security:authorize>
 	
 	</display:table>
-	
+</div>	

@@ -11,7 +11,7 @@
 <%@ page import="java.io.*,java.util.*" %>
 <%@ page import="javax.servlet.*,java.text.*" %>
 
-
+<div class="table-responsive">
 <display:table name="budgets" id="row" requestURI="${requestUri}" class="table" keepStatus="false" pagesize="5"  >
 	
 	
@@ -66,3 +66,5 @@
 	</security:authorize>
 	
 	</display:table>
+	
+	</div>

@@ -19,7 +19,7 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-
+<div class="table-responsive">
 <display:table name="comments" id="row" requestURI="${requestUri}" class="table" keepStatus="true" pagesize="5" >
 	
 	<spring:message code="comment.customer" var="customerColumn" ></spring:message>
@@ -35,3 +35,5 @@
 	<display:column property="text" title="${textColumn}" />	
 	
 </display:table>
+
+</div>
