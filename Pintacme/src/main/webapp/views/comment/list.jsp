@@ -19,6 +19,9 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+
+
+
 <div class="table-responsive">
 <display:table name="comments" id="row" requestURI="${requestUri}" class="table" keepStatus="true" pagesize="5" >
 	
@@ -29,7 +32,7 @@
 	<display:column title="${momentColumn}"><center><fmt:formatDate value="${row.moment}" pattern="dd-MM-yyyy HH:mm"/></center></display:column>
 	
 	<spring:message code="comment.numberOfStars" var="numberOfStarsColumn" ></spring:message>
-	<display:column property="numberOfStars" title="${numberOfStarsColumn}"/>
+	<display:column title="${numberOfStarsColumn}"><meter value="${row.numberOfStars}" min="0" max="5" optimum="2.5"></meter><br></display:column>
 	
 	<spring:message code="comment.text" var="textColumn" ></spring:message>
 	<display:column property="text" title="${textColumn}" />	
@@ -37,3 +40,4 @@
 </display:table>
 
 </div>
+

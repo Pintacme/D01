@@ -52,6 +52,9 @@
 		<security:intercept-url pattern="/request/painter/**" access="hasRole('PAINTER')" />
 		<security:intercept-url pattern="/budget/customer/**" access="hasRole('CUSTOMER')" />
 		<security:intercept-url pattern="/budget/customer/makePayPaypal/**" access="hasRole('CUSTOMER')" />
+	
+		
+		<security:intercept-url pattern="/dashboard/administrator/list.do" access="hasRole('ADMINISTRATOR')" />
 		
 		<security:intercept-url pattern="/**" access="hasRole('NONE')" />
 

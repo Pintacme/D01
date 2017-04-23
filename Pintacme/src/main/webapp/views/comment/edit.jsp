@@ -9,6 +9,8 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
+
+
 <form:form action="comment/customer/edit.do" modelAttribute="comment">
 		
 		<form:hidden path="id"/>
@@ -18,6 +20,7 @@
 		<form:hidden path="customer"/>
 		
 		<acme:textareaMD code="comment.edit.text" path="text"/>
+		
 		<acme:inputTextMD code="comment.edit.numberOfStars" path="numberOfStars"/>	
 		
 		<acme:submitMD name="save" code="comment.edit.save" withButtonCancel="true"

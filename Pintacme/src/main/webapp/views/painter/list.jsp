@@ -21,7 +21,7 @@
 	<display:column property="surname" title="${surnameColumn}"/>
 	
 	<spring:message code="painter.averageStart" var="averageStartColumn" ></spring:message>
-	<display:column property="averageStart" title="${averageStartColumn}"/>
+	<display:column title="${averageStartColumn}"><meter value="${row.averageStart}" min="0" max="5" optimum="2.5"></meter><br></display:column>
 	
 	<security:authorize access="hasRole('CUSTOMER')">
 	<display:column>

@@ -66,6 +66,10 @@
 
 								<security:authorize access="hasRole('ADMINISTRATOR')">
 									<!-- Espacio a la izquierda para el admin -->
+									
+									<li><a href="dashboard/administrator/list.do"><spring:message
+												code="master.page.administrator.dashboard" /></a></li>
+												
 								</security:authorize>
 
 						

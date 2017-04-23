@@ -20,6 +20,7 @@
 		<value>/views/budget/messages</value>
 		<value>/views/comment/messages</value>
 		<value>/views/help/messages</value>
+		<value>/views/administrator/messages</value>
 	</util:list>
 
 </beans>
