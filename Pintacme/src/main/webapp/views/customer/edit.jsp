@@ -23,6 +23,8 @@
 	<acme:inputTextMD code="customer.email" path="email"/>	
 	<acme:inputTextMD code="customer.phone" path="phone"/>
 	<acme:inputTextMD code="customer.dni" path="dni"/>
+	<acme:inputTextMD code="customer.age" path="age"/>
+	<acme:inputTextMD code="customer.genre" path="genre"/>
 
 	<form:checkbox path="hasAccepted"></form:checkbox>
 	<spring:message code="customer.hasAccepted"/>

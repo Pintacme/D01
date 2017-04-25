@@ -1,6 +1,8 @@
 package forms;
 
 import javax.persistence.Column;
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -10,10 +12,14 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.SafeHtml;
 import org.hibernate.validator.constraints.SafeHtml.WhiteListType;
 
+import domain.Genre;
+
 public class CustomerForm {
 
 	private String username,password,email,phone,repeatedPassword,name,surname,postalCode,dni;
 	private Boolean hasAccepted; 
+	private Genre genre;
+	private Integer age;
 	
 	@Size(min = 5, max = 32)
 	@SafeHtml(whitelistType = WhiteListType.NONE)
@@ -117,6 +123,24 @@ public class CustomerForm {
 
 	public void setDni(String dni) {
 		this.dni = dni;
+	}
+	
+	@NotNull
+	@Valid
+	public Genre getGenre() {
+		return this.genre;
+	}
+	public void setGenre(final Genre genre) {
+		this.genre = genre;
+	}
+
+	@Min(1)
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
 	}
 	
 }

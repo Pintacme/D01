@@ -78,6 +78,8 @@ public class CustomerService {
 		customer.setSurname(customerForm.getSurname());
 		customer.setPostalCode(customerForm.getPostalCode());
 		customer.setDni(customerForm.getDni());
+		customer.setAge(customerForm.getAge());
+		customer.setGenre(customerForm.getGenre());
 		customer.getUserAccount().setUsername(customerForm.getUsername());
 		Md5PasswordEncoder encoder = new Md5PasswordEncoder();
 		customer.getUserAccount().setPassword(encoder.encodePassword(customerForm.getPassword(), null));
