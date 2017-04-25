@@ -121,5 +121,9 @@ public class PainterService {
 		
 		return res;
 	}
+	
+	public Collection<Painter> getPaintersOrderByAverageStart(){
+		return painterRepository.getPaintersOrderByAverageStart();
+	}
 
 }
