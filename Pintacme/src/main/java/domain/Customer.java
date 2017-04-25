@@ -23,6 +23,8 @@ public class Customer extends Actor {
 
 
 	private String dni;
+	private Genre genre;
+	private Integer age;
 
 	public Customer() {
 		super();
@@ -40,8 +42,24 @@ public class Customer extends Actor {
 	}
 	
 	
-	//RELATIONSHIPS
+	@NotNull
+	@Valid
+	public Genre getGenre() {
+		return this.genre;
+	}
+	public void setGenre(final Genre genre) {
+		this.genre = genre;
+	}
 	
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+	
+	//RELATIONSHIPS
 	private Collection<Request> requests;
 
 	@Valid
