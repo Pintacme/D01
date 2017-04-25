@@ -93,6 +93,66 @@
 		</property>
 	</bean>
 	
+	<bean id="userAccount8" class="security.UserAccount">
+		<property name="username" value="customer4" />
+		<property name="password" value="55feb130be438e686ad6a80d12dd8f44" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CUSTOMER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount9" class="security.UserAccount">
+		<property name="username" value="customer5" />
+		<property name="password" value="9e8486cdd435beda9a60806dd334d964" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CUSTOMER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount10" class="security.UserAccount">
+		<property name="username" value="customer6" />
+		<property name="password" value="dbaa8bd25e06cc641f5406027c026e8b" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CUSTOMER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount11" class="security.UserAccount">
+		<property name="username" value="customer7" />
+		<property name="password" value="81162e1ef3d93f96b36d3712ca52bca5" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CUSTOMER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount12" class="security.UserAccount">
+		<property name="username" value="customer8" />
+		<property name="password" value="3079e3991f94d1b3b21b894f329d369d" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CUSTOMER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
 	<!-- CreditCards -->
 
 	<bean id="creditCard1" class="domain.CreditCard">
@@ -217,6 +277,111 @@
 				</bean>
 		</property>
 		<property name="age" value="28" />
+		<property name="requests">
+			<list>
+			</list>
+		</property>
+
+	</bean>
+	
+	<bean id="customer4" class="domain.Customer">
+		<property name="userAccount" ref="userAccount7" />
+		<property name="name" value="Marta" />
+		<property name="surname" value="Ruiz Jimenez" />
+		<property name="postalCode" value="44571" />
+		<property name="email" value="martarj@pintacme.com" />
+		<property name="phone" value="654778925" />
+		<property name="dni" value="13322264L" />
+		<property name="genre">
+				<bean class="domain.Genre">
+				<property name="genre" value="WOMAN"/>
+				</bean>
+		</property>
+		<property name="age" value="21" />
+		<property name="requests">
+			<list>
+			</list>
+		</property>
+
+	</bean>
+	
+	<bean id="customer5" class="domain.Customer">
+		<property name="userAccount" ref="userAccount7" />
+		<property name="name" value="Cristina" />
+		<property name="surname" value="Mrquez Ponce" />
+		<property name="postalCode" value="48881" />
+		<property name="email" value="cristinamp@pintacme.com" />
+		<property name="phone" value="654778925" />
+		<property name="dni" value="15787464L" />
+		<property name="genre">
+				<bean class="domain.Genre">
+				<property name="genre" value="WOMAN"/>
+				</bean>
+		</property>
+		<property name="age" value="23" />
+		<property name="requests">
+			<list>
+			</list>
+		</property>
+
+	</bean>
+	
+	<bean id="customer6" class="domain.Customer">
+		<property name="userAccount" ref="userAccount7" />
+		<property name="name" value="Valeria" />
+		<property name="surname" value="Roldan Buruel" />
+		<property name="postalCode" value="48751" />
+		<property name="email" value="varelarb@pintacme.com" />
+		<property name="phone" value="655778925" />
+		<property name="dni" value="14782264L" />
+		<property name="genre">
+				<bean class="domain.Genre">
+				<property name="genre" value="WOMAN"/>
+				</bean>
+		</property>
+		<property name="age" value="29" />
+		<property name="requests">
+			<list>
+			</list>
+		</property>
+
+	</bean>
+	
+	<bean id="customer7" class="domain.Customer">
+		<property name="userAccount" ref="userAccount7" />
+		<property name="name" value="Alberto" />
+		<property name="surname" value="Sanchez Mejias" />
+		<property name="postalCode" value="48751" />
+		<property name="email" value="albertosm@pintacme.com" />
+		<property name="phone" value="659978925" />
+		<property name="dni" value="15578464L" />
+		<property name="genre">
+				<bean class="domain.Genre">
+				<property name="genre" value="MAN"/>
+				</bean>
+		</property>
+		<property name="age" value="24" />
+		<property name="requests">
+			<list>
+			</list>
+		</property>
+
+	</bean>
+	
+	<bean id="customer8" class="domain.Customer">
+		<property name="userAccount" ref="userAccount7" />
+		<property name="name" value="Carlos" />
+		<property name="surname" value="Rodriguez Serrano" />
+		<property name="postalCode" value="48751" />
+		<property name="email" value="carlosrs@pintacme.com" />
+		<property name="phone" value="652328925" />
+		<property name="dni" value="15598864L" />
+		<property name="genre">
+				<bean class="domain.Genre">
+				<property name="genre" value="MAN"/>
+				</bean>
+		</property>
+		<property name="age" value="31" />
 		<property name="requests">
 			<list>
 			</list>
