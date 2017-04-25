@@ -85,5 +85,12 @@ public class CustomerService {
 		return customer;
 	}
 	
+	public Integer avgAgeCustomer(){
+		return customerRepository.avgAgeCustomer();
+	}
+	
+	public Collection<Object> ratioManWoman(){
+		return customerRepository.ratioManWoman();
+	}
 
 }
