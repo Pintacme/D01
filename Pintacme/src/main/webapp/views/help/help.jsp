@@ -18,6 +18,7 @@
 h1   {color: blue;
 padding-left: 20px;}
 </style>
+<div class="responsive">
 
 <h1 align="justify">
 <a  href="<c:url value="/helpClient/show.do"/>"><spring:message code="helpClient.title" /></a>
@@ -31,3 +32,5 @@ padding-left: 20px;}
 <a href="<c:url value="/helpIssue/show.do"/>"><spring:message code="helpIssue.title" /></a>
 
 </h1>
+
+</div>

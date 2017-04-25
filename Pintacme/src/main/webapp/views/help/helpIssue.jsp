@@ -12,6 +12,8 @@
 
 <%@ taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
+<div class="responsive">
+
 <a href="#"><img align="left" width="25%" src="images/brochita enfada guantes.png"
 						alt="Pintacme" /></a>
 
@@ -27,3 +29,4 @@
 <spring:message code="helpIssue.2" />
 </h3>
 
+</div>

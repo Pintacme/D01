@@ -12,7 +12,7 @@
 
 <%@ taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-
+<div class="responsive">
 <a href="#"><img align="left" width="25%" src="images/brochita pintora guantes.png"
 						alt="Pintacme" /></a>
 
@@ -34,4 +34,4 @@
 </h3>
 
 
-
+</div>

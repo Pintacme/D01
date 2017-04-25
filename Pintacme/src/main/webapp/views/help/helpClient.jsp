@@ -11,7 +11,7 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 
 <%@ taglib prefix="acme" tagdir="/WEB-INF/tags"%>
-
+<div class="responsive">
 <a href="#"><img align="left" width="25%" src="images/brochita clienta guantes.png"
 						alt="Pintacme" /></a>
 						
@@ -35,5 +35,5 @@
 <h3 align="left">
 	<spring:message code="helpClient.5" />
 </h3>
-
+</div>
 
