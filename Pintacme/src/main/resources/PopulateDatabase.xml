@@ -285,7 +285,7 @@
 	</bean>
 	
 	<bean id="customer4" class="domain.Customer">
-		<property name="userAccount" ref="userAccount7" />
+		<property name="userAccount" ref="userAccount8" />
 		<property name="name" value="Marta" />
 		<property name="surname" value="Ruiz Jimenez" />
 		<property name="postalCode" value="44571" />
@@ -306,7 +306,7 @@
 	</bean>
 	
 	<bean id="customer5" class="domain.Customer">
-		<property name="userAccount" ref="userAccount7" />
+		<property name="userAccount" ref="userAccount9" />
 		<property name="name" value="Cristina" />
 		<property name="surname" value="Mrquez Ponce" />
 		<property name="postalCode" value="48881" />
@@ -327,7 +327,7 @@
 	</bean>
 	
 	<bean id="customer6" class="domain.Customer">
-		<property name="userAccount" ref="userAccount7" />
+		<property name="userAccount" ref="userAccount10" />
 		<property name="name" value="Valeria" />
 		<property name="surname" value="Roldan Buruel" />
 		<property name="postalCode" value="48751" />
@@ -348,7 +348,7 @@
 	</bean>
 	
 	<bean id="customer7" class="domain.Customer">
-		<property name="userAccount" ref="userAccount7" />
+		<property name="userAccount" ref="userAccount11" />
 		<property name="name" value="Alberto" />
 		<property name="surname" value="Sanchez Mejias" />
 		<property name="postalCode" value="48751" />
@@ -369,7 +369,7 @@
 	</bean>
 	
 	<bean id="customer8" class="domain.Customer">
-		<property name="userAccount" ref="userAccount7" />
+		<property name="userAccount" ref="userAccount12" />
 		<property name="name" value="Carlos" />
 		<property name="surname" value="Rodriguez Serrano" />
 		<property name="postalCode" value="48751" />
