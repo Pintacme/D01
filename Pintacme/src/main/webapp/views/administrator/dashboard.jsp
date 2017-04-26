@@ -16,48 +16,52 @@
 <%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 
-
+<div class="table-responsive">
 <div>
 <h3><spring:message code="administrator.dashboard.avgAgeCustomer" /></h3>
 </div>
-<display:table name="avgAgeCustomer" id="row">
-	<spring:message code="administrator.dashboard.avgAgeCustomer" var="avgAgeCustomer"/>
-	<display:column title="${avgAgeCustomer}"> 
-		<jstl:out value="${row}" />
-	</display:column>
-</display:table>
+
+
+
+		<center><jstl:out value="${avgAgeCustomer}" /></center>
+
+
+
+
 
 
 <div>
 <h3><spring:message code="administrator.dashboard.ratioManWoman" /></h3>
 </div>
-<display:table name="ratioManWoman" id="row">
+<div class="table-responsive">
+<display:table name="ratioManWoman" id="row" class="table" keepStatus="false" pagesize="5"  >
 	
-	<spring:message code="administrator.dashboard.ratioMan" var="ratioMan"/>
-	<display:column title="${ratioMan}"> 
-		<jstl:out value="${row[0]}" />
-	</display:column>
-
-	<spring:message code="administrator.dashboard.ratioWoman" var="ratioWoman"/>
-	<display:column title="${ratioWoman}"> 
-		<jstl:out value="${row[1]}" />
-	</display:column>
+	<spring:message code="administrator.dashboard.ratioMan" var="ratioMan" ></spring:message>
+	<display:column  title="${ratioMan}"><jstl:out value="${row[0]}" /></display:column>
+	
+	<spring:message code="administrator.dashboard.ratioWoman" var="ratioWoman" ></spring:message>
+	<display:column  title="${ratioWoman}"><jstl:out value="${row[1]}" /></display:column>
+	
 </display:table>
+</div>
+
+
+
+
+
 
 <div>
 <h3><spring:message code="administrator.dashboard.getPaintersOrderByAverageStart" /></h3>
 </div>
-
-<display:table name="getPaintersOrderByAverageStart" id="row">
-
-	<spring:message code="actor.name" var="nameHeader"/>
-	<display:column title="${nameHeader}"> 
-		<jstl:out value="${row.name}" />
-	</display:column>
+<div class="table-responsive">
+<display:table name="getPaintersOrderByAverageStart" id="row" class="table" keepStatus="false" pagesize="5"  >
 	
-	<spring:message code="actor.surname" var="surnameHeader"/>
-	<display:column title="${surnameHeader}"> 
-		<jstl:out value="${row.surname}" />
-	</display:column>
+	<spring:message code="actor.name" var="nameColumn" ></spring:message>
+	<display:column property="name" title="${nameColumn}"/>
+	
+	<spring:message code="actor.surname" var="surnameColumn" ></spring:message>
+	<display:column property="surname" title="${surnameColumn}"/>
 	
 </display:table>
+</div>	
+</div>	
