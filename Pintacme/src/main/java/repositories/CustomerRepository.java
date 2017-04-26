@@ -16,7 +16,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 	
 	
 	@Query("select avg(c.age) from Customer c")
-	Integer avgAgeCustomer();
+	Double avgAgeCustomer();
 	
 	@Query("select (select count(c)*1.0 from Customer c where c.genre='MAN')/count(m), (select count(c)*1.0 from Customer c where c.genre='WOMAN')/count(m) from Customer m")
 	Collection<Object> ratioManWoman();

@@ -1,74 +1,63 @@
-<%@page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%--
+ * list.jsp
+ *
+ * Copyright (C) 2013 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ --%>
 
-<%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+
+<%@taglib prefix="jstl"	uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
-<%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 
-<security:authorize access="hasRole('ADMINISTRATOR')">
-
-<h2><b><spring:message code="levelc"></spring:message></b></h2>
-
-<b><spring:message code="c1"></spring:message> : <jstl:out value="${c1}"/></b>
-</br>
-</br>
-<b><spring:message code="c2"></spring:message> : <jstl:out value="${c2}"/></b>
-</br>
-</br>
-
-<b><spring:message code="c3"></spring:message> : <jstl:out value="${c3a}, ${c3b}, ${c3c}, ${c3d}"/></b>
-</br>
-</br>
-
-<b><spring:message code="c4"></spring:message> : <jstl:out value="${c4}"/></b>
-</br>
-</br>
-
-<b><spring:message code="c5"></spring:message> : <jstl:out value="${c5a}, ${c5b}"/></b>
-</br>
-</br>
-
-<b><spring:message code="c6"></spring:message> : <jstl:out value="${c6a}, ${c6b}"/></b>
-</br>
-</br>
-
-<b><spring:message code="c7"></spring:message> : <jstl:out value="${c7a}, ${c7b}"/></b>
-</br>
-</br>
-
-<h2><b><spring:message code="levelb"></spring:message></b></h2>
-
-<b><spring:message code="b1"></spring:message> : <jstl:out value="${b1}"/></b>
-</br>
-</br>
-
-<b><spring:message code="b2"></spring:message> : <jstl:out value="${b2a}, ${b2b}, ${b2c}, ${b2d}"/></b>
-</br>
-</br>
-
-<h2><b><spring:message code="levela"></spring:message></b></h2>
-
-<b><spring:message code="a1"></spring:message> : <jstl:out value="${a1a}, ${a1b}"/></b>
-</br>
-</br>
-
-<b><spring:message code="a2"></spring:message> : <jstl:out value="${a2a}, ${a2b}"/></b>
-</br>
-</br>
-
-<b><spring:message code="a3"></spring:message> : <jstl:out value="${a3a}, ${a3b}"/></b>
-</br>
-</br>
-
-<b><spring:message code="a4"></spring:message> : <jstl:out value="${a4}"/></b>
-</br>
-</br>
+<div>
+<h3><spring:message code="administrator.dashboard.avgAgeCustomer" /></h3>
+</div>
+<display:table name="avgAgeCustomer" id="row">
+	<spring:message code="administrator.dashboard.avgAgeCustomer" var="avgAgeCustomer"/>
+	<display:column title="${avgAgeCustomer}"> 
+		<jstl:out value="${row}" />
+	</display:column>
+</display:table>
 
 
+<div>
+<h3><spring:message code="administrator.dashboard.ratioManWoman" /></h3>
+</div>
+<display:table name="ratioManWoman" id="row">
+	
+	<spring:message code="administrator.dashboard.ratioMan" var="ratioMan"/>
+	<display:column title="${ratioMan}"> 
+		<jstl:out value="${row[0]}" />
+	</display:column>
 
+	<spring:message code="administrator.dashboard.ratioWoman" var="ratioWoman"/>
+	<display:column title="${ratioWoman}"> 
+		<jstl:out value="${row[1]}" />
+	</display:column>
+</display:table>
 
-</security:authorize>
+<div>
+<h3><spring:message code="administrator.dashboard.getPaintersOrderByAverageStart" /></h3>
+</div>
+
+<display:table name="getPaintersOrderByAverageStart" id="row">
+
+	<spring:message code="actor.name" var="nameHeader"/>
+	<display:column title="${nameHeader}"> 
+		<jstl:out value="${row.name}" />
+	</display:column>
+	
+	<spring:message code="actor.surname" var="surnameHeader"/>
+	<display:column title="${surnameHeader}"> 
+		<jstl:out value="${row.surname}" />
+	</display:column>
+	
+</display:table>

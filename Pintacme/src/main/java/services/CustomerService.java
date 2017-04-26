@@ -87,7 +87,7 @@ public class CustomerService {
 		return customer;
 	}
 	
-	public Integer avgAgeCustomer(){
+	public Double avgAgeCustomer(){
 		return customerRepository.avgAgeCustomer();
 	}
 	
