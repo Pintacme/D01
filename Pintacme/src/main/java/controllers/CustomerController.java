@@ -1,5 +1,8 @@
 package controllers;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import domain.Customer;
+import domain.Genre;
 import forms.CustomerForm;
 import services.CustomerService;
 
@@ -86,9 +90,22 @@ public class CustomerController extends AbstractController{
 
 			protected ModelAndView createEditModelAndView(CustomerForm customerForm,String message) {
 				ModelAndView result;
+				
+				Collection<Genre> genre = new ArrayList<Genre>();
+				Genre man = new Genre();
+				man.setGenre("MAN");
+				
+				Genre women = new Genre();
+				women.setGenre("WOMAN");
+				
+				genre.add(man);
+				genre.add(women);
+				
 				result = new ModelAndView("customer/edit");
 				result.addObject("customerForm", customerForm);
 				result.addObject("message", message);
+				result.addObject("genre", genre);
+				
 				return result;
 			}
 

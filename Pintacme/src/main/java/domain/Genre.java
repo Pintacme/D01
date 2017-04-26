@@ -30,7 +30,6 @@ public class Genre extends DomainEntity{
 	
 	// Methods ----------------------------------------------------------------
 	@NotBlank
-	@Pattern(regexp = "^" + MAN +  "|" + WOMAN + "$")
 	public String getGenre() {
 		return this.genre;
 	}

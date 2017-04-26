@@ -33,7 +33,7 @@ public class Customer extends Actor {
 	
 	@NotBlank
 	@SafeHtml(whitelistType = WhiteListType.NONE)
-	@Pattern(regexp="([0-9]{8})([A-Z])")
+	@Pattern(regexp="([0-9]{8})([A-Za-z])")
 	public String getDni() {
 		return dni;
 	}
