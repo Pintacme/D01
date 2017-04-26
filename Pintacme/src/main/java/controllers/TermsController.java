@@ -15,6 +15,6 @@ public class TermsController extends AbstractController {
 	@RequestMapping("show")
 	public ModelAndView show() {
 
-		return new ModelAndView("terms/show");
+			return new ModelAndView("terms/show");
 	}
 }
