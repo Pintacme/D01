@@ -87,7 +87,7 @@ public class BudgetCustomerController extends AbstractController{
  }
 	int iD;
 	@RequestMapping(value = "/display", method = RequestMethod.GET)
-	public ModelAndView create(@RequestParam int id) {
+	public ModelAndView display(@RequestParam int id) {
 		ModelAndView result;
 		Budget budget;
 	
@@ -99,13 +99,25 @@ public class BudgetCustomerController extends AbstractController{
 		return result;
 	}
 	
+	@RequestMapping(value = "/paymentDone", method = RequestMethod.GET)
+	public ModelAndView paymentDone() {
+		ModelAndView result;
+		Budget budget;
+	
+		budget = budgetService.findOne(iD);
+		result = createEditModelAndView2(budget);
+		
+		
+		return result;
+	}
+	
 	@RequestMapping("/makePayPaypal")
 	public ModelAndView makePayPaypal() throws IOException, PayPalRESTException
 	{
 		Map<String, String> sdkConfig = new HashMap<String, String>();
 		sdkConfig.put("mode", "sandbox");
 
-		String accessToken = new OAuthTokenCredential("ASEA9iFHqo5dyXBCszPMOEcO7MqbddtDY_CCKdNvWWVqHKYVstl_zISqOT9ZhdPv_8WLHble8L4PQ5H6", "EOIJoOYXdZXCBo4LPXepLL1KursXAFRzaAWqFov0H9nOP_u14UHpZe5lqXPMtY9sZWhyLzOOmb4NoVkP", sdkConfig).getAccessToken();
+		String accessToken = new OAuthTokenCredential("AS-SLQeckobn4OOw94wLRm07fWEXbkuOOfNNAdlO4u7POztpKvvh9lhJS9Pjxf7V0lWq5VVJOSiFENAw", "EMWXJ183KZD0nL2xZQ0sCpsgTqvhpxMyqDdUtfoxOY_gDWLEgrKIgNvO4CuWzi731aqZRkiHfdN5BMei", sdkConfig).getAccessToken();
 		APIContext apiContext = new APIContext(accessToken);
 		apiContext.setConfigurationMap(sdkConfig);
 
@@ -133,7 +145,7 @@ public class BudgetCustomerController extends AbstractController{
 		payment.setTransactions(transactions);
 		RedirectUrls redirectUrls = new RedirectUrls();
 		redirectUrls.setCancelUrl("https://devtools-paypal.com/guide/pay_paypal?cancel=true");
-		redirectUrls.setReturnUrl("http://sportsmate.cf/SportsMate/customer/executePayment.do");
+		redirectUrls.setReturnUrl("http://localhost:8080/Pintacme/budget/customer/paymentDone.do");
 		payment.setRedirectUrls(redirectUrls);
 		
 		Payment createdPayment = payment.create(apiContext);	
@@ -150,7 +162,7 @@ public class BudgetCustomerController extends AbstractController{
 	{
 		Map<String, String> sdkConfig = new HashMap<String, String>();
 		sdkConfig.put("mode", "sandbox");
-		String accessToken = new OAuthTokenCredential("ASEA9iFHqo5dyXBCszPMOEcO7MqbddtDY_CCKdNvWWVqHKYVstl_zISqOT9ZhdPv_8WLHble8L4PQ5H6", "EOIJoOYXdZXCBo4LPXepLL1KursXAFRzaAWqFov0H9nOP_u14UHpZe5lqXPMtY9sZWhyLzOOmb4NoVkP", sdkConfig).getAccessToken();
+		String accessToken = new OAuthTokenCredential("AS-SLQeckobn4OOw94wLRm07fWEXbkuOOfNNAdlO4u7POztpKvvh9lhJS9Pjxf7V0lWq5VVJOSiFENAw", "EMWXJ183KZD0nL2xZQ0sCpsgTqvhpxMyqDdUtfoxOY_gDWLEgrKIgNvO4CuWzi731aqZRkiHfdN5BMei", sdkConfig).getAccessToken();
 		APIContext apiContext = new APIContext(accessToken);
 		
 		apiContext.setConfigurationMap(sdkConfig);
@@ -272,5 +284,34 @@ public class BudgetCustomerController extends AbstractController{
 				
 				return result;
 			}
+			
+			//Payment
+			
+			 protected ModelAndView createEditModelAndView2(Budget budget){
+					ModelAndView result;
+					
+					result = createEditModelAndView2(budget, null);
+					
+					return result;
+				}
+				
+				protected ModelAndView createEditModelAndView2(Budget budget, String message){
+					ModelAndView result;
+					
+					Collection<String> priorities = new ArrayList<String>();
+					
+					priorities.add("ACCEPTED");
+					priorities.add("PENDING");
+					priorities.add("REJECTED");
+						
+					result = new ModelAndView("budget/payment");
+					
+					
+					result.addObject("priorities", priorities);
+					result.addObject("budget", budget);
+					result.addObject("message", message);
+					
+					return result;
+				}
 
 }
