@@ -31,12 +31,6 @@
 	<spring:message code="budget.description" var="descriptionColumn" ></spring:message>
 	<display:column property="description" title="${descriptionColumn}"/>
 	
-	<display:column>
-		<center><a href="material/painter/list.do?id=${row.id}">
-			<spring:message code="budget.list.material"/>
-		</a></center>
-	</display:column>
-	
 	<security:authorize access="hasRole('PAINTER')">
 	<display:column>
 		<center><a href="budget/painter/edit.do?id=${row.id}">
