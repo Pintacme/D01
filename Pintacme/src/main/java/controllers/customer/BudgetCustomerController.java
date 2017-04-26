@@ -145,7 +145,7 @@ public class BudgetCustomerController extends AbstractController{
 		payment.setTransactions(transactions);
 		RedirectUrls redirectUrls = new RedirectUrls();
 		redirectUrls.setCancelUrl("https://devtools-paypal.com/guide/pay_paypal?cancel=true");
-		redirectUrls.setReturnUrl("http://localhost:8080/Pintacme/budget/customer/paymentDone.do");
+		redirectUrls.setReturnUrl("http://ispp1617.cloud.hostnet.nl/Pintacme/budget/customer/paymentDone.do");
 		payment.setRedirectUrls(redirectUrls);
 		
 		Payment createdPayment = payment.create(apiContext);	
