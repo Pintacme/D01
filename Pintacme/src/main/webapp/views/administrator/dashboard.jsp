@@ -62,6 +62,9 @@
 	<spring:message code="actor.surname" var="surnameColumn" ></spring:message>
 	<display:column property="surname" title="${surnameColumn}"/>
 	
+	<spring:message code="painter.averageStart" var="averageStartColumn" ></spring:message>
+	<display:column title="${averageStartColumn}"><meter value="${row.averageStart}" min="0" max="5" optimum="3" low="3" high="5"></meter><br></display:column>
+	
 </display:table>
 </div>	
 </div>	
