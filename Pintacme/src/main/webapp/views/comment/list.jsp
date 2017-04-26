@@ -32,7 +32,7 @@
 	<display:column title="${momentColumn}"><center><fmt:formatDate value="${row.moment}" pattern="dd-MM-yyyy HH:mm"/></center></display:column>
 	
 	<spring:message code="comment.numberOfStars" var="numberOfStarsColumn" ></spring:message>
-	<display:column title="${numberOfStarsColumn}"><meter value="${row.numberOfStars}" min="0" max="5" optimum="2.5"></meter><br></display:column>
+	<display:column title="${numberOfStarsColumn}"><meter value="${row.numberOfStars}" min="0" max="5" optimum="3" low="3" high="5"></meter><br></display:column>
 	
 	<spring:message code="comment.text" var="textColumn" ></spring:message>
 	<display:column property="text" title="${textColumn}" />	
