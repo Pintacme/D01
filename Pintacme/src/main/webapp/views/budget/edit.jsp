@@ -32,7 +32,9 @@
 	
 
 	<jstl:if test="${budget.id!=0}">
-		<acme:submitMD name="delete" code="budget.edit.delete"/>
+	<jstl:if test = "${budget.status=='PENDING'}">
+			<acme:submitMD name="delete" code="budget.edit.delete"/>
+	</jstl:if>
 	</jstl:if>
 	
 	

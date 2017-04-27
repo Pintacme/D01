@@ -38,7 +38,7 @@ public class BudgetPainterController extends AbstractController{
 		ModelAndView result;			
 		result = new ModelAndView("budget/list");
 			
-		result.addObject("budgets",budgetService.findAll());
+		result.addObject("budgets",budgetService.findLoggedBudget());
 		result.addObject("requestUri","budget/painter/list.do");
 			
 
