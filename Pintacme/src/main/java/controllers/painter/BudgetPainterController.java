@@ -16,8 +16,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import controllers.AbstractController;
 import domain.Budget;
+import domain.Painter;
 import domain.Request;
 import services.BudgetService;
+import services.PainterService;
 
 @Controller
 @RequestMapping("/budget/painter")
@@ -25,6 +27,9 @@ public class BudgetPainterController extends AbstractController{
 	
 	@Autowired
 	private BudgetService budgetService;
+	
+	@Autowired
+	private PainterService painterService;
 	
 	
 	// Constructors -----------------------------------------------------------
@@ -63,8 +68,12 @@ public class BudgetPainterController extends AbstractController{
 			ModelAndView result;
 			Budget budget;
 			
+			Painter painter = painterService.getLogged();
 			budget=budgetService.findOne(id);
+			
 			Assert.notNull(budget); 
+			Assert.isTrue(painter.equals(budget.getPainter()));
+			
 			result = createEditModelAndView(budget);
 
 			return result;
