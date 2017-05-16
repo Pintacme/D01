@@ -53,6 +53,7 @@ public class BudgetCustomerController extends AbstractController{
 		public ModelAndView list(@RequestParam int id) {
 			ModelAndView result;			
 			result = new ModelAndView("budget/list");
+			
 				
 			result.addObject("budgets",budgetService.findBudgetsForRequestId(id));
 			result.addObject("requestUri","budget/customer/list.do");

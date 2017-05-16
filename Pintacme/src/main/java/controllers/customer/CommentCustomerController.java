@@ -2,6 +2,9 @@ package controllers.customer;
 
 
 
+import java.util.Collection;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +18,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 import controllers.AbstractController;
 import controllers.CustomerController;
+import domain.Budget;
 import domain.Comment;
+import domain.Customer;
+import domain.Painter;
 import domain.Request;
 import services.ActorService;
 import services.CommentService;
+import services.CustomerService;
 import services.PainterService;
 
 @Controller
@@ -29,6 +36,10 @@ public class CommentCustomerController extends AbstractController{
 	
 			@Autowired
 			private CommentService commentService;
+			
+			@Autowired
+			private CustomerService customerService;
+			
 			
 			@Autowired
 			private PainterService painterService;
@@ -57,11 +68,25 @@ public class CommentCustomerController extends AbstractController{
 				ModelAndView result;
 				Comment comment;
 				
+				
+				//Poder crear un comentario a un painter si el customer 
+				//tiene una request con un presupuesto
+				//aceptado por parte de ese mismo painter
+				
 				comment = commentService.create(id);
+				
+				Customer customer = customerService.getLogged();
+				
+				Collection<Painter>painters = painterService.findPaintersWorkedWithCustomerId(customer.getId());
+				
+				Assert.isTrue(painters.contains(painterService.findOne(id)));
 			
 				result = createEditModelAndView(comment);
-					
+				
 				return result;
+				
+					
+				
 			}
 			
 			// edicion -----------------------------------------

@@ -81,4 +81,12 @@ public class RequestService {
 		
 		return result; 
 	}
+	
+	public Collection<Request> findRequestDoBudgetPainterID(int idPainter){
+		Collection<Request> res;
+		
+		res = requestRepository.findRequestDoBudgetPainterId(idPainter);
+		
+		return res;
+	}
 }

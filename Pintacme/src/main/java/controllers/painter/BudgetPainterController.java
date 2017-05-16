@@ -20,6 +20,7 @@ import domain.Painter;
 import domain.Request;
 import services.BudgetService;
 import services.PainterService;
+import services.RequestService;
 
 @Controller
 @RequestMapping("/budget/painter")
@@ -31,6 +32,8 @@ public class BudgetPainterController extends AbstractController{
 	@Autowired
 	private PainterService painterService;
 	
+	@Autowired
+	private RequestService requestService;
 	
 	// Constructors -----------------------------------------------------------
 
@@ -82,13 +85,18 @@ public class BudgetPainterController extends AbstractController{
 		@RequestMapping(value = "/edit", method = RequestMethod.POST, params="save")
 		public ModelAndView save(@Valid Budget budget, BindingResult binding){
 			ModelAndView result;
-				
 			if(binding.hasErrors()){
 				result = createEditModelAndView(budget);
 			}else{
 				try{
+					Collection<Request> requestsCreateBudget = requestService.findRequestDoBudgetPainterID(budget.getPainter().getId());
+					System.out.println(requestsCreateBudget);
+					if(requestsCreateBudget.contains(budget.getRequest())){
+						result = createEditModelAndView(budget, "budget.commit.duplicate");
+					}else{
 						budgetService.save(budget);
 						result = new ModelAndView("redirect:list.do");
+					}
 				}catch(Throwable oops){
 					result = createEditModelAndView(budget, "budget.commit.error");
 				}
