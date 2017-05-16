@@ -67,13 +67,6 @@ public class RequestCustomerController extends AbstractController {
 	
 		request = requestService.create();
 		
-		List<Request> requests = (List<Request>) requestService.findLoggedRequest();					
-		if(!requests.isEmpty() && request.getId()==0){
-			
-			request.setCreditCard(requests.get(requests.size()-1).getCreditCard());
-			
-		}
-		
 		result = createEditModelAndView(request);
 			
 		return result;

@@ -44,7 +44,6 @@ public class Request extends DomainEntity {
 	private Date moment;
 	private Date work;
 	private Collection<URL> photos;
-	private CreditCard creditCard;
 	
 	
 	//Getters & setters================================================================================
@@ -109,14 +108,6 @@ public class Request extends DomainEntity {
 	}
 	public void setPhotos(Collection<URL> photos) {
 		this.photos = photos;
-	}
-	
-	@NotNull
-	public CreditCard getCreditCard() {
-		return creditCard;
-	}
-	public void setCreditCard(CreditCard creditCard) {
-		this.creditCard = creditCard;
 	}
 	
 

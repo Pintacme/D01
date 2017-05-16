@@ -153,36 +153,6 @@
 		</property>
 	</bean>
 	
-	<!-- CreditCards -->
-
-	<bean id="creditCard1" class="domain.CreditCard">
-		<property name="holderName" value="Rafael" />
-		<property name="brandName" value="American Express" />
-		<property name="number" value="5654543141175015" />
-		<property name="expirationMonth" value="5" />
-		<property name="expirationYear" value="2017" />
-		<property name="cvvCode" value="364" />
-	</bean>
-	
-	<bean id="creditCard2" class="domain.CreditCard">
-		<property name="holderName" value="Jesus" />
-		<property name="brandName" value="La Caixa" />
-		<property name="number" value="5675843141175015" />
-		<property name="expirationMonth" value="6" />
-		<property name="expirationYear" value="2017" />
-		<property name="cvvCode" value="463" />
-	</bean>
-	
-	<bean id="creditCard3" class="domain.CreditCard">
-		<property name="holderName" value="Jose Carlos" />
-		<property name="brandName" value="Santander" />
-		<property name="number" value="5654549576175015" />
-		<property name="expirationMonth" value="7" />
-		<property name="expirationYear" value="2017" />
-		<property name="cvvCode" value="634" />
-	</bean>
-
-	
 	<!-- Curricula -->
 
 	<bean id="curriculum1" class="domain.Curriculum">
@@ -478,7 +448,6 @@
 		<property name="address" value="C/Ruperto Chapi Nº43" />
 		<property name="moment" value="2017/03/15 12:50" />
 		<property name="work" value="2017/08/21 12:50" />
-		<property name="creditCard" ref="creditCard1" />
 
 		<property name="customer" ref="customer1" />
 		
@@ -504,7 +473,6 @@
 		<property name="address" value="C/Reina Merces Bl.3, B" />
 		<property name="moment" value="2017/03/05 15:50" />
 		<property name="work" value="2017/08/08 12:00" />
-		<property name="creditCard" ref="creditCard2" />
 
 		<property name="customer" ref="customer2" />
 		

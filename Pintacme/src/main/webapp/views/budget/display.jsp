@@ -22,8 +22,8 @@
   	<br>
 
 	
-	<acme:inputTextMD code="budget.amount" path="amount"/>
-	<acme:textareaMD code="budget.description" path="description"/>
+	<acme:textbox code="budget.amount" path="amount" readonly="true"/>
+	<acme:textarea code="budget.description" path="description" readonly="true"/>
 	
 	<div class="col-xs-12 col-sm-4 pull-right">
 					<a href="budget/customer/makePayPaypal.do">

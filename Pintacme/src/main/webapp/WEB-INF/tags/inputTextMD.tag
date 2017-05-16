@@ -29,8 +29,6 @@
 <%@ attribute name="placeholder" required="false"%> 
 
 
-
-
 <%-- Definition --%>
 
 
@@ -40,7 +38,7 @@
 		<spring:message code="${code}" />
 	</form:label>
 
-	<div class="col-md-10">
+	<div class="col-md-10 ">
 		<form:input path="${path}" class="form-control" id="${id}" placeholder="${placeholder}"/>
 	</div>
 
