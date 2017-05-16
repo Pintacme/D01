@@ -490,10 +490,25 @@
 		</property>
 	</bean>
 	
+	<!-- Discussions -->
+	
+		
+	<bean id="discussion1" class="domain.Discussion">
+		<property name="moment" value="05/05/2017 00:00" />
+		<property name="description" value="El pintor me ha dejado un agujero en la pared" />
+		<property name="pictures">
+			<list>
+				<value>http://www.pisos.com/aldia/wp-content/uploads/2015/11/como-arreglar-pared-mal-estado1.jpg</value>
+			</list>
+		</property>
+		<property name="request" ref="request1" />
+	</bean>
+	
+	
 	<!-- Budgets -->
 	
 	<bean id="budget1" class="domain.Budget">
-		<property name="status" value="PENDING" />
+		<property name="status" value="ACCEPTED" />
 		<property name="amount" value="450.50" />
 		<property name="description" value="It is the price of a medium-sized room" />
 		<property name="painter" ref="painter1" />
