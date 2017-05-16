@@ -24,6 +24,7 @@ import services.RequestService;
 
 import controllers.AbstractController;
 import domain.CreditCard;
+import domain.Customer;
 import domain.Request;
 
 
@@ -84,7 +85,12 @@ public class RequestCustomerController extends AbstractController {
 			ModelAndView result;
 			Request request;
 			
+			Customer customer = customerService.getLogged();
+			
+			
 			request=requestService.findOne(id);
+			
+			Assert.isTrue(customer.equals(request.getCustomer()));
 			Assert.notNull(request); 
 			result = createEditModelAndView(request);
 
