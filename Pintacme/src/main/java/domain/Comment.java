@@ -23,7 +23,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Access(AccessType.PROPERTY)
 public class Comment extends DomainEntity {
 
-	
 	private int numberOfStars;
 	private String text;
 	private Date moment;
