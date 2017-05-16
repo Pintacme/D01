@@ -76,7 +76,7 @@ public class BudgetPainterController extends AbstractController{
 			
 			Assert.notNull(budget); 
 			Assert.isTrue(painter.equals(budget.getPainter()));
-			
+			Assert.isTrue(budget.getStatus().equals("PENDING"));
 			result = createEditModelAndView(budget);
 
 			return result;

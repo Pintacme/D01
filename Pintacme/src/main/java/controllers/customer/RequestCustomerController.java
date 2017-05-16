@@ -81,7 +81,10 @@ public class RequestCustomerController extends AbstractController {
 			Customer customer = customerService.getLogged();
 			
 			
+			
 			request=requestService.findOne(id);
+			
+			Assert.isTrue(request.getBudgets().isEmpty());
 			
 			Assert.isTrue(customer.equals(request.getCustomer()));
 			Assert.notNull(request); 

@@ -33,9 +33,11 @@
 	
 	<security:authorize access="hasRole('PAINTER')">
 	<display:column>
+	<jstl:if test="${row.status=='PENDING'}">
 		<center><a href="budget/painter/edit.do?id=${row.id}">
 			<spring:message code="budget.edit"/>
 		</a></center>
+	</jstl:if>
 	</display:column>
 	</security:authorize>
 	

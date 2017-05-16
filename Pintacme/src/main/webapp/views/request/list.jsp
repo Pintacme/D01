@@ -43,9 +43,11 @@
 	
 	<security:authorize access="hasRole('CUSTOMER')">
 	<display:column>
+	<jstl:if test="${row.budgets.isEmpty()}">
 		<center><a href="request/customer/edit.do?id=${row.id}">
 			<spring:message code="request.edit"/>
 		</a></center>
+	</jstl:if>
 	</display:column>
 	
 	
