@@ -82,6 +82,7 @@ body {
 }
 
 .spm-message-list-item{
+
 	overflow: auto;
 	border-radius: 5px;
 	border: thin solid lightgray;

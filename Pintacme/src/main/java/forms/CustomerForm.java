@@ -134,7 +134,7 @@ public class CustomerForm {
 		this.genre = genre;
 	}
 
-	@Min(1)
+	@Min(18)
 	public Integer getAge() {
 		return age;
 	}
