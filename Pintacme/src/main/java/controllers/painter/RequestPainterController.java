@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import controllers.AbstractController;
+import domain.Budget;
 import domain.Request;
 import domain.Request;
 import services.RequestService;
@@ -37,12 +38,22 @@ public class RequestPainterController extends AbstractController{
 	public ModelAndView list() {
 		ModelAndView result;			
 		result = new ModelAndView("request/list");
-			
-		result.addObject("requests",requestService.findRequestToBudget());
+		
+		Collection<Request> requestsAll = requestService.findRequestToBudget();
+		Collection<Request> requestsAccepted = requestService.findRequestWithBudgetAccepted();		
+		Collection<Request> requests = new ArrayList<Request>();
+		
+		for(Request r:requestsAll){
+			if(!requestsAccepted.contains(r)){
+				requests.add(r);
+			}
+		}
+		
+		
+		result.addObject("requests",requests);
 		result.addObject("requestUri","request/painter/list.do");
 			
 
 		return result;
 	}
-
 }

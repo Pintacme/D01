@@ -20,6 +20,9 @@ public interface RequestRepository extends JpaRepository<Request, Integer> {
 
 	@Query("select r from Request r join r.budgets b where b.painter.id=?1")
 	Collection<Request> findRequestDoBudgetPainterId(int id);
+	
+	@Query("select r from Request r join r.budgets b where b.status='ACCEPTED'")
+	Collection<Request> findRequestWithBudgetAccepted();
 
 
 }

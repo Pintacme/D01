@@ -89,4 +89,13 @@ public class RequestService {
 		
 		return res;
 	}
+	
+	
+	public Collection<Request> findRequestWithBudgetAccepted(){
+		Collection<Request> res;
+		
+		res = requestRepository.findRequestWithBudgetAccepted();
+		
+		return res;
+	}
 }
