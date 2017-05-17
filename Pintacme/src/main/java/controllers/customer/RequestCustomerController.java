@@ -96,14 +96,18 @@ public class RequestCustomerController extends AbstractController {
 		@RequestMapping(value = "/edit", method = RequestMethod.POST, params="save")
 		public ModelAndView save(@Valid Request request, BindingResult binding){
 			ModelAndView result;
+			Date now = new Date(System.currentTimeMillis());
 				
 			if(binding.hasErrors()){
 				result = createEditModelAndView(request);
 			}else{
-				try{	
+				try{
+					if(request.getWork().before(now)){
+						result = createEditModelAndView(request, "request.work.error");
+					}else{
 						requestService.save(request);
-						result = new ModelAndView("redirect:list.do");					
-		
+						result = new ModelAndView("redirect:list.do");	
+					}		
 				}catch(Throwable oops){
 					result = createEditModelAndView(request, "request.commit.error");
 				}

@@ -28,13 +28,19 @@ import com.paypal.base.rest.PayPalRESTException;
 
 import controllers.AbstractController;
 import domain.Budget;
+import domain.Customer;
+import domain.Request;
 import services.BudgetService;
+import services.CustomerService;
 import services.RequestService;
 
 
 @Controller
 @RequestMapping("/budget/customer")
 public class BudgetCustomerController extends AbstractController{
+	
+	@Autowired
+	private CustomerService customerService;
 	
 	@Autowired
 	private RequestService requestService;
@@ -54,7 +60,11 @@ public class BudgetCustomerController extends AbstractController{
 			ModelAndView result;			
 			result = new ModelAndView("budget/list");
 			
-				
+			Customer customer = customerService.getLogged();
+			Request request= requestService.findOne(id);
+			
+			Assert.isTrue(request.getCustomer().equals(customer));
+			
 			result.addObject("budgets",budgetService.findBudgetsForRequestId(id));
 			result.addObject("requestUri","budget/customer/list.do");
 				
@@ -73,6 +83,12 @@ public class BudgetCustomerController extends AbstractController{
 		  
 		  budget= budgetService.findOne(id);
 		  Assert.notNull(budget);
+		  
+		  Customer customer = customerService.getLogged();
+		  
+		  Request request = budget.getRequest();
+		  
+		  Assert.isTrue(request.getCustomer().equals(customer));
 		 
 		  
 		  budget.setStatus("ACCEPTED");
