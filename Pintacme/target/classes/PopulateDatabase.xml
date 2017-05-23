@@ -447,7 +447,7 @@
 		<property name="description" value="It is a marriage room" />
 		<property name="address" value="C/Ruperto Chapi Nº43" />
 		<property name="moment" value="2017/03/15 12:50" />
-		<property name="work" value="2017/08/21 12:50" />
+		<property name="work" value="2017/05/21 12:50" />
 
 		<property name="customer" ref="customer1" />
 		
@@ -462,6 +462,8 @@
 				<value>http://interiorismos.com/wp-content/2015/11/pintar-paredes-1.jpg</value>
 			</list>
 		</property>
+		<property name="discussion" ref="discussion1" />
+		
 	</bean>
 	
 	
@@ -471,8 +473,8 @@
 		<property name="measures" value="Room 3 x 4m" />
 		<property name="description" value="It is a small room" />
 		<property name="address" value="C/Reina Merces Bl.3, B" />
-		<property name="moment" value="2017/05/16 15:12" />
-		<property name="work" value="2017/07/16 10:00" />
+		<property name="moment" value="2017/03/05 15:50" />
+		<property name="work" value="2017/08/08 12:00" />
 
 		<property name="customer" ref="customer2" />
 		
@@ -496,12 +498,15 @@
 	<bean id="discussion1" class="domain.Discussion">
 		<property name="moment" value="05/05/2017 00:00" />
 		<property name="description" value="El pintor me ha dejado un agujero en la pared" />
+		<property name="resolution" value="PENDING" />
 		<property name="pictures">
 			<list>
+				<value>http://www.pisos.com/aldia/wp-content/uploads/2015/11/como-arreglar-pared-mal-estado1.jpg</value>
 				<value>http://www.pisos.com/aldia/wp-content/uploads/2015/11/como-arreglar-pared-mal-estado1.jpg</value>
 			</list>
 		</property>
 		<property name="request" ref="request1" />
+		<property name="painter" ref="painter1" />
 	</bean>
 	
 	
