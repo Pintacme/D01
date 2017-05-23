@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import domain.Budget;
 import domain.Discussion;
 import repositories.DiscussionRepository;
 
@@ -30,5 +31,12 @@ public class DiscussionService {
 		return res;
 	}
 
+	public Budget namePainter(int discussionId){
+		Budget result;
+		
+		result = discussionRepository.namePainterByBudget(discussionId);
+		
+		return result;
+	}
 }
 

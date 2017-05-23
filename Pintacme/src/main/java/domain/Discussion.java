@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -20,7 +21,7 @@ public class Discussion extends DomainEntity{
 
 	private Date moment;
 	private String description;
-	private Boolean resolution;
+	private String resolution;
 	private Collection<URL> pictures;
 
 	@NotBlank
@@ -42,10 +43,12 @@ public class Discussion extends DomainEntity{
 		this.moment = moment;
 	}
 
-	public Boolean getResolution() {
+	@NotBlank
+	@Pattern(regexp = "^ACCEPTED$|^PENDING$|^REJECTED$")
+	public String getResolution() {
 		return resolution;
 	}
-	public void setResolution(Boolean resolution) {
+	public void setResolution(String resolution) {
 		this.resolution = resolution;
 	}
 	
