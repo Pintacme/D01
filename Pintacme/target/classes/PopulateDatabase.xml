@@ -446,8 +446,8 @@
 		<property name="measures" value="Room 7 x 5  m" />
 		<property name="description" value="It is a marriage room" />
 		<property name="address" value="C/Ruperto Chapi Nº43" />
-		<property name="moment" value="2017/05/16 12:50" />
-		<property name="work" value="2017/07/16 17:00" />
+		<property name="moment" value="2017/03/15 12:50" />
+		<property name="work" value="2017/08/21 12:50" />
 
 		<property name="customer" ref="customer1" />
 		
