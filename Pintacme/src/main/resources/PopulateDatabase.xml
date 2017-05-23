@@ -447,7 +447,7 @@
 		<property name="description" value="It is a marriage room" />
 		<property name="address" value="C/Ruperto Chapi Nº43" />
 		<property name="moment" value="2017/03/15 12:50" />
-		<property name="work" value="2017/08/21 12:50" />
+		<property name="work" value="2017/05/21 12:50" />
 
 		<property name="customer" ref="customer1" />
 		
@@ -501,9 +501,11 @@
 		<property name="pictures">
 			<list>
 				<value>http://www.pisos.com/aldia/wp-content/uploads/2015/11/como-arreglar-pared-mal-estado1.jpg</value>
+				<value>http://www.pisos.com/aldia/wp-content/uploads/2015/11/como-arreglar-pared-mal-estado1.jpg</value>
 			</list>
 		</property>
 		<property name="request" ref="request1" />
+		<property name="painter" ref="painter1" />
 	</bean>
 	
 	

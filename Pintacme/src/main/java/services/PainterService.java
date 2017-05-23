@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import domain.Comment;
-import domain.Customer;
 import domain.Painter;
 import forms.PainterForm;
 import repositories.PainterRepository;

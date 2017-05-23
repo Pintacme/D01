@@ -56,7 +56,10 @@
 	
 		
 		<security:intercept-url pattern="/dashboard/administrator/list.do" access="hasRole('ADMINISTRATOR')" />
-		
+		<security:intercept-url pattern="/discussion/administrator/list.do" access="hasRole('ADMINISTRATOR')" />
+		<security:intercept-url pattern="/discussion/administrator/accept.do" access="hasRole('ADMINISTRATOR')" />
+		<security:intercept-url pattern="/discussion/administrator/denied.do" access="hasRole('ADMINISTRATOR')" />
+				
 		<security:intercept-url pattern="/**" access="hasRole('NONE')" />
 
 		<security:form-login 

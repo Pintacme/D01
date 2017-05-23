@@ -70,6 +70,9 @@
 									<li><a href="dashboard/administrator/list.do"><spring:message
 												code="master.page.administrator.dashboard" /></a></li>
 												
+									<li><a href="discussion/administrator/list.do"><spring:message
+												code="master.page.administrator.discussion" /></a></li>
+												
 								</security:authorize>
 
 						

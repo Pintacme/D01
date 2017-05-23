@@ -9,6 +9,7 @@ import javax.persistence.AccessType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
@@ -62,9 +63,11 @@ public class Discussion extends DomainEntity{
 	}
 
 	private Request request;
+	private Painter painter;
 
 	@OneToOne(optional = false)
 	@NotNull
+	@Valid
 	public Request getRequest() {
 		return request;
 	}
@@ -72,6 +75,19 @@ public class Discussion extends DomainEntity{
 	public void setRequest(Request request) {
 		this.request = request;
 	}
+
+	@OneToOne(optional = false)
+	@NotNull
+	@Valid
+	public Painter getPainter() {
+		return painter;
+	}
+
+	public void setPainter(Painter painter) {
+		this.painter = painter;
+	}
+	
+	
 
 	
 }

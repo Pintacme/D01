@@ -134,6 +134,7 @@ public class Request extends DomainEntity {
 	}
 	
 	@OneToOne(cascade = CascadeType.ALL, optional= true)
+	@Valid
 	public Discussion getDiscussion() {
 		return discussion;
 	}
