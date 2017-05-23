@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import domain.Budget;
-import domain.Customer;
 import domain.Material;
 import domain.Painter;
 import domain.Request;
