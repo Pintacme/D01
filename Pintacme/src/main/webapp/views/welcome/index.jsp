@@ -19,6 +19,18 @@
       height:  35%;   
       margin: auto;
   }
+  
+  .spm-carousel-text{
+  	
+  	color:black;
+    display:inherit;
+    align-items:center;
+    font-family: sans-serif;
+    font-size: 500%;
+  	
+  }
+  
+  
   </style>
   
 <div class="row col-lg-10 col-lg-offset-1">
@@ -38,18 +50,27 @@
 	    <div class="item active">
 	      <img src="images/carousel_01.jpg" alt="Carousel_image_01">
 	      <div class="carousel-caption">
+	      <span class="spm-carousel-text hidden-xs"><spring:message code="carousel_01.1"></spring:message></span>
+	        <span class="spm-carousel-text-xs hidden-sm hidden-md hidden-lg"><spring:message code="carousel_01.2"></spring:message></span>
+	      
 	      </div>
 	    </div>
 	    
 	    <div class="item">
 	      <img src="images/carousel_02.jpg" alt="Carousel_image_02">
 	      <div class="carousel-caption">
+	      <span class="spm-carousel-text hidden-xs"><spring:message code="carousel_02.1"></spring:message></span>
+	        <span class="spm-carousel-text-xs hidden-sm hidden-md hidden-lg"><spring:message code="carousel_02.2"></spring:message></span>
+	      
 	      </div>
 	    </div>
 	    
 	    <div class="item">
 	      <img src="images/carousel_03.jpg" alt="Carousel_image_03">
 	      <div class="carousel-caption">
+	      <span class="spm-carousel-text hidden-xs"><spring:message code="carousel_03.1"></spring:message></span>
+	        <span class="spm-carousel-text-xs hidden-sm hidden-md hidden-lg"><spring:message code="carousel_03.2"></spring:message></span>
+	      
 	      </div>
 	    </div>
 	    <!-- ...  -->
