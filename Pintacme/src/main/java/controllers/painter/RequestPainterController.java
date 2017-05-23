@@ -40,7 +40,8 @@ public class RequestPainterController extends AbstractController{
 		result = new ModelAndView("request/list");
 		
 		Collection<Request> requestsAll = requestService.findRequestToBudget();
-		Collection<Request> requestsAccepted = requestService.findRequestWithBudgetAccepted();		
+		Collection<Request> requestsAccepted = requestService.findRequestWithBudgetAccepted();
+		Collection<Request> requestPainter= requestService.findRequestWithBudgetPainterId();
 		Collection<Request> requests = new ArrayList<Request>();
 		
 		for(Request r:requestsAll){
@@ -49,7 +50,7 @@ public class RequestPainterController extends AbstractController{
 			}
 		}
 		
-		
+		requests.removeAll(requestPainter);
 		result.addObject("requests",requests);
 		result.addObject("requestUri","request/painter/list.do");
 			

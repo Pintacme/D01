@@ -12,6 +12,7 @@ import org.springframework.util.Assert;
 
 import domain.Budget;
 import domain.Customer;
+import domain.Painter;
 import domain.Request;
 import repositories.RequestRepository;
 
@@ -24,6 +25,10 @@ public class RequestService {
 	
 	@Autowired
 	private CustomerService customerService;
+	
+
+	@Autowired
+	private PainterService painterService;
 
 
 
@@ -77,7 +82,9 @@ public class RequestService {
 	public Collection<Request> findRequestToBudget() {
 		Collection<Request> result = new ArrayList<Request>();
 		
-		result = requestRepository.findRequestToBudget();
+		Painter painter = painterService.getLogged();
+		
+		result = requestRepository.findRequestToBudget(painter.getId());
 		
 		return result; 
 	}
@@ -95,6 +102,16 @@ public class RequestService {
 		Collection<Request> res;
 		
 		res = requestRepository.findRequestWithBudgetAccepted();
+		
+		return res;
+	}
+	
+	public Collection<Request> findRequestWithBudgetPainterId(){
+		Collection<Request> res;
+		
+		Painter painter = painterService.getLogged();
+		
+		res = requestRepository.findRequestWithBudgetPainterId(painter.getId());
 		
 		return res;
 	}
