@@ -33,6 +33,9 @@ public class DiscussionService {
 	private RequestService requestService;
 	
 	@Autowired
+	private BudgetService budgetService;
+	
+	@Autowired
 	private CustomerService customerService;
 	
 	private PainterService painterService;
@@ -69,10 +72,14 @@ public class DiscussionService {
 		result = new Discussion();
 		
 		Request request = requestService.findOne(id);
-		Painter painter = painterService.painterBudgetAcceptedByRequestId(id);
+		
+		System.out.println(request);
+		Budget budget = budgetService.BudgetAcceptedByRequestId(id);
+		//Painter painter = painterService.painterBudgetAcceptedByRequestId(id);
+		System.out.println(budget);
 		
 		result.setRequest(request);
-		result.setPainter(painter);		
+		result.setPainter(budget.getPainter());		
 		result.setMoment(moment);
 		result.setPictures(pictures);
 		result.setResolution("PENDING");
@@ -127,7 +134,7 @@ public class DiscussionService {
 		discussionRepository.saveAndFlush(discussion);
 	}
 	
-	public Collection<Discussion> findAllByCustomerId(int customerId){
+	public Collection<Discussion> findAllByCustomerId(){
 		Collection<Discussion> result;
 		Customer principal;
 		

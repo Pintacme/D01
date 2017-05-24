@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import domain.Budget;
+import domain.Painter;
 
 @Repository
 public interface BudgetRepository extends JpaRepository<Budget, Integer> {
@@ -20,5 +21,8 @@ public interface BudgetRepository extends JpaRepository<Budget, Integer> {
 
 	@Query("select r.budgets from Request r where r.id=?1")
 	Collection<Budget> findBudgetsForRequestId(int id);
+	
+	@Query("select b from Budget b where b.request.id = ?1 and b.status = 'ACCEPTED'")
+	Budget BudgetAcceptedByRequestId(int id);
 
 }

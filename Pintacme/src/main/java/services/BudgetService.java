@@ -144,4 +144,12 @@ public class BudgetService {
 		
 	}
 	
+	public Budget BudgetAcceptedByRequestId(int id){
+		Budget res;
+		
+		res = budgetRepository.BudgetAcceptedByRequestId(id);
+		
+		return res;
+	}
+	
 }

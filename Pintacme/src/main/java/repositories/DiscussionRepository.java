@@ -20,6 +20,6 @@ public interface DiscussionRepository extends JpaRepository<Discussion, Integer>
 	Budget budgetAcceptedByRequestId(int requestId);
 	
 	@Query("select d from Discussion d where d.request.customer.id = ?1")
-	Collection<Discussion> findAllByCustomerId(int customerId);
+	Collection<Discussion> findAllByCustomerId(int id);
 	
 }

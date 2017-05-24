@@ -50,7 +50,7 @@ public class DiscussionCustomerController extends AbstractController{
 		ModelAndView result;			
 		result = new ModelAndView("discussion/list");
 		
-		result.addObject("discussions",requestService.findRequestBudgetAcceptedCustomerID());
+		result.addObject("discussions",discussionService.findAllByCustomerId());
 		result.addObject("requestUri","discussion/customer/list.do");
 			
 		return result;
