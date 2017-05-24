@@ -36,13 +36,7 @@ public class DiscussionCustomerController extends AbstractController{
 	
 	@Autowired
 	private RequestService requestService;
-	
-	@Autowired
-	private CustomerService customerService;
-	
-	@Autowired
-	private PainterService painterService;
-	
+
 	
 	// Constructors -----------------------------------------------------------
 
@@ -66,6 +60,9 @@ public class DiscussionCustomerController extends AbstractController{
 	public ModelAndView create(@RequestParam int id) {
 		ModelAndView result;
 		Discussion  discussion;
+		
+		Assert.notNull(id);
+		
 		discussion = discussionService.create(id);
 		
 		result = createEditModelAndView(discussion);

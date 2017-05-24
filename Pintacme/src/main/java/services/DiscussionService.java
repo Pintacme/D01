@@ -63,7 +63,7 @@ public class DiscussionService {
 		Collection<URL> pictures;
 		Date moment;
 		
-		moment = new Date(System.currentTimeMillis()-100);
+		moment = new Date(System.currentTimeMillis());
 
 		pictures= new ArrayList<URL>();
 		result = new Discussion();
