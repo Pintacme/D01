@@ -45,7 +45,7 @@
 											</security:authorize>
 											
 											<security:authorize access="hasRole('CUSTOMER')">
-								<li><a href="discussion/customer/list.do"><spring:message
+								<li><a href="request/customer/listDis.do"><spring:message
 												code="master.page.discussion.customer" /></a></li>
 											</security:authorize>
 											

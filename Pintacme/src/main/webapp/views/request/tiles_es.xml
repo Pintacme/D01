@@ -25,5 +25,10 @@
 		<put-attribute name="title" value="Editar una solicitud" />
 		<put-attribute name="body" value="/views/request/edit.jsp" />
 	</definition>
+	
+	<definition name="request/listDis" extends="master.page">	
+		<put-attribute name="title" value="Lista de disputas de solicitudes" />
+		<put-attribute name="body" value="/views/request/listDis.jsp" />
+	</definition>
 
 </tiles-definitions>

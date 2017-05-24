@@ -16,10 +16,12 @@
 	<form:hidden path="version"/>
 	<form:hidden path="moment"/>
 	<form:hidden path="resolution"/>
-  		
+	<form:hidden path="painter"/>
+	<form:hidden path="request"/>
+	  		
 	<acme:inputTextMD code="discussion.edit.pictures" path="pictures"/>	
 	<acme:textareaMD code="discussion.edit.description" path="description"/>
-	<acme:inputSelectMD items="${requests}" itemLabel="address" code="discussion.edit.requests" path="request"/>
+
 
 	
 	<acme:submitMD name="save" code="discussion.edit.save" withButtonCancel="true"

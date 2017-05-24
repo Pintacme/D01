@@ -34,6 +34,8 @@ public class DiscussionService {
 	
 	@Autowired
 	private CustomerService customerService;
+	
+	private PainterService painterService;
 
 	public DiscussionService() {
 		super();
@@ -56,7 +58,7 @@ public class DiscussionService {
 		return res;
 	}
 
-	public Discussion create(){
+	public Discussion create(int id){
 		Discussion result;
 		Collection<URL> pictures;
 		Date moment;
@@ -66,8 +68,11 @@ public class DiscussionService {
 		pictures= new ArrayList<URL>();
 		result = new Discussion();
 		
+		Request request = requestService.findOne(id);
+		Painter painter = painterService.painterBudgetAcceptedByRequestId(id);
 		
-		
+		result.setRequest(request);
+		result.setPainter(painter);		
 		result.setMoment(moment);
 		result.setPictures(pictures);
 		result.setResolution("PENDING");

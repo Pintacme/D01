@@ -58,6 +58,18 @@ public class RequestCustomerController extends AbstractController {
 		return result;
 	}
 	
+	@RequestMapping(value = "/listDis",method=RequestMethod.GET)
+	public ModelAndView listDiscussion() {
+		ModelAndView result;			
+		result = new ModelAndView("request/listDis");
+			
+		result.addObject("requests",requestService.findRequestBudgetAcceptedCustomerID());
+		result.addObject("requestUri","request/customer/listDis.do");
+			
+
+		return result;
+	}
+	
 		
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
 	public ModelAndView create() {

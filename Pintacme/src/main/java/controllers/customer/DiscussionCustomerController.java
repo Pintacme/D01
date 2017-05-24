@@ -56,19 +56,17 @@ public class DiscussionCustomerController extends AbstractController{
 		ModelAndView result;			
 		result = new ModelAndView("discussion/list");
 		
-		Customer customer = customerService.getLogged();
-		
-		result.addObject("discussions",discussionService.findAllByCustomerId(customer.getId()));
+		result.addObject("discussions",requestService.findRequestBudgetAcceptedCustomerID());
 		result.addObject("requestUri","discussion/customer/list.do");
 			
 		return result;
 	}
 	
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
-	public ModelAndView create() {
+	public ModelAndView create(@RequestParam int id) {
 		ModelAndView result;
 		Discussion  discussion;
-		discussion = discussionService.create();
+		discussion = discussionService.create(id);
 		
 		result = createEditModelAndView(discussion);
 			
@@ -78,10 +76,6 @@ public class DiscussionCustomerController extends AbstractController{
 	@RequestMapping(value = "/edit", method = RequestMethod.POST, params="save")
 	public ModelAndView save(@Valid Discussion discussion, BindingResult binding){
 		ModelAndView result;
-		
-		Painter painter = painterService.painterBudgetAcceptedByRequestId(discussion.getRequest().getId());
-		discussion.setPainter(painter);		
-		
 		if(binding.hasErrors()){
 			result = createEditModelAndView(discussion);
 		}else{
@@ -112,8 +106,6 @@ public class DiscussionCustomerController extends AbstractController{
 							
 			result = new ModelAndView("discussion/edit");
 			
-			
-			result.addObject("requests", requestService.findRequestBudgetAcceptedCustomerID());
 			result.addObject("discussion", discussion);
 			result.addObject("message", message);
 			
