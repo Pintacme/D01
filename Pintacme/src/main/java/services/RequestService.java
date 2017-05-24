@@ -82,19 +82,11 @@ public class RequestService {
 	public Collection<Request> findRequestToBudget() {
 		Collection<Request> result = new ArrayList<Request>();
 		
-		Painter painter = painterService.getLogged();
+	
 		
-		result = requestRepository.findRequestToBudget(painter.getId());
+		result = requestRepository.findRequestToBudget();
 		
 		return result; 
-	}
-	
-	public Collection<Request> findRequestDoBudgetPainterID(int idPainter){
-		Collection<Request> res;
-		
-		res = requestRepository.findRequestDoBudgetPainterId(idPainter);
-		
-		return res;
 	}
 	
 	
@@ -112,6 +104,16 @@ public class RequestService {
 		Painter painter = painterService.getLogged();
 		
 		res = requestRepository.findRequestWithBudgetPainterId(painter.getId());
+		
+		return res;
+	}
+	
+	public Collection<Request> findRequestBudgetAcceptedCustomerID(){
+		Collection<Request>res;
+		
+		Customer customer = customerService.getLogged();
+		
+		res = requestRepository.findRequestBudgetAcceptedCustomerID(customer.getId());
 		
 		return res;
 	}

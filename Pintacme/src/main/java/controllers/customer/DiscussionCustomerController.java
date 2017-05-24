@@ -2,10 +2,14 @@ package controllers.customer;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,9 +19,11 @@ import controllers.AbstractController;
 import domain.Budget;
 import domain.Customer;
 import domain.Discussion;
+import domain.Painter;
 import domain.Request;
 import services.CustomerService;
 import services.DiscussionService;
+import services.PainterService;
 import services.RequestService;
 
 
@@ -33,6 +39,9 @@ public class DiscussionCustomerController extends AbstractController{
 	
 	@Autowired
 	private CustomerService customerService;
+	
+	@Autowired
+	private PainterService painterService;
 	
 	
 	// Constructors -----------------------------------------------------------
@@ -56,20 +65,37 @@ public class DiscussionCustomerController extends AbstractController{
 	}
 	
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
-	public ModelAndView create(@RequestParam int requestId) {
+	public ModelAndView create() {
 		ModelAndView result;
 		Discussion  discussion;
-		
-		Assert.notNull(requestId);
-		
-		Request request = requestService.findOne(requestId);
-		
-		Assert.notNull(request);
-		
-		discussion = discussionService.create(request);
+		discussion = discussionService.create();
 		
 		result = createEditModelAndView(discussion);
 			
+		return result;
+	}
+	
+	@RequestMapping(value = "/edit", method = RequestMethod.POST, params="save")
+	public ModelAndView save(@Valid Discussion discussion, BindingResult binding){
+		ModelAndView result;
+		
+		Painter painter = painterService.painterBudgetAcceptedByRequestId(discussion.getRequest().getId());
+		discussion.setPainter(painter);		
+		
+		if(binding.hasErrors()){
+			result = createEditModelAndView(discussion);
+		}else{
+			try{
+				if(discussion.getRequest()==null){
+					result = createEditModelAndView(discussion, "discussion.request.error");
+				}else{
+					discussionService.save(discussion);
+					result = new ModelAndView("redirect:list.do");	
+				}		
+			}catch(Throwable oops){
+				result = createEditModelAndView(discussion, "discussion.commit.error");
+			}
+		}
 		return result;
 	}
 	
@@ -86,6 +112,8 @@ public class DiscussionCustomerController extends AbstractController{
 							
 			result = new ModelAndView("discussion/edit");
 			
+			
+			result.addObject("requests", requestService.findRequestBudgetAcceptedCustomerID());
 			result.addObject("discussion", discussion);
 			result.addObject("message", message);
 			

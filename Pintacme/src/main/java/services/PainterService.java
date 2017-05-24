@@ -125,4 +125,12 @@ public class PainterService {
 		return painterRepository.getPaintersOrderByAverageStart();
 	}
 
+	public Painter painterBudgetAcceptedByRequestId(int id) {
+		Painter painter;
+		
+		painter = painterRepository.painterBudgetAcceptedByRequestId(id);
+		
+		return painter;
+	}
+
 }

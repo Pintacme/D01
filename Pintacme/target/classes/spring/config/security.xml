@@ -47,6 +47,7 @@
 		
 		<security:intercept-url pattern="/painter/customer/**" access="hasRole('CUSTOMER')" />					
 		<security:intercept-url pattern="/request/customer/**" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/discussion/customer/**" access="hasRole('CUSTOMER')" />
 		<security:intercept-url pattern="/comment/customer/**" access="hasRole('CUSTOMER')" />
 		<security:intercept-url pattern="/budget/painter/**" access="hasRole('PAINTER')" />
 		<security:intercept-url pattern="/request/painter/**" access="hasRole('PAINTER')" />

@@ -1,6 +1,7 @@
 package services;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
@@ -14,6 +15,7 @@ import domain.Administrator;
 import domain.Budget;
 import domain.Customer;
 import domain.Discussion;
+import domain.Painter;
 import domain.Request;
 import repositories.DiscussionRepository;
 
@@ -26,6 +28,9 @@ public class DiscussionService {
 		
 	@Autowired
 	private AdminService adminService;
+	
+	@Autowired
+	private RequestService requestService;
 	
 	@Autowired
 	private CustomerService customerService;
@@ -51,43 +56,36 @@ public class DiscussionService {
 		return res;
 	}
 
-	public Discussion create(Request request){
-		Assert.notNull(request);
+	public Discussion create(){
 		Discussion result;
 		Collection<URL> pictures;
 		Date moment;
 		
-		moment = new Date(System.currentTimeMillis());
-		pictures = new HashSet<URL>();
-		
+		moment = new Date(System.currentTimeMillis()-100);
+
+		pictures= new ArrayList<URL>();
 		result = new Discussion();
 		
-		Budget budget = discussionRepository.budgetAcceptedByRequestId(request.getId());
+		
 		
 		result.setMoment(moment);
 		result.setPictures(pictures);
-		result.setRequest(request);
-		result.setPainter(budget.getPainter());		
+		result.setResolution("PENDING");
+		
 		
 		return result;
 	}
 	
 	public Discussion save(Discussion discussion){
 		Assert.notNull(discussion);
-		Discussion result;		
-		Date moment;
-
-				
-		moment = new Date(System.currentTimeMillis() - 1000);
-
-		discussion.setMoment(moment);
+		Discussion result;	
 		
-		Budget budget = discussionRepository.budgetAcceptedByRequestId(discussion.getRequest().getId());
+		Request request = discussion.getRequest();
+	
+		result = discussionRepository.save(discussion);
 		
-		
-		Assert.isTrue(budget.getStatus().equals("ACCEPTED"));
-		
-		result = discussionRepository.saveAndFlush(discussion);
+		request.setDiscussion(result);
+		requestService.save(request);
 		
 		return result;
 	}
@@ -134,5 +132,6 @@ public class DiscussionService {
 		
 		return result;
 	}
+
 }
 

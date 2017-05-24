@@ -89,7 +89,7 @@ public class BudgetPainterController extends AbstractController{
 				result = createEditModelAndView(budget);
 			}else{
 				try{
-					Collection<Request> requestsCreateBudget = requestService.findRequestDoBudgetPainterID(budget.getPainter().getId());
+					Collection<Request> requestsCreateBudget = requestService.findRequestWithBudgetPainterId();
 					System.out.println(requestsCreateBudget);
 					if(requestsCreateBudget.contains(budget.getRequest())){
 						result = createEditModelAndView(budget, "budget.commit.duplicate");

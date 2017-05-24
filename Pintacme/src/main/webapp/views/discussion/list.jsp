@@ -65,6 +65,13 @@
 	</security:authorize>
 	
 </display:table>
-
 </div>
+
+<security:authorize access="hasRole('CUSTOMER')">
+	<div>
+		<a href="discussion/customer/create.do"><spring:message code="discussion.create"/></a>
+	</div>
+</security:authorize>
+
+
 

@@ -41,17 +41,12 @@ public class RequestPainterController extends AbstractController{
 		
 		Collection<Request> requestsAll = requestService.findRequestToBudget();
 		Collection<Request> requestsAccepted = requestService.findRequestWithBudgetAccepted();
-		Collection<Request> requestPainter= requestService.findRequestWithBudgetPainterId();
-		Collection<Request> requests = new ArrayList<Request>();
-		
-		for(Request r:requestsAll){
-			if(!requestsAccepted.contains(r)){
-				requests.add(r);
-			}
-		}
-		
-		requests.removeAll(requestPainter);
-		result.addObject("requests",requests);
+		Collection<Request> requestPainterId= requestService.findRequestWithBudgetPainterId();
+
+		requestsAll.removeAll(requestsAccepted);
+		requestsAll.removeAll(requestPainterId);
+
+		result.addObject("requests",requestsAll);
 		result.addObject("requestUri","request/painter/list.do");
 			
 

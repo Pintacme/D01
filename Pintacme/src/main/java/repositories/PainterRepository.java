@@ -19,4 +19,7 @@ public interface PainterRepository extends JpaRepository<Painter, Integer> {
 	@Query("select p from Painter p order by p.averageStart desc")
 	Collection<Painter> getPaintersOrderByAverageStart();
 
+	@Query("select b.painter from Budget b where b.request.id = ?1 and b.status = 'ACCEPTED'")
+	Painter painterBudgetAcceptedByRequestId(int id);
+
 }

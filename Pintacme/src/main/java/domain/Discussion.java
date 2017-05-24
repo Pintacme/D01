@@ -77,7 +77,6 @@ public class Discussion extends DomainEntity{
 	}
 
 	@OneToOne(optional = false)
-	@NotNull
 	@Valid
 	public Painter getPainter() {
 		return painter;

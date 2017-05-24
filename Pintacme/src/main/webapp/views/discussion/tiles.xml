@@ -21,4 +21,9 @@
 		<put-attribute name="body" value="/views/discussion/list.jsp" />
 	</definition>
 	
+	<definition name="discussion/edit" extends="master.page">	
+		<put-attribute name="title" value="Edit a discussion" />
+		<put-attribute name="body" value="/views/discussion/edit.jsp" />
+	</definition>
+	
 </tiles-definitions>
