@@ -9,6 +9,8 @@ import javax.persistence.Embeddable;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.SafeHtml;
+import org.hibernate.validator.constraints.SafeHtml.WhiteListType;
 
 @Embeddable
 @Access(AccessType.PROPERTY)
@@ -30,6 +32,7 @@ public class Genre extends DomainEntity{
 	
 	// Methods ----------------------------------------------------------------
 	@NotBlank
+	@SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getGenre() {
 		return this.genre;
 	}

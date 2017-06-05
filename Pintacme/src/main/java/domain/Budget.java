@@ -14,6 +14,8 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.SafeHtml;
+import org.hibernate.validator.constraints.SafeHtml.WhiteListType;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -35,6 +37,7 @@ public class Budget extends DomainEntity {
 	//Getters & setters================================================================================
 	@Pattern(regexp = "^ACCEPTED$|^PENDING$|^REJECTED$")
 	@NotBlank
+	@SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getStatus() {
 		return this.status;
 	}
@@ -54,6 +57,7 @@ public class Budget extends DomainEntity {
 	}
 
 	@NotBlank
+	@SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getDescription() {
 		return this.description;
 	}

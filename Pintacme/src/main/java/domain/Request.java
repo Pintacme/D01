@@ -20,6 +20,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.SafeHtml;
+import org.hibernate.validator.constraints.SafeHtml.WhiteListType;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
@@ -46,6 +48,7 @@ public class Request extends DomainEntity {
 	//Getters & setters================================================================================
 	
 	@NotBlank
+	@SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getSchedule() {
 		return schedule;
 	}
@@ -54,6 +57,7 @@ public class Request extends DomainEntity {
 	}
 	
 	@NotBlank
+	@SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getMeasures() {
 		return measures;
 	}
@@ -62,6 +66,7 @@ public class Request extends DomainEntity {
 	}
 	
 	@NotBlank
+	@SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getDescription() {
 		return description;
 	}
@@ -70,6 +75,7 @@ public class Request extends DomainEntity {
 	}
 	
 	@NotBlank
+	@SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getAddress() {
 		return address;
 	}

@@ -40,7 +40,7 @@
 	<spring:message code="discussion.pictures" var="picturesColumn" ></spring:message>
 	<display:column title="${picturesColumn}">
 	<jstl:forEach items="${row.pictures}" var="p" >
-			<A HREF="${p}"><IMG HEIGHT=50 WIDTH=50 SRC="${p}"></A>
+			<A HREF="${p}"><img height="60" width="60" src="<jstl:out value="${p}"></jstl:out>"/></A>
 	</jstl:forEach>
 	</display:column>
 	

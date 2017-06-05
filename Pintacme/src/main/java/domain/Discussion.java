@@ -15,6 +15,8 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.SafeHtml;
+import org.hibernate.validator.constraints.SafeHtml.WhiteListType;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -26,6 +28,7 @@ public class Discussion extends DomainEntity{
 	private Collection<URL> pictures;
 
 	@NotBlank
+	@SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getDescription() {
 		return description;
 	}
@@ -45,6 +48,7 @@ public class Discussion extends DomainEntity{
 	}
 
 	@NotBlank
+	@SafeHtml(whitelistType = WhiteListType.NONE)
 	@Pattern(regexp = "^ACCEPTED$|^PENDING$|^REJECTED$")
 	public String getResolution() {
 		return resolution;

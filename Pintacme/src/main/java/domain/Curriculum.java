@@ -14,7 +14,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.SafeHtml;
 import org.hibernate.validator.constraints.URL;
+import org.hibernate.validator.constraints.SafeHtml.WhiteListType;
 import org.springframework.format.annotation.DateTimeFormat;
 
 
@@ -36,6 +38,7 @@ public class Curriculum extends DomainEntity {
 	}
 	@NotNull
 	@URL
+	@SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getPhoto() {
 		return photo;
 	}
@@ -44,6 +47,7 @@ public class Curriculum extends DomainEntity {
 		this.photo = photo;
 	}
 	@NotBlank
+	@SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getGeneral() {
 		return general;
 	}
@@ -52,6 +56,7 @@ public class Curriculum extends DomainEntity {
 		this.general = general;
 	}
 	@NotBlank
+	@SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getExperience() {
 		return experience;
 	}

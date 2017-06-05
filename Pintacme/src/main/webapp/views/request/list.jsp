@@ -25,10 +25,10 @@
 	<spring:message code="request.photos" var="photosColumn" ></spring:message>
 	<display:column title="${photosColumn}">
 	<jstl:forEach items="${row.photos}" var="p" >
-			<li><A HREF="${p}"><IMG HEIGHT=50 WIDTH=50 SRC="${p}"></A></li>
+			<A HREF="${p}"><img height="60" width="60" src="<jstl:out value="${p}"></jstl:out>"/></A>
 	</jstl:forEach>
 	</display:column>
-	
+		
 	<spring:message code="request.measures" var="measuresColumn" ></spring:message>
 	<display:column property="measures" title="${measuresColumn}"/>
 	
