@@ -2,13 +2,13 @@ package forms;
 
 import javax.persistence.Column;
 import javax.validation.Valid;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.Range;
 import org.hibernate.validator.constraints.SafeHtml;
 import org.hibernate.validator.constraints.SafeHtml.WhiteListType;
 
@@ -134,7 +134,8 @@ public class CustomerForm {
 		this.genre = genre;
 	}
 
-	@Min(18)
+	@Range(min=18, max=150)
+	@NotNull
 	public Integer getAge() {
 		return age;
 	}
