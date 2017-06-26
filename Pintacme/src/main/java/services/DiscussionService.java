@@ -63,12 +63,12 @@ public class DiscussionService {
 
 	public Discussion create(int id){
 		Discussion result;
-		Collection<URL> pictures;
+		Collection<String> pictures;
 		Date moment;
 		
 		moment = new Date(System.currentTimeMillis());
 
-		pictures= new ArrayList<URL>();
+		pictures= new ArrayList<String>();
 		result = new Discussion();
 		
 		Request request = requestService.findOne(id);

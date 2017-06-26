@@ -109,7 +109,6 @@ public class Request extends DomainEntity {
 
 	@AllURLs
 	@ElementCollection
-
 	public Collection<String> getPhotos() {
 		return this.photos;
 	}

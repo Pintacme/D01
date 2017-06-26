@@ -18,6 +18,8 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.SafeHtml;
 import org.hibernate.validator.constraints.SafeHtml.WhiteListType;
 
+import utilities.validators.AllURLs;
+
 @Entity
 @Access(AccessType.PROPERTY)
 public class Discussion extends DomainEntity{
@@ -25,7 +27,7 @@ public class Discussion extends DomainEntity{
 	private Date moment;
 	private String description;
 	private String resolution;
-	private Collection<URL> pictures;
+	private Collection<String> pictures;
 
 	@NotBlank
 	@SafeHtml(whitelistType = WhiteListType.NONE)
@@ -57,12 +59,13 @@ public class Discussion extends DomainEntity{
 		this.resolution = resolution;
 	}
 	
+	@AllURLs
 	@ElementCollection	
-	public Collection<URL> getPictures() {
+	public Collection<String> getPictures() {
 		return pictures;
 	}
 
-	public void setPictures(Collection<URL> pictures) {
+	public void setPictures(Collection<String> pictures) {
 		this.pictures = pictures;
 	}
 

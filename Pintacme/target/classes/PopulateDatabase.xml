@@ -473,8 +473,8 @@
 		<property name="measures" value="Room 3 x 4m" />
 		<property name="description" value="It is a small room" />
 		<property name="address" value="C/Reina Merces Bl.3, B" />
-		<property name="moment" value="2017/03/05 15:50" />
-		<property name="work" value="2017/08/08 12:00" />
+		<property name="moment" value="2017/01/02 15:50" />
+		<property name="work" value="2017/01/01 12:00" />
 
 		<property name="customer" ref="customer2" />
 		
@@ -541,7 +541,7 @@
 	</bean>
 	
 	<bean id="budget3" class="domain.Budget">
-		<property name="status" value="PENDING" />
+		<property name="status" value="ACCEPTED" />
 		<property name="amount" value="850.50" />
 		<property name="description" value="Minimum price for a small room" />
 		<property name="painter" ref="painter3" />
