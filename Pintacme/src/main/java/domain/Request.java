@@ -1,7 +1,6 @@
 
 package domain;
 
-import java.net.URL;
 import java.util.Collection;
 import java.util.Date;
 
@@ -24,6 +23,9 @@ import org.hibernate.validator.constraints.SafeHtml;
 import org.hibernate.validator.constraints.SafeHtml.WhiteListType;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import utilities.validators.AllURLs;
+
+
 @Entity
 @Access(AccessType.PROPERTY)
 public class Request extends DomainEntity {
@@ -42,7 +44,7 @@ public class Request extends DomainEntity {
 	private String address;
 	private Date moment;
 	private Date work;
-	private Collection<URL> photos;
+	private Collection<String> photos;
 	
 	
 	//Getters & setters================================================================================
@@ -104,12 +106,14 @@ public class Request extends DomainEntity {
 	public void setWork(Date work) {
 		this.work = work;
 	}
-	
+
+	@AllURLs
 	@ElementCollection
-	public Collection<URL> getPhotos() {
-		return photos;
+
+	public Collection<String> getPhotos() {
+		return this.photos;
 	}
-	public void setPhotos(Collection<URL> photos) {
+	public void setPhotos(Collection<String> photos) {
 		this.photos = photos;
 	}
 	
