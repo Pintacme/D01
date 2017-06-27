@@ -63,9 +63,10 @@
 											code="master.page.chooselanguage" /> <i
 										class="material-icons">language</i><b class="caret"></b> </a>
 									<ul class="dropdown-menu">
-										<li><a href="?language=en"><spring:message
+
+										<li><a href="${requestScope['javax.servlet.forward.request_uri']}?${requestScope['javax.servlet.forward.query_string'].replaceAll("[&?]language=([^&]$|[^&]*)", "")}&language=en"><spring:message
 													code="master.page.english" /></a></li>
-										<li><a href="?language=es"><spring:message
+										<li><a href="${requestScope['javax.servlet.forward.request_uri']}?${requestScope['javax.servlet.forward.query_string'].replaceAll("[&?]language=([^&]$|[^&]*)", "")}&language=es"><spring:message
 													code="master.page.spanish" /></a></li>
 									</ul></li>
 
