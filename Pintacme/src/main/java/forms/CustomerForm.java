@@ -117,6 +117,7 @@ public class CustomerForm {
 	@NotBlank
 	@SafeHtml(whitelistType = WhiteListType.NONE)
 	@Pattern(regexp="([0-9]{8})([A-Z])")
+	@Column(unique = true)
 	public String getDni() {
 		return dni;
 	}

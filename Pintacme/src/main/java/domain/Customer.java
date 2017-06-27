@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.validation.Valid;
@@ -34,6 +35,7 @@ public class Customer extends Actor {
 	@NotBlank
 	@SafeHtml(whitelistType = WhiteListType.NONE)
 	@Pattern(regexp="([0-9]{8})([A-Za-z])")
+	@Column(unique = true)
 	public String getDni() {
 		return dni;
 	}

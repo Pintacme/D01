@@ -113,7 +113,8 @@ public class PainterForm {
 	
 	@NotBlank
 	@SafeHtml(whitelistType = WhiteListType.NONE)
-	@Pattern(regexp="\\d{11}")
+	@Pattern(regexp="^[A-Z0-9]{2}\\d{10}$")
+	@Column(unique = true)
 	public String getCodeSS() {
 		return codeSS;
 	}
