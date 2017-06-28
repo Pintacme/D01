@@ -10,7 +10,7 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 
-<form:form action="painter/register.do" modelAttribute="painterForm">
+<form:form action="painter/create.do" modelAttribute="painterForm">
 
 	<form:hidden path="averageStar"/>
 

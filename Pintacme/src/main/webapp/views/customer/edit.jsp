@@ -10,7 +10,7 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 
-<form:form action="customer/register.do" modelAttribute="customerForm">
+<form:form action="customer/create.do" modelAttribute="customerForm">
 
 	
 	<acme:inputTextMD code="customer.username" path="username"/>	

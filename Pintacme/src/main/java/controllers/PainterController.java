@@ -42,7 +42,7 @@ public class PainterController extends AbstractController{
 				return result;
 			}
 			
-			@RequestMapping(value = "/register", method = RequestMethod.POST, params = "save")
+			@RequestMapping(value = "/create", method = RequestMethod.POST, params = "save")
 			public ModelAndView save(@Valid PainterForm painterForm, BindingResult binding) {
 				ModelAndView result;
 				Painter painter;

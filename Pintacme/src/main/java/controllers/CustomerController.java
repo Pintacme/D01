@@ -43,7 +43,7 @@ public class CustomerController extends AbstractController{
 				return result;
 			}
 			
-			@RequestMapping(value = "/register", method = RequestMethod.POST, params = "save")
+			@RequestMapping(value = "/create", method = RequestMethod.POST, params = "save")
 			public ModelAndView save(@Valid CustomerForm customerForm, BindingResult binding) {
 				ModelAndView result;
 				Customer customer;
