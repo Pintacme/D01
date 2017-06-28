@@ -11,28 +11,38 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 
 <%@ taglib prefix="acme" tagdir="/WEB-INF/tags"%>
-<div class="responsive">
-<a href="#"><img align="left" width="25%" src="images/brochita clienta guantes.png"
-						alt="Pintacme" /></a>
-						
-<h2 align="left">
+
+<style type="text/css">
+.helpClientPhoto {
+    background-image:url('images/imagenAyudaPintor.bmp');
+    
+    background-size:100%;
+ 	width:100%;
+	height:100%;
+}
+</style>
+
+
+<div class="helpClientPhoto">					
+									
+<h2 align="center">
 	<spring:message code="helpClient.title" />:
 </h2> 
 
-
-<h3 align="left">
+	
+<h3 align="center">
 	<spring:message code="helpClient.1" />
 </h3>
-<h3 align="left">
+<h3 align="center">
 	<spring:message code="helpClient.2" />
 </h3>
-<h3 align="left">
+<h3 align="center">
 	<spring:message code="helpClient.3" />
 </h3>
-<h3 align="left">
+<h3 align="center">
 	<spring:message code="helpClient.4" />
 </h3>
-<h3 align="left">
+<h3 align="center">
 	<spring:message code="helpClient.5" />
 </h3>
 </div>
