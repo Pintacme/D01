@@ -22,8 +22,9 @@
 	<acme:inputTextMD code="painter.surname" path="surname"/>	
 	<acme:inputTextMD code="painter.postalCode" path="postalCode"/>	
 	<acme:inputTextMD code="painter.email" path="email"/>	
-	<acme:inputTextMD code="painter.phone" path="phone"/>
-	<acme:inputTextMD code="painter.codeSS" path="codeSS"/>
+	<acme:inputTextMD  placeHolderCode="customer.messsagePhone" code="painter.phone" path="phone"/>
+	
+	<acme:inputTextMD placeHolderCode="painter.messsageCodeSS" code="painter.codeSS" path="codeSS"/>
 
 	<form:checkbox path="hasAccepted"></form:checkbox>
 	<spring:message code="painter.hasAccepted"/>
