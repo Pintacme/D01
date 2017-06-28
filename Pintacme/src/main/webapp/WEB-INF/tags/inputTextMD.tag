@@ -27,6 +27,9 @@
 <%@ attribute name="path" required="true"%>
 <%@ attribute name="id" required="false"%> 
 <%@ attribute name="placeholder" required="false"%> 
+<%@ attribute name="placeHolderCode" required="false" %>
+
+
 
 
 <%-- Definition --%>
@@ -38,7 +41,10 @@
 		<spring:message code="${code}" />
 	</form:label>
 
-	<div class="col-md-10 ">
+	<div class="col-md-10">
+		<jstl:if test="${placeHolderCode != null}">
+			<spring:message code="${placeHolderCode}"  var="placeholder" />
+		</jstl:if>
 		<form:input path="${path}" class="form-control" id="${id}" placeholder="${placeholder}"/>
 	</div>
 

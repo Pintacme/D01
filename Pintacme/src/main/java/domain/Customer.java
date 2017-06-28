@@ -14,6 +14,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.Range;
 import org.hibernate.validator.constraints.SafeHtml;
 import org.hibernate.validator.constraints.SafeHtml.WhiteListType;
 
@@ -54,7 +55,7 @@ public class Customer extends Actor {
 		this.genre = genre;
 	}
 
-	@Min(18)
+	@Range(min=18, max=150)
 	public Integer getAge() {
 		return age;
 	}

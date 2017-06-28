@@ -21,7 +21,7 @@
 	<acme:inputTextMD code="customer.surname" path="surname"/>	
 	<acme:inputTextMD code="customer.postalCode" path="postalCode"/>	
 	<acme:inputTextMD code="customer.email" path="email"/>	
-	<acme:inputTextMD code="customer.phone" path="phone"/>
+	<acme:inputTextMD  placeHolderCode="customer.messsagePhone" code="customer.phone" path="phone"/>
 	<acme:inputTextMD code="customer.dni" path="dni"/>
 	<acme:inputTextMD code="customer.age" path="age"/>
 	
