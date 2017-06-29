@@ -13,7 +13,7 @@
 
 <%@ taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-
+<!--  
 <style>
 #responsive{ width:100%; height:20px; margin:0 auto;}
 #responsive ul{list-style:none}
@@ -26,14 +26,23 @@
 <li><a href="<c:url value="/helpPainter/show.do"/>"><spring:message code="helpPainter.title" /></a></li>
 <li><a href="<c:url value="/helpIssue/show.do"/>"><spring:message code="helpIssue.title" /></a></li>
 </ul>
+-->
+<div class="responsive">
 
-<a href="#"><img align="left" width="25%" src="images/brochita clienta guantes.png"
+<h1 align="justify">
+<a  href="<c:url value="/helpClient/show.do"/>"><spring:message code="helpClient.title" /></a>
+<a href="<c:url value="/helpPainter/show.do"/>"><spring:message code="helpPainter.title" /></a>
+<a href="<c:url value="/helpIssue/show.do"/>"><spring:message code="helpIssue.title" /></a>
+</h1>
+
+
+<a href="helpClient/show.do"><img align="left" width="25%" src="images/brochita clienta guantes.png"
 						alt="Pintacme" /></a>
 
-<a href="#"><img align="center" width="25%" src="images/brochita pintora guantes.png"
+<a href="helpPainter/show.do"><img align="center" width="25%" src="images/brochita pintora guantes.png"
 						alt="Pintacme" /></a>
 
-<a href="#"><img align="right" width="25%" src="images/brochita enfada guantes.png"
+<a href="helpIssue/show.do"><img align="right" width="25%" src="images/brochita enfada guantes.png"
 						alt="Pintacme" /></a>
 </div>
 <!-- 
