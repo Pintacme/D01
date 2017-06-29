@@ -12,6 +12,40 @@
 
 <%@ taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
+
+<style type="text/css">
+.helpPainterPhoto {
+    background-image:url('images/ayudaPintor1.bmp');
+    
+    background-size:100%;
+ 	width:100%;
+	height:100%;
+}
+</style>
+
+
+<div class="helpPainterPhoto">	
+
+<h2 align="center">
+<spring:message code="helpPainter.title" />:
+</h2>
+
+<h3 align="center">
+	<spring:message code="helpPainter.1" />
+</h3>
+<h3 align="center">
+	<spring:message code="helpPainter.2" />
+</h3>
+<h3 align="center">
+	<spring:message code="helpPainter.3" />
+</h3>
+<h3 align="center">
+	<spring:message code="helpPainter.4" />
+</h3>
+
+</div>
+
+<!--  
 <div class="responsive">
 <a href="#"><img align="left" width="25%" src="images/brochita pintora guantes.png"
 						alt="Pintacme" /></a>
@@ -35,3 +69,4 @@
 
 
 </div>
+-->

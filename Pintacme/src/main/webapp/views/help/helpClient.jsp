@@ -14,7 +14,7 @@
 
 <style type="text/css">
 .helpClientPhoto {
-    background-image:url('images/imagenAyudaPintor.bmp');
+    background-image:url('images/ayudaCliente1.bmp');
     
     background-size:100%;
  	width:100%;

@@ -12,6 +12,33 @@
 
 <%@ taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
+<style type="text/css">
+.helpIssuePhoto {
+    background-image:url('images/ayudaDisputa1.bmp');
+    
+    background-size:100%;
+ 	width:100%;
+	height:100%;
+}
+</style>
+
+
+<div class="helpIssuePhoto">	
+
+<h2 align="center">
+<spring:message code="helpIssue.title" />:
+</h2>
+
+<h3 align="center">
+<spring:message code="helpIssue.1" />
+</h3>
+
+<h3 align="center">
+<spring:message code="helpIssue.2" />
+</h3>
+
+</div>
+<!--  
 <div class="responsive">
 
 <a href="#"><img align="left" width="25%" src="images/brochita enfada guantes.png"
@@ -30,3 +57,5 @@
 </h3>
 
 </div>
+
+-->
