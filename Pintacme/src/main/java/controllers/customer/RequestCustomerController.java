@@ -1,15 +1,12 @@
 package controllers.customer;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
 import org.springframework.validation.BindingResult;
@@ -18,14 +15,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import services.CustomerService;
-import services.RequestService;
-
-
 import controllers.AbstractController;
-import domain.CreditCard;
 import domain.Customer;
 import domain.Request;
+import services.CustomerService;
+import services.RequestService;
 
 
 @Controller
@@ -79,7 +73,7 @@ public class RequestCustomerController extends AbstractController {
 	
 		request = requestService.create();
 		
-		result = createEditModelAndView(request);
+		result = createModelAndView(request);
 			
 		return result;
 	}
@@ -126,6 +120,28 @@ public class RequestCustomerController extends AbstractController {
 			}
 			return result;
 		}
+
+		@RequestMapping(value = "/create", method = RequestMethod.POST, params="save")
+		public ModelAndView createSave(@Valid Request request, BindingResult binding){
+			ModelAndView result;
+			Date now = new Date(System.currentTimeMillis());
+				
+			if(binding.hasErrors()){
+				result = createModelAndView(request);
+			}else{
+				try{
+					if(request.getWork().before(now)){
+						result = createModelAndView(request, "request.work.error");
+					}else{
+						requestService.save(request);
+						result = new ModelAndView("redirect:list.do");	
+					}		
+				}catch(Throwable oops){
+					result = createModelAndView(request, "request.commit.error");
+				}
+			}
+			return result;
+		}
 		
 		@RequestMapping(value = "/edit", method = RequestMethod.POST, params = "delete")
 		public ModelAndView delete(@Valid Request Request, BindingResult binding) {
@@ -166,6 +182,35 @@ public class RequestCustomerController extends AbstractController {
 			result.addObject("priorities", priorities);
 			result.addObject("request", request);
 			result.addObject("message", message);
+			result.addObject("requestURI", "request/customer/create.do");
+			
+			return result;
+		}
+		
+		protected ModelAndView createModelAndView(Request request){
+			ModelAndView result;
+			
+			result = createEditModelAndView(request, null);
+			
+			return result;
+		}
+		
+		protected ModelAndView createModelAndView(Request request, String message){
+			ModelAndView result;
+			
+			Collection<String> priorities = new ArrayList<String>();
+			
+			priorities.add("LOW");
+			priorities.add("MID");
+			priorities.add("HIGH");
+				
+			result = new ModelAndView("request/create");
+			
+			
+			result.addObject("priorities", priorities);
+			result.addObject("request", request);
+			result.addObject("message", message);
+			result.addObject("requestURI", "request/customer/edit.do");
 			
 			return result;
 		}

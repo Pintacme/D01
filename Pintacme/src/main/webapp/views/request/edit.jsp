@@ -10,7 +10,7 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 
-<form:form action="request/customer/edit.do" modelAttribute="request">
+<form:form action="${requestURI}" modelAttribute="request">
 
 	<form:hidden path="id"/>
 	<form:hidden path="version"/>
@@ -23,7 +23,7 @@
 	<acme:inputTextMD code="request.edit.photos" path="photos"/>	
 	<acme:textareaMD code="request.edit.description" path="description"/>	
 	<acme:inputTextMD code="request.edit.address" path="address"/>	
-	<acme:inputTextMD code="request.edit.work" path="work"/>
+	<acme:inputTextMD placeHolderCode="customer.messsageWork" code="request.edit.work" path="work"/>
 
 	
 	<acme:submitMD name="save" code="request.edit.save"/>
