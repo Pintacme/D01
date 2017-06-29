@@ -31,8 +31,7 @@
 
 <%-- Definition --%>
 
-<div class="form-group">
-	<div class="col-md-12">
+
 	
 		<button type="submit" name="${name}"
 			class="btn btn-raised btn-primary">
@@ -45,8 +44,7 @@
 				onclick="javascript:relativeRedir('/welcome/index.do');" />
 		</jstl:if>
 		
-	</div>
-</div>
+
 
 
 

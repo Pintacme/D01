@@ -89,10 +89,12 @@ public class BudgetPainterController extends AbstractController{
 				result = createEditModelAndView(budget);
 			}else{
 				try{
-					Collection<Request> requestsCreateBudget = requestService.findRequestWithBudgetPainterId();
-					System.out.println(requestsCreateBudget);
-					if(requestsCreateBudget.contains(budget.getRequest())){
-						result = createEditModelAndView(budget, "budget.commit.duplicate");
+//					Collection<Request> requestsCreateBudget = requestService.findRequestWithBudgetPainterId();
+//					System.out.println(requestsCreateBudget);
+//					if(requestsCreateBudget.contains(budget.getRequest())){
+//						result = createEditModelAndView(budget, "budget.commit.duplicate");
+					if(!budget.getStatus().equals("PENDING")){
+						result = createEditModelAndView(budget, "budget.commit.notPending");
 					}else{
 						budgetService.save(budget);
 						result = new ModelAndView("redirect:list.do");

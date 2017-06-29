@@ -26,8 +26,9 @@
 	<acme:inputTextMD code="budget.description" path="description"/>
 	
 	 
-	<acme:submitMD name="save" code="budget.edit.save" withButtonCancel="true"
-					codeButtonCancel="budget.edit.cancel" />
+	<acme:submitMD name="save" code="budget.edit.save" />
+	<acme:buttonMD href="request/painter/list.do" type="button" code="budget.edit.cancel" />
+				
 	
 	
 

@@ -26,9 +26,8 @@
 	<acme:inputTextMD code="request.edit.work" path="work"/>
 
 	
-	<acme:submitMD name="save" code="request.edit.save" withButtonCancel="true"
-					codeButtonCancel="request.edit.cancel" />
-	
+	<acme:submitMD name="save" code="request.edit.save"/>
+	<acme:buttonMD href="request/customer/list.do" type="button" code="request.edit.cancel"/>
 
 </form:form>
 

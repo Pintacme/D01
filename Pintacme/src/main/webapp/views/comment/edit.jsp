@@ -23,8 +23,8 @@
 		
 		<acme:inputTextMD code="comment.edit.numberOfStars" path="numberOfStars"/>	
 		
-		<acme:submitMD name="save" code="comment.edit.save" withButtonCancel="true"
-					codeButtonCancel="comment.edit.cancel" />	
+		<acme:submitMD name="save" code="comment.edit.save" />	
+		<acme:buttonMD href="painter/customer/list.do" type="button" code="comment.edit.cancel"/>
 							
 		
 </form:form>

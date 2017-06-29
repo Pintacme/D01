@@ -30,5 +30,5 @@
 
 <%-- Definition --%>
 
-<a href="${href}" class="btn btn-${type}"><spring:message
+<a href="${href}" class="btn btn-raised btn-primary"><spring:message
 		code="${code}" /></a>
