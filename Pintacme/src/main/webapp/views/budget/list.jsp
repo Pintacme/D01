@@ -14,6 +14,8 @@
 <div class="table-responsive">
 <display:table name="budgets" id="row" requestURI="${requestUri}" class="table" keepStatus="false" pagesize="5"  >
 	
+	<spring:message code="budget.request.customer" var="customerColumn" ></spring:message>
+	<display:column property="request.customer.name" title="${customerColumn}"/>
 	
 	<spring:message code="budget.request.work" var="workColumn" ></spring:message>
 	<display:column title="${workColumn}"><center><fmt:formatDate value="${row.request.work}" pattern="dd-MM-yyyy HH:mm"/></center></display:column>

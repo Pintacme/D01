@@ -18,7 +18,6 @@
 								<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 									class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="#">Pintacme</a>
 						</div>
 						<div class="navbar-collapse collapse navbar-responsive-collapse">
 
@@ -36,7 +35,7 @@
 											
 												<security:authorize access="hasRole('PAINTER')">
 								<li><a href="request/painter/list.do"><spring:message
-												code="master.page.request.customer" /></a></li>
+												code="master.page.request.painter" /></a></li>
 											</security:authorize>
 											
 											<security:authorize access="hasRole('CUSTOMER')">

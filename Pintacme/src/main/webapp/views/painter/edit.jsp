@@ -28,6 +28,8 @@
 
 	<form:checkbox path="hasAccepted"></form:checkbox>
 	<spring:message code="painter.hasAccepted"/>
+	
+	</br>
 		
 	
 	<acme:submitMD name="save" code="painter.save" withButtonCancel="true"

@@ -21,7 +21,7 @@
 	<acme:inputTextMD code="request.edit.schedule" path="schedule"/>	
 	<acme:inputTextMD code="request.edit.measures" path="measures"/>	
 	<acme:inputTextMD code="request.edit.photos" path="photos"/>	
-	<acme:textareaMD code="request.edit.description" path="description"/>	
+	<acme:inputTextMD code="request.edit.description" path="description"/>	
 	<acme:inputTextMD code="request.edit.address" path="address"/>	
 	<acme:inputTextMD placeHolderCode="customer.messsageWork" code="request.edit.work" path="work"/>
 

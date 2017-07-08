@@ -17,12 +17,12 @@
 <tiles-definitions>
 
 	<definition name="discussion/list" extends="master.page">	
-		<put-attribute name="title" value="Disputes" />
+		<put-attribute name="title" value="Issues" />
 		<put-attribute name="body" value="/views/discussion/list.jsp" />
 	</definition>
 	
 	<definition name="discussion/edit" extends="master.page">	
-		<put-attribute name="title" value="Edit a discussion" />
+		<put-attribute name="title" value="Edit an issues" />
 		<put-attribute name="body" value="/views/discussion/edit.jsp" />
 	</definition>
 	

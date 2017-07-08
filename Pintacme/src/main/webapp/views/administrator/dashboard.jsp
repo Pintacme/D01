@@ -37,10 +37,10 @@
 <display:table name="ratioManWoman" id="row" class="table" keepStatus="false" pagesize="5"  >
 	
 	<spring:message code="administrator.dashboard.ratioMan" var="ratioMan" ></spring:message>
-	<display:column  title="${ratioMan}"><jstl:out value="${row[0]}" /></display:column>
+	<display:column  title="${ratioMan}"><jstl:out value="${row[0]*100}" /></display:column>
 	
 	<spring:message code="administrator.dashboard.ratioWoman" var="ratioWoman" ></spring:message>
-	<display:column  title="${ratioWoman}"><jstl:out value="${row[1]}" /></display:column>
+	<display:column  title="${ratioWoman}"><jstl:out value="${row[1]*100}" /></display:column>
 	
 </display:table>
 </div>

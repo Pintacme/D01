@@ -29,6 +29,8 @@
 
 	<form:checkbox path="hasAccepted"></form:checkbox>
 	<spring:message code="customer.hasAccepted"/>
+	
+	</br>
 		
 	
 	<acme:submitMD name="save" code="customer.save" withButtonCancel="true"

@@ -12,6 +12,11 @@
 <%@ page import="javax.servlet.*,java.text.*" %>
 
 <div class="table-responsive">
+
+<security:authorize access="hasRole('CUSTOMER')">
+<h2><spring:message code="painter.explanation" /></h2>
+</br>
+</security:authorize>
 <display:table name="painters" id="row" requestURI="${requestUri}" class="table" keepStatus="false" pagesize="5"  >
 	
 	<spring:message code="painter.name" var="nameColumn" ></spring:message>
