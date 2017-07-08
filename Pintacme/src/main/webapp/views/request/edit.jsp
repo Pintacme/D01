@@ -18,13 +18,13 @@
 	<form:hidden path="customer"/>
 	<form:hidden path="budgets"/>
   	
-	<acme:inputTextMD code="request.edit.schedule" path="schedule"/>	
+  	
 	<acme:inputTextMD code="request.edit.measures" path="measures"/>	
 	<acme:inputTextMD code="request.edit.photos" path="photos"/>	
 	<acme:inputTextMD code="request.edit.description" path="description"/>	
 	<acme:inputTextMD code="request.edit.address" path="address"/>	
 	<acme:inputTextMD placeHolderCode="customer.messsageWork" code="request.edit.work" path="work"/>
-
+	<acme:inputSelectMD items="${timePreference}" itemLabel="timePreference" code="request.edit.schedule" path="timePreference"/>
 	
 	<acme:submitMD name="save" code="request.edit.save"/>
 	<acme:buttonMD href="request/customer/list.do" type="button" code="request.edit.cancel"/>

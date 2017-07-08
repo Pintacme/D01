@@ -17,7 +17,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import controllers.AbstractController;
 import domain.Customer;
+import domain.Genre;
 import domain.Request;
+import domain.TimePreference;
 import services.CustomerService;
 import services.RequestService;
 
@@ -170,16 +172,20 @@ public class RequestCustomerController extends AbstractController {
 		protected ModelAndView createEditModelAndView(Request request, String message){
 			ModelAndView result;
 			
-			Collection<String> priorities = new ArrayList<String>();
+			Collection<TimePreference> timePreference = new ArrayList<TimePreference>();
+			TimePreference morning = new TimePreference();
+			morning.setTimePreference("MORNING");
 			
-			priorities.add("LOW");
-			priorities.add("MID");
-			priorities.add("HIGH");
+			TimePreference afternoon = new TimePreference();
+			afternoon.setTimePreference("AFTERNOON");
+			
+			timePreference.add(morning);
+			timePreference.add(afternoon);
 				
 			result = new ModelAndView("request/edit");
 			
 			
-			result.addObject("priorities", priorities);
+			result.addObject("timePreference", timePreference);
 			result.addObject("request", request);
 			result.addObject("message", message);
 			result.addObject("requestURI", "request/customer/create.do");
@@ -198,18 +204,21 @@ public class RequestCustomerController extends AbstractController {
 		protected ModelAndView createModelAndView(Request request, String message){
 			ModelAndView result;
 			
-			Collection<String> priorities = new ArrayList<String>();
+			Collection<TimePreference> timePreference = new ArrayList<TimePreference>();
+			TimePreference morning = new TimePreference();
+			morning.setTimePreference("MORNING");
 			
-			priorities.add("LOW");
-			priorities.add("MID");
-			priorities.add("HIGH");
+			TimePreference afternoon = new TimePreference();
+			afternoon.setTimePreference("AFTERNOON");
+			
+			timePreference.add(morning);
+			timePreference.add(afternoon);
 				
 			result = new ModelAndView("request/create");
 			
-			
-			result.addObject("priorities", priorities);
 			result.addObject("request", request);
 			result.addObject("message", message);
+			result.addObject("timePreference", timePreference);
 			result.addObject("requestURI", "request/customer/edit.do");
 			
 			return result;

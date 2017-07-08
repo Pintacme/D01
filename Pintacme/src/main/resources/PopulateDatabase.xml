@@ -442,7 +442,11 @@
 		<!-- Requests -->
 
 	<bean id="request1" class="domain.Request">
-		<property name="schedule" value="Morning 12:00" />
+		<property name="timePreference">
+				<bean class="domain.TimePreference">
+				<property name="timePreference" value="MORNING"/>
+				</bean>
+		</property>
 		<property name="measures" value="Room 7 x 5  m" />
 		<property name="description" value="It is a marriage room" />
 		<property name="address" value="C/Ruperto Chapi Nº43" />
@@ -469,7 +473,11 @@
 	
 	
 	<bean id="request2" class="domain.Request">
-		<property name="schedule" value="Afternoon" />
+		<property name="timePreference">
+				<bean class="domain.TimePreference">
+				<property name="timePreference" value="AFTERNOON"/>
+				</bean>
+		</property>
 		<property name="measures" value="Room 3 x 4m" />
 		<property name="description" value="It is a small room" />
 		<property name="address" value="C/Reina Merces Bl.3, B" />

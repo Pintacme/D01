@@ -38,7 +38,7 @@ public class Request extends DomainEntity {
 
 
 	//Attributes=====================================================================================
-	private String  schedule;
+	private TimePreference timePreference;
 	private String	measures;
 	private String description;
 	private String address;
@@ -49,20 +49,21 @@ public class Request extends DomainEntity {
 	
 	//Getters & setters================================================================================
 	
-	@NotBlank
-	@SafeHtml(whitelistType = WhiteListType.NONE)
-	public String getSchedule() {
-		return schedule;
+	@NotNull
+	@Valid
+	public TimePreference getTimePreference() {
+		return timePreference;
 	}
-	public void setSchedule(String schedule) {
-		this.schedule = schedule;
-	}
+	public void setTimePreference(final TimePreference timePreference) {
+		this.timePreference = timePreference;
+	}	
 	
 	@NotBlank
 	@SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getMeasures() {
 		return measures;
 	}
+	
 	public void setMeasures(String measures) {
 		this.measures = measures;
 	}
