@@ -30,7 +30,7 @@ public class Material extends DomainEntity {
 	//Attributes=====================================================================================
 
 	private String	description;
-	private int		quantity;
+	private Integer		quantity;
 	private double	price;
 
 
@@ -47,11 +47,11 @@ public class Material extends DomainEntity {
 	}
 
 	@Min(1)
-	public int getQuantity() {
+	public Integer getQuantity() {
 		return this.quantity;
 	}
 
-	public void setQuantity(final int quantity) {
+	public void setQuantity(final Integer quantity) {
 		this.quantity = quantity;
 	}
 
