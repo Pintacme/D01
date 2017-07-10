@@ -1,7 +1,7 @@
 package controllers;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -90,16 +90,7 @@ public class CustomerController extends AbstractController{
 
 			protected ModelAndView createEditModelAndView(CustomerForm customerForm,String message) {
 				ModelAndView result;
-				
-				Collection<Genre> genre = new ArrayList<Genre>();
-				Genre man = new Genre();
-				man.setGenre("MAN");
-				
-				Genre women = new Genre();
-				women.setGenre("WOMAN");
-				
-				genre.add(man);
-				genre.add(women);
+				List<Genre> genre = Arrays.asList(Genre.values());	
 				
 				result = new ModelAndView("customer/edit");
 				result.addObject("customerForm", customerForm);

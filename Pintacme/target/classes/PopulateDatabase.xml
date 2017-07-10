@@ -197,11 +197,8 @@
 		<property name="email" value="rafaelrf@pintacme.com" />
 		<property name="phone" value="654784525" />
 		<property name="dni" value="15588564L" />
-		<property name="genre">
-				<bean class="domain.Genre">
-				<property name="genre" value="MAN"/>
-				</bean>
-		</property>
+		<property name="genre" value="MAN"/>
+
 		<property name="age" value="25" />
 		<property name="requests">
 			<list>
@@ -219,11 +216,7 @@
 		<property name="email" value="jesusni@pintacme.com" />
 		<property name="phone" value="654787775" />
 		<property name="dni" value="15547964L" />
-		<property name="genre">
-				<bean class="domain.Genre">
-				<property name="genre" value="MAN"/>
-				</bean>
-		</property>
+		<property name="genre" value="MAN"/>
 		<property name="age" value="33" />
 		<property name="requests">
 			<list>
@@ -241,11 +234,7 @@
 		<property name="email" value="josecarlosrn@pintacme.com" />
 		<property name="phone" value="654778925" />
 		<property name="dni" value="15522264L" />
-		<property name="genre">
-				<bean class="domain.Genre">
-				<property name="genre" value="MAN"/>
-				</bean>
-		</property>
+		<property name="genre" value="MAN"/>
 		<property name="age" value="28" />
 		<property name="requests">
 			<list>
@@ -262,11 +251,7 @@
 		<property name="email" value="martarj@pintacme.com" />
 		<property name="phone" value="654778925" />
 		<property name="dni" value="13322264L" />
-		<property name="genre">
-				<bean class="domain.Genre">
-				<property name="genre" value="WOMAN"/>
-				</bean>
-		</property>
+		<property name="genre" value="WOMAN"/>
 		<property name="age" value="21" />
 		<property name="requests">
 			<list>
@@ -283,11 +268,7 @@
 		<property name="email" value="cristinamp@pintacme.com" />
 		<property name="phone" value="654778925" />
 		<property name="dni" value="15787464L" />
-		<property name="genre">
-				<bean class="domain.Genre">
-				<property name="genre" value="WOMAN"/>
-				</bean>
-		</property>
+		<property name="genre" value="WOMAN"/>
 		<property name="age" value="23" />
 		<property name="requests">
 			<list>
@@ -304,11 +285,7 @@
 		<property name="email" value="varelarb@pintacme.com" />
 		<property name="phone" value="655778925" />
 		<property name="dni" value="14782264L" />
-		<property name="genre">
-				<bean class="domain.Genre">
-				<property name="genre" value="WOMAN"/>
-				</bean>
-		</property>
+		<property name="genre" value="WOMAN"/>
 		<property name="age" value="29" />
 		<property name="requests">
 			<list>
@@ -325,11 +302,7 @@
 		<property name="email" value="albertosm@pintacme.com" />
 		<property name="phone" value="659978925" />
 		<property name="dni" value="15578464L" />
-		<property name="genre">
-				<bean class="domain.Genre">
-				<property name="genre" value="MAN"/>
-				</bean>
-		</property>
+		<property name="genre" value="MAN"/>
 		<property name="age" value="24" />
 		<property name="requests">
 			<list>
@@ -346,11 +319,7 @@
 		<property name="email" value="carlosrs@pintacme.com" />
 		<property name="phone" value="652328925" />
 		<property name="dni" value="15598864L" />
-		<property name="genre">
-				<bean class="domain.Genre">
-				<property name="genre" value="MAN"/>
-				</bean>
-		</property>
+		<property name="genre" value="MAN"/>
 		<property name="age" value="31" />
 		<property name="requests">
 			<list>

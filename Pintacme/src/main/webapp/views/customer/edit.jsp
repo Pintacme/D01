@@ -24,9 +24,16 @@
 	<acme:inputTextMD  placeHolderCode="customer.messsagePhone" code="customer.phone" path="phone"/>
 	<acme:inputTextMD placeHolderCode="customer.messsageDni" code="customer.dni" path="dni"/>
 	<acme:inputTextMD code="customer.age" path="age"/>
-	
-	<acme:inputSelectMD items="${genre}" itemLabel="genre" code="customer.genre" path="genre"/>
 
+	<div class="form-group">
+	<form:label path="genre"  class="col-md-2 control-label">
+		<spring:message code="customer.genre" />:</form:label>
+			<div class="col-md-10">
+				<form:select path="genre" class="form-control">
+				<form:options items="${genre}"/>
+			</form:select>
+		</div>
+	</div>
 	<form:checkbox path="hasAccepted"></form:checkbox>
 	<spring:message code="customer.hasAccepted"/>
 	
