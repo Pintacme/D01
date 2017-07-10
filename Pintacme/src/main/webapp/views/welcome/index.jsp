@@ -30,6 +30,15 @@
   	
   }
   
+  .spm-carousel-text-xs{
+  	color:black;
+    display:inherit;
+    align-items:center;
+    font-family: sans-serif;
+    font-size: 500%;
+ 
+  }
+  
   
   </style>
   
