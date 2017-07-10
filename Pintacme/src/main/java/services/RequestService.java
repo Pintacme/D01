@@ -117,4 +117,14 @@ public class RequestService {
 		
 		return res;
 	}
+	
+	public Collection<Request> findRequestBudgetAcceptedCustomerIDDatePast(){
+		Collection<Request>res;
+		
+		Customer customer = customerService.getLogged();
+		
+		res = requestRepository.findRequestBudgetAcceptedCustomerIDDatePast(customer.getId());
+		
+		return res;
+	}
 }

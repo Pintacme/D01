@@ -58,7 +58,7 @@ public class RequestCustomerController extends AbstractController {
 		ModelAndView result;			
 		result = new ModelAndView("request/listDis");
 			
-		result.addObject("requests",requestService.findRequestBudgetAcceptedCustomerID());
+		result.addObject("requests",requestService.findRequestBudgetAcceptedCustomerIDDatePast());
 		result.addObject("requestUri","request/customer/listDis.do");
 			
 
