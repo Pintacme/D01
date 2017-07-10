@@ -19,8 +19,8 @@
 	<spring:message code="request.moment" var="momentColumn" ></spring:message>
 	<display:column title="${momentColumn}"><center><fmt:formatDate value="${row.moment}" pattern="dd-MM-yyyy HH:mm"/></center></display:column>
 	
-	<spring:message code="request.schedule" var="scheduleColumn" ></spring:message>
-	<display:column property="timePreference" title="${timePreference}"/>
+	<spring:message code="request.schedule" var="timePreferenceColumn" ></spring:message>
+	<display:column property="timePreference" title="${timePreferenceColumn}"/>
 	
 	<spring:message code="request.photos" var="photosColumn" ></spring:message>
 	<display:column title="${photosColumn}">

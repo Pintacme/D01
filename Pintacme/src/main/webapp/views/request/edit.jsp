@@ -27,7 +27,7 @@
 	
 	<div class="form-group">
 	<form:label path="timePreference"  class="col-md-2 control-label">
-		<spring:message code="request.edit.schedule" />:</form:label>
+		<spring:message code="request.edit.schedule" /></form:label>
 			<div class="col-md-10">
 				<form:select path="timePreference" class="form-control">
 				<form:options items="${timePreference}"/>
