@@ -35,7 +35,7 @@
     display:inherit;
     align-items:center;
     font-family: sans-serif;
-    font-size: 500%;
+    font-size: 300%;
  
   }
   
