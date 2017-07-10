@@ -24,7 +24,16 @@
 	<acme:inputTextMD code="request.edit.description" path="description"/>	
 	<acme:inputTextMD code="request.edit.address" path="address"/>	
 	<acme:inputTextMD placeHolderCode="customer.messsageWork" code="request.edit.work" path="work"/>
-	<acme:inputSelectMD items="${timePreference}" itemLabel="timePreference" code="request.edit.schedule" path="timePreference"/>
+	
+	<div class="form-group">
+	<form:label path="timePreference"  class="col-md-2 control-label">
+		<spring:message code="request.edit.schedule" />:</form:label>
+			<div class="col-md-10">
+				<form:select path="timePreference" class="form-control">
+				<form:options items="${timePreference}"/>
+			</form:select>
+		</div>
+	</div>
 	
 	<acme:submitMD name="save" code="request.edit.save"/>
 	<acme:buttonMD href="request/customer/list.do" type="button" code="request.edit.cancel"/>

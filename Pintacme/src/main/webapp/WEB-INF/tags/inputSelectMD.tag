@@ -25,7 +25,7 @@
 
 <%@ attribute name="code" required="true"%>
 <%@ attribute name="path" required="true"%>
-<%@ attribute name="itemLabel" required="true"%>
+<%@ attribute name="itemLabel" required="false"%>
 <%@ attribute name="items" required="true" type="java.util.Collection"%>
 
 

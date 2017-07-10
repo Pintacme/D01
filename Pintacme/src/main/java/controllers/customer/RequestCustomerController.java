@@ -1,8 +1,8 @@
 package controllers.customer;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -17,7 +17,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import controllers.AbstractController;
 import domain.Customer;
-import domain.Genre;
 import domain.Request;
 import domain.TimePreference;
 import services.CustomerService;
@@ -171,16 +170,8 @@ public class RequestCustomerController extends AbstractController {
 		
 		protected ModelAndView createEditModelAndView(Request request, String message){
 			ModelAndView result;
-			
-			Collection<TimePreference> timePreference = new ArrayList<TimePreference>();
-			TimePreference morning = new TimePreference();
-			morning.setTimePreference("MORNING");
-			
-			TimePreference afternoon = new TimePreference();
-			afternoon.setTimePreference("AFTERNOON");
-			
-			timePreference.add(morning);
-			timePreference.add(afternoon);
+
+			List<TimePreference> timePreference = Arrays.asList(TimePreference.values());	
 				
 			result = new ModelAndView("request/edit");
 			
@@ -204,15 +195,9 @@ public class RequestCustomerController extends AbstractController {
 		protected ModelAndView createModelAndView(Request request, String message){
 			ModelAndView result;
 			
-			Collection<TimePreference> timePreference = new ArrayList<TimePreference>();
-			TimePreference morning = new TimePreference();
-			morning.setTimePreference("MORNING");
-			
-			TimePreference afternoon = new TimePreference();
-			afternoon.setTimePreference("AFTERNOON");
-			
-			timePreference.add(morning);
-			timePreference.add(afternoon);
+
+			List<TimePreference> timePreference = Arrays.asList(TimePreference.values());	
+
 				
 			result = new ModelAndView("request/create");
 			

@@ -19,7 +19,6 @@
 		<bean class="converters.PainterToStringConverter" />
 		<bean class="converters.RequestToStringConverter" />
 		<bean class="converters.GenreToStringConverter" />
-		<bean class="converters.TimePreferenceToStringConverter" />
 		
 		<bean class="converters.StringToActorConverter" />
 		<bean class="converters.StringToAdminConverter" />
@@ -31,7 +30,6 @@
 		<bean class="converters.StringToPainterConverter" />
 		<bean class="converters.StringToRequestConverter" />
 		<bean class="converters.StringToGenreConverter" />
-		<bean class="converters.StringToTimePreferenceConverter" />
 	
 	
 	</util:list>

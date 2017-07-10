@@ -49,8 +49,7 @@ public class Request extends DomainEntity {
 	
 	//Getters & setters================================================================================
 	
-	@NotNull
-	@Valid
+
 	public TimePreference getTimePreference() {
 		return timePreference;
 	}

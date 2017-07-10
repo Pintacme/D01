@@ -27,7 +27,7 @@
 	
 	 
 	<acme:submitMD name="save" code="budget.edit.save" />
-	<acme:buttonMD href="budget/painter/list.do" type="button" code="budget.edit.cancel" />
+	<acme:buttonMD href="request/painter/list.do" type="button" code="budget.edit.cancel" />
 				
 	
 	
