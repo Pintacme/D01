@@ -25,7 +25,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Access(AccessType.PROPERTY)
 public class Comment extends DomainEntity {
 
-	private int numberOfStars;
+	private Integer numberOfStars;
 	private String text;
 	private Date moment;
 	
@@ -33,11 +33,12 @@ public class Comment extends DomainEntity {
 		super();
 	}
 	
+	@NotNull
 	@Range(min = 0, max = 5)
-	public int getNumberOfStars() {
+	public Integer getNumberOfStars() {
 		return numberOfStars;
 	}
-	public void setNumberOfStars(int numberOfStars) {
+	public void setNumberOfStars(Integer numberOfStars) {
 		this.numberOfStars = numberOfStars;
 	}
 	@NotBlank
