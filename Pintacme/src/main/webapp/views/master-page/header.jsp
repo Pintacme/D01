@@ -44,9 +44,15 @@
 											</security:authorize>
 											
 											<security:authorize access="hasRole('CUSTOMER')">
-								<li><a href="request/customer/listDis.do"><spring:message
+								<li><a href="discussion/customer/list.do"><spring:message
 												code="master.page.discussion.customer" /></a></li>
 											</security:authorize>
+											
+									<security:authorize access="hasRole('CUSTOMER')">
+								<li><a href="request/customer/listDis.do"><spring:message
+												code="master.page.discussion.create.customer" /></a></li>
+											</security:authorize>
+											
 											
 								<li><a href="painter/list.do"><spring:message
 												code="master.page.painter.list" /></a></li>

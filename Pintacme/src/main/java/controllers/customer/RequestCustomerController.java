@@ -199,7 +199,7 @@ public class RequestCustomerController extends AbstractController {
 			List<TimePreference> timePreference = Arrays.asList(TimePreference.values());	
 
 				
-			result = new ModelAndView("request/create");
+			result = new ModelAndView("request/edit");
 			
 			result.addObject("request", request);
 			result.addObject("message", message);
