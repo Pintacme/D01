@@ -17,45 +17,26 @@
     background-image:url('images/ayudaDisputa1.bmp');
     
     background-size:100%;
- 	width:100%;
-	height:100%;
+ 	width:500px;
+	height:425px;
 }
 </style>
 
 
-<div class="helpIssuePhoto">	
 
-<h2 align="center">
-<spring:message code="helpIssue.title" />:
-</h2>
+<div style="padding-left:350px; font-weight: bold;">
 
-<h3 align="center">
-<spring:message code="helpIssue.1" />
-</h3>
-
-<h3 align="center">
-<spring:message code="helpIssue.2" />
-</h3>
-
+	<div class="helpIssuePhoto">	
+		<h2 align="center" style="font-weight:bold;">
+		<spring:message code="helpIssue.title" />:
+		</h2>
+		
+		<h3 align="center" style="font-weight:bold;">
+		<spring:message code="helpIssue.1" />
+		</h3>
+		
+		<h3 align="center" style="font-weight:bold;">
+		<spring:message code="helpIssue.2" />
+		</h3>	
+	</div>
 </div>
-<!--  
-<div class="responsive">
-
-<a href="#"><img align="left" width="25%" src="images/brochita enfada guantes.png"
-						alt="Pintacme" /></a>
-
-<h2 align="left">
-<spring:message code="helpIssue.title" />:
-</h2>
-
-<h3 align="left">
-<spring:message code="helpIssue.1" />
-</h3>
-
-<h3 align="left">
-<spring:message code="helpIssue.2" />
-</h3>
-
-</div>
-
--->

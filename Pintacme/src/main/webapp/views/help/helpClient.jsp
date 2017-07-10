@@ -17,33 +17,36 @@
     background-image:url('images/ayudaCliente1.bmp');
     
     background-size:100%;
- 	width:100%;
-	height:100%;
+ 	width:500px;
+	height:425px;
+	
 }
 </style>
 
+<div style="padding-left:350px; font-weight: bold;">
 
-<div class="helpClientPhoto">					
-									
-<h2 align="center">
-	<spring:message code="helpClient.title" />:
-</h2> 
-
-	
-<h3 align="center">
-	<spring:message code="helpClient.1" />
-</h3>
-<h3 align="center">
-	<spring:message code="helpClient.2" />
-</h3>
-<h3 align="center">
-	<spring:message code="helpClient.3" />
-</h3>
-<h3 align="center">
-	<spring:message code="helpClient.4" />
-</h3>
-<h3 align="center">
-	<spring:message code="helpClient.5" />
-</h3>
+	<div class="helpClientPhoto">					
+										
+		<h2 align="center" style="font-weight:bold;">
+			<spring:message code="helpClient.title" />:
+		</h2> 
+		
+			
+		<h3 align="center" style="font-weight:bold;">
+			<spring:message code="helpClient.1" />
+		</h3>
+		<h3 align="center" style="font-weight:bold;">
+			<spring:message code="helpClient.2" />
+		</h3>
+		<h3 align="center" style="font-weight:bold;">
+			<spring:message code="helpClient.3" />
+		</h3>
+		<h3 align="center" style="font-weight:bold;">
+			<spring:message code="helpClient.4" />
+		</h3>
+		<h3 align="center" style="font-weight:bold;">
+			<spring:message code="helpClient.5" />
+		</h3>
+	</div>
 </div>
 

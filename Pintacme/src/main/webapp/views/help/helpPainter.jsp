@@ -18,55 +18,30 @@
     background-image:url('images/ayudaPintor1.bmp');
     
     background-size:100%;
- 	width:100%;
-	height:100%;
+ 	width:500px;
+	height:425px;
 }
 </style>
 
-
+<div style="padding-left:350px; font-weight: bold;">
 <div class="helpPainterPhoto">	
 
-<h2 align="center">
+<h2 align="center" style="font-weight:bold;">
 <spring:message code="helpPainter.title" />:
 </h2>
 
-<h3 align="center">
+<h3 align="center" style="font-weight:bold;">
 	<spring:message code="helpPainter.1" />
 </h3>
-<h3 align="center">
+<h3 align="center"style="font-weight:bold;">
 	<spring:message code="helpPainter.2" />
 </h3>
-<h3 align="center">
+<h3 align="center" style="font-weight:bold;">
 	<spring:message code="helpPainter.3" />
 </h3>
-<h3 align="center">
+<h3 align="center" style="font-weight:bold;">
 	<spring:message code="helpPainter.4" />
 </h3>
 
 </div>
-
-<!--  
-<div class="responsive">
-<a href="#"><img align="left" width="25%" src="images/brochita pintora guantes.png"
-						alt="Pintacme" /></a>
-
-<h2 align="left">
-<spring:message code="helpPainter.title" />:
-</h2>
-
-<h3 align="left">
-	<spring:message code="helpPainter.1" />
-</h3>
-<h3 align="left">
-	<spring:message code="helpPainter.2" />
-</h3>
-<h3 align="left">
-	<spring:message code="helpPainter.3" />
-</h3>
-<h3 align="left">
-	<spring:message code="helpPainter.4" />
-</h3>
-
-
 </div>
--->
