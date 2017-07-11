@@ -8,6 +8,7 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -83,9 +84,9 @@ public class Discussion extends DomainEntity{
 		this.request = request;
 	}
 
-	@OneToOne(optional = false)
-	@NotNull
 	@Valid
+	@ManyToOne(optional=false)
+	@NotNull
 	public Painter getPainter() {
 		return painter;
 	}

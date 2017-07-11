@@ -408,6 +408,8 @@
 
 	</bean>
 	
+	
+	
 		<!-- Requests -->
 
 	<bean id="request1" class="domain.Request">
@@ -478,6 +480,7 @@
 		<property name="request" ref="request1" />
 		<property name="painter" ref="painter1" />
 	</bean>
+	
 	
 	
 	<!-- Budgets -->

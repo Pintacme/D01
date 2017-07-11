@@ -58,6 +58,8 @@ public class Painter extends Actor {
 	
 	Collection<Budget> budgets;
 	Collection<Comment> comments;
+	Collection<Discussion> discussions;
+	
 	private Curriculum curriculum;
 
 	@Valid
@@ -89,6 +91,18 @@ public class Painter extends Actor {
 	public void setCurriculum(Curriculum curriculum) {
 		this.curriculum = curriculum;
 	}
+
+	@Valid
+	@OneToMany(mappedBy="painter")
+	public Collection<Discussion> getDiscussions() {
+		return discussions;
+	}
+
+	public void setDiscussions(Collection<Discussion> discussions) {
+		this.discussions = discussions;
+	}
+	
+	
 
 	
 	
