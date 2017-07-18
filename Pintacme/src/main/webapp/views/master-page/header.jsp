@@ -53,10 +53,10 @@
 												code="master.page.discussion.create.customer" /></a></li>
 											</security:authorize>
 											
-											
+									<security:authorize access="isAnonymous()">			
 								<li><a href="painter/list.do"><spring:message
 												code="master.page.painter.list" /></a></li>
-															
+										</security:authorize>					
 
 							</ul>
 							
