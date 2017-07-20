@@ -27,7 +27,7 @@ public interface RequestRepository extends JpaRepository<Request, Integer> {
 	@Query("select r from Request r join r.budgets b where b.status='ACCEPTED' and r.customer.id=?1 and r.discussion.id=null")
 	Collection<Request> findRequestBudgetAcceptedCustomerID(int id);
 	
-	@Query("select r from Request r join r.budgets b where b.status='ACCEPTED' and r.customer.id=?1 and r.discussion.id=null and r.work > now()")
+	@Query("select r from Request r join r.budgets b where b.status='ACCEPTED' and r.customer.id=?1 and r.discussion.id=null and r.work < now()")
 	Collection<Request> findRequestBudgetAcceptedCustomerIDDatePast(int id);
 
 

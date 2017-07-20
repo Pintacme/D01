@@ -1,6 +1,7 @@
 package controllers.customer;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -57,8 +58,9 @@ public class RequestCustomerController extends AbstractController {
 	public ModelAndView listDiscussion() {
 		ModelAndView result;			
 		result = new ModelAndView("request/listDis");
+		Collection<Request> requests = requestService.findRequestBudgetAcceptedCustomerIDDatePast();
 			
-		result.addObject("requests",requestService.findRequestBudgetAcceptedCustomerIDDatePast());
+		result.addObject("requests",requests);
 		result.addObject("requestUri","request/customer/listDis.do");
 			
 
