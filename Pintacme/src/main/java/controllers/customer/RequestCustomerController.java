@@ -179,7 +179,7 @@ public class RequestCustomerController extends AbstractController {
 			result.addObject("timePreference", timePreference);
 			result.addObject("request", request);
 			result.addObject("message", message);
-			result.addObject("requestURI", "request/customer/create.do");
+			result.addObject("requestURI", "request/customer/edit.do?id="+request.getId());
 			
 			return result;
 		}
@@ -187,7 +187,7 @@ public class RequestCustomerController extends AbstractController {
 		protected ModelAndView createModelAndView(Request request){
 			ModelAndView result;
 			
-			result = createEditModelAndView(request, null);
+			result = createModelAndView(request, null);
 			
 			return result;
 		}
@@ -204,7 +204,7 @@ public class RequestCustomerController extends AbstractController {
 			result.addObject("request", request);
 			result.addObject("message", message);
 			result.addObject("timePreference", timePreference);
-			result.addObject("requestURI", "request/customer/edit.do");
+			result.addObject("requestURI", "request/customer/create.do");
 			
 			return result;
 		}

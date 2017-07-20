@@ -10,7 +10,7 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 
-<form:form action="budget/painter/edit.do" modelAttribute="budget">
+<form:form action="${requestURI}" modelAttribute="budget">
 
 	<form:hidden path="id"/>
 	<form:hidden path="version"/>

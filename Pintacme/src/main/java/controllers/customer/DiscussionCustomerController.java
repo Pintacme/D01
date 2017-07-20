@@ -65,50 +65,68 @@ public class DiscussionCustomerController extends AbstractController{
 		
 		discussion = discussionService.create(id);
 		
-		result = createEditModelAndView(discussion);
+		result = createModelAndView(discussion);
 			
 		return result;
 	}
 	
-	@RequestMapping(value = "/edit", method = RequestMethod.POST, params="save")
+	@RequestMapping(value = "/create", method = RequestMethod.POST, params="save")
 	public ModelAndView save(@Valid Discussion discussion, BindingResult binding){
 		ModelAndView result;
 		if(binding.hasErrors()){
-			result = createEditModelAndView(discussion);
+			result = createModelAndView(discussion);
 		}else{
 			try{
 				if(discussion.getRequest()==null){
-					result = createEditModelAndView(discussion, "discussion.request.error");
+					result = createModelAndView(discussion, "discussion.request.error");
 				}else{
 					discussionService.save(discussion);
 					result = new ModelAndView("redirect:list.do");	
 				}		
 			}catch(Throwable oops){
-				result = createEditModelAndView(discussion, "discussion.commit.error");
+				result = createModelAndView(discussion, "discussion.commit.error");
 			}
 		}
 		return result;
 	}
 	
-	 protected ModelAndView createEditModelAndView(Discussion discussion){
-			ModelAndView result;
-			
-			result = createEditModelAndView(discussion, null);
-			
-			return result;
-		}
-		
-		protected ModelAndView createEditModelAndView(Discussion discussion, String message){
-			ModelAndView result;
-							
-			result = new ModelAndView("discussion/edit");
-			
-			result.addObject("discussion", discussion);
-			result.addObject("message", message);
-			
-			return result;
-		}
+//	 protected ModelAndView createEditModelAndView(Discussion discussion){
+//			ModelAndView result;
+//			
+//			result = createEditModelAndView(discussion, null);
+//			
+//			return result;
+//		}
+//		
+//		protected ModelAndView createEditModelAndView(Discussion discussion, String message){
+//			ModelAndView result;
+//							
+//			result = new ModelAndView("discussion/edit");
+//			
+//			result.addObject("discussion", discussion);
+//			result.addObject("message", message);
+//			
+//			return result;
+//		}
 
-	
+		 protected ModelAndView createModelAndView(Discussion discussion){
+				ModelAndView result;
+				
+				result = createModelAndView(discussion, null);
+				
+				return result;
+			}
+			
+			protected ModelAndView createModelAndView(Discussion discussion, String message){
+				ModelAndView result;
+				int id = discussion.getRequest().getId();	
+				result = new ModelAndView("discussion/edit");
+				
+				result.addObject("discussion", discussion);
+				result.addObject("message", message);
+				result.addObject("requestURI", "discussion/customer/create.do?id="+id);
+				
+				return result;
+			}	
 
 }

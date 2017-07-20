@@ -10,7 +10,7 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 
-<form:form action="discussion/customer/edit.do" modelAttribute="discussion">
+<form:form action="${requestURI}" modelAttribute="discussion">
 
 	<form:hidden path="id"/>
 	<form:hidden path="version"/>

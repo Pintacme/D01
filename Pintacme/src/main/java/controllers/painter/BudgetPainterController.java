@@ -60,7 +60,7 @@ public class BudgetPainterController extends AbstractController{
 		Budget budget;
 	
 		budget = budgetService.create(id);
-		result = createEditModelAndView(budget);
+		result = createModelAndView(budget);
 			
 		return result;
 	}
@@ -105,7 +105,30 @@ public class BudgetPainterController extends AbstractController{
 			}
 			return result;
 		}
-		
+
+		@RequestMapping(value = "/create", method = RequestMethod.POST, params="save")
+		public ModelAndView saveCreate(@Valid Budget budget, BindingResult binding){
+			ModelAndView result;
+			if(binding.hasErrors()){
+				result = createModelAndView(budget);
+			}else{
+				try{
+//					Collection<Request> requestsCreateBudget = requestService.findRequestWithBudgetPainterId();
+//					System.out.println(requestsCreateBudget);
+//					if(requestsCreateBudget.contains(budget.getRequest())){
+//						result = createEditModelAndView(budget, "budget.commit.duplicate");
+					if(!budget.getStatus().equals("PENDING")){
+						result = createModelAndView(budget, "budget.commit.notPending");
+					}else{
+						budgetService.save(budget);
+						result = new ModelAndView("redirect:list.do");
+					}
+				}catch(Throwable oops){
+					result = createModelAndView(budget, "budget.commit.error");
+				}
+			}
+			return result;
+		}
 		@RequestMapping(value = "/edit", method = RequestMethod.POST, params = "delete")
 		public ModelAndView delete(@Valid Budget budget, BindingResult binding) {
 			ModelAndView result;
@@ -141,12 +164,41 @@ public class BudgetPainterController extends AbstractController{
 				
 			result = new ModelAndView("budget/edit");
 			
-			
+
+			int id = budget.getId();	
 			result.addObject("priorities", priorities);
 			result.addObject("budget", budget);
 			result.addObject("message", message);
+			result.addObject("requestURI", "budget/painter/edit.do?id="+id);
 			
 			return result;
 		}
 
+		protected ModelAndView createModelAndView(Budget budget){
+			ModelAndView result;
+			
+			result = createModelAndView(budget, null);
+			
+			return result;
+		}
+		
+		protected ModelAndView createModelAndView(Budget budget, String message){
+			ModelAndView result;
+			
+			Collection<String> priorities = new ArrayList<String>();
+			int id = budget.getRequest().getId();
+			
+			priorities.add("ACCEPTED");
+			priorities.add("PENDING");
+			priorities.add("REJECTED");
+				
+			result = new ModelAndView("budget/edit");
+			
+			result.addObject("priorities", priorities);
+			result.addObject("budget", budget);
+			result.addObject("message", message);
+			result.addObject("requestURI", "budget/painter/create.do?id="+id);
+			
+			return result;
+		}
 }

@@ -11,7 +11,7 @@
 
 
 
-<form:form action="comment/customer/edit.do" modelAttribute="comment">
+<form:form action="${requestURI}" modelAttribute="comment">
 		
 		<form:hidden path="id"/>
 		<form:hidden path="version"/>

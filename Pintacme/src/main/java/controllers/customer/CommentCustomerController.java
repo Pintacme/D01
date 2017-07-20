@@ -81,7 +81,7 @@ public class CommentCustomerController extends AbstractController{
 				
 				Assert.isTrue(painters.contains(painterService.findOne(id)));
 			
-				result = createEditModelAndView(comment);
+				result = createModelAndView(comment);
 				
 				return result;
 				
@@ -120,7 +120,25 @@ public class CommentCustomerController extends AbstractController{
 				}
 				return result;
 			}
+	
+			@RequestMapping(value = "/create", method = RequestMethod.POST, params="save")
+			public ModelAndView saveCreate(@Valid Comment comment, BindingResult binding){
+				ModelAndView result;
+					
+				if(binding.hasErrors()){
+					result = createModelAndView(comment);
+				}else{
+					try{	
+							commentService.save(comment);
+							painterService.calculateAverageStarPainter(comment.getPainter());
+							result = new ModelAndView("redirect:list.do?id="+comment.getPainter().getId());					
 			
+					}catch(Throwable oops){
+						result = createModelAndView(comment, "comment.commit.error");
+					}
+				}
+				return result;
+			}
 
 			protected ModelAndView createEditModelAndView(Comment comment){
 				ModelAndView result;
@@ -137,10 +155,30 @@ public class CommentCustomerController extends AbstractController{
 				
 				result.addObject("comment", comment);
 				result.addObject("message", message);
+				result.addObject("requestURI", "comment/customer/edit.do");
+				
+				return result;
+			}
+
+			protected ModelAndView createModelAndView(Comment comment){
+				ModelAndView result;
+				
+				result = createModelAndView(comment, null);
 				
 				return result;
 			}
 			
+			protected ModelAndView createModelAndView(Comment comment, String message){
+				ModelAndView result;
+					
+				result = new ModelAndView("comment/edit");
+				int id = comment.getPainter().getId();
+				
+				result.addObject("comment", comment);
+				result.addObject("message", message);
+				result.addObject("requestURI", "comment/customer/create.do?id="+id);
+				return result;
+			}
 }
 		
 
